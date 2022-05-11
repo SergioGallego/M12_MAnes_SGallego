@@ -19,7 +19,8 @@ class AlumnoController extends Controller
     public function index()
     {
         $alumnos = Alumno::all();
-        return view('alumno.index', array('arrayAlumnos'=>$alumnos));
+        $ciclos = Ciclo::all();
+        return view('alumno.index', array('arrayAlumnos'=>$alumnos, 'arrayCiclos'=>$ciclos));
     }
 
     public function indexAlumno()
