@@ -21,6 +21,11 @@ class CicloSeeder extends Seeder
             'updated_by' => 1
         ),
         array(
+            'nombre' => 'ASIX',
+            'descripcion' => 'Administració de sistemes i xarxes',
+            'updated_by' => 1
+        ),
+        array(
             'nombre' => 'SMX',
             'descripcion' => 'Sistemes Microinformatics i Xarxes',
             'updated_by' => 1

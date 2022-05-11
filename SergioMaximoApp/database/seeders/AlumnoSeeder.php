@@ -11,24 +11,37 @@ use Illuminate\Support\Facades\Auth;
 
 class AlumnoSeeder extends Seeder
 {
-    private $arrayUsers = array (
+    private $arrayAlumnos = array (
         array(
-            'nombre' => 'Maximo'
+            'apellidos' => 'Anes Gimeno',
+            'nombre' => 'Maximo',
+            'ciclo' => 'DAW'
         ),
         array(
-            'nombre' => 'Joan'
+            'apellidos' => 'Fernandez Malé',
+            'nombre' => 'Joan',
+            'ciclo' => 'DAW'
         ),
         array(
-            'nombre' => 'Ataulfo'
+            'apellidos' => 'Rodriguez de la fuente',
+            'nombre' => 'Ataulfo',
+            'ciclo' => 'ASIX'
+        ),
+        array(
+            'apellidos' => 'Gallego Gudiño',
+            'nombre' => 'Daniel',
+            'ciclo' => 'SMX'
         ),
     );
 
     private function seedAlumno(){
         DB::table('alumnos')->delete();
-        foreach($this->arrayUsers as $user){
-            $us = new Alumno;
-            $us->nombre = $user['nombre'];
-            $us->save();
+        foreach($this->arrayAlumnos as $alumno){
+            $al = new Alumno;
+            $al->apellidos = $alumno['apellidos'];
+            $al->nombre = $alumno['nombre'];
+            $al->ciclo = $alumno['ciclo'];
+            $al->save();
         }
     }
     /**

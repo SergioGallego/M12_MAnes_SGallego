@@ -17,11 +17,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('alumno.index');
-    }
-
-    public function indexAlumno()
-    {
         $alumnos = Alumno::all();
         return view('alumno.index', array('arrayAlumnos'=>$alumnos));
     }
@@ -42,6 +37,8 @@ class UserController extends Controller
     { 
         $alumno = new Alumno;
         $alumno->name=$request->input('name');
+        $alumno->apellidos=$request->input('apellidos');
+        $alumno->ciclo=$request->input('ciclo');
         $alumno->save();
         return redirect()->back();
     }
