@@ -18,16 +18,14 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        $ciclos = Ciclo::all();
         $alumnos = Alumno::all();
-        return view('alumno.index', array('arrayAlumnos'=>$alumnos, 'arrayCiclos'=>$ciclos));
+        return view('alumno.index', array('arrayAlumnos'=>$alumnos));
     }
 
     public function indexAlumno()
     {
-        $ciclos = Ciclo::all();
         $alumnos = Alumno::all();
-        return view('alumno.index', array('arrayAlumnos'=>$alumnos, 'arrayCiclos'=>$ciclos));
+        return view('alumno.index', array('arrayAlumnos'=>$alumnos));
     }
 
     public function show($id)
@@ -46,6 +44,8 @@ class AlumnoController extends Controller
     { 
         $alumno = new Alumno;
         $alumno->name=$request->input('name');
+        $alumno->apellidos=$request->input('apellidos');
+        $alumno->ciclo=$request->input('ciclo');
         $alumno->save();
         return redirect()->back();
     }
