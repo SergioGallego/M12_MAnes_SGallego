@@ -59,7 +59,6 @@
     
                     <div>
                         <select name="role_id" x-model="role_id" class="block mt-1 w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            <option selected>Registrar como...</option>
                             <option value="1">Superusuario</option>
                             <option value="2">Profesor</option>
                         </select>
@@ -67,7 +66,6 @@
     
                     <div>
                         <select name="estado" x-model="estado" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            <option selected>Selecciona estado...</option>
                             <option value="Activo">Activo</option>
                             <option value="Inactivo">Inactivo</option>
                         </select>

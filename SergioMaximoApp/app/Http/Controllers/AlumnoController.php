@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use App\Models\Ciclo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class AlumnoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +18,16 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('alumno.index');
+        $ciclos = Ciclo::all();
+        $alumnos = Alumno::all();
+        return view('alumno.index', array('arrayAlumnos'=>$alumnos, 'arrayCiclos'=>$ciclos));
     }
 
     public function indexAlumno()
     {
+        $ciclos = Ciclo::all();
         $alumnos = Alumno::all();
-        return view('alumno.index', array('arrayAlumnos'=>$alumnos));
+        return view('alumno.index', array('arrayAlumnos'=>$alumnos, 'arrayCiclos'=>$ciclos));
     }
 
     public function show($id)

@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @include('partials.navbar')
 @section('title')
-    <h1 style="text-align: center">Gestión de usuarios</h1>
+    <h1 style="text-align: center">Gestión de alumnos</h1>
 @stop
 @section('content') 
     
@@ -15,23 +15,15 @@
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
-                <td class="cabecera"><b>Email</b></td>
-                <td class="cabecera"><b>Rol</b></td>
-                <td class="cabecera"><b>Estado</b></td>
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
-            @foreach ($arrayUsuarios as $key => $u)
+            @foreach ($arrayAlumnos as $key => $a)
                 <tr>
-                    <td style="padding: 10px">{{$u->id}}</td>
-                    <td style="padding: 10px">{{$u->name}}</td>
-                    <td style="padding: 10px">{{$u->email}}</td>
-                    <td style="padding: 10px">{{$u->role_id}}</td>
-                    <td style="padding: 10px">{{$u->estado}}</td>
-                    <td style="padding: 10px"><a href="{{route('showUser', $u->id)}}" style="color: #FF6701">Detalles...</a>
+                    <td style="padding: 10px">{{$a->id}}</td>
+                    <td style="padding: 10px">{{$a->nombre}}</td>
+                    <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" style="color: #FF6701">Detalles...</a>
                         @if (auth()->user()->role_id == 1)
-                            @if ($u->role_id == 2 || (auth()->user()->id == 1 && $u->id != 1))
-                                <a href="{{route('destroyUser', $u->id)}}" style="color: #FF6701">Borrar...</a>
-                            @endif
+                            <a href="{{route('destroyAlumno', $a->id)}}" style="color: #FF6701">Borrar...</a>
                         @endif</td>
                 </tr>
             @endforeach
@@ -41,8 +33,8 @@
         <div class="col-md-3">
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
-                <h3 style="text-align: center">Dar de alta usuarios</h1>
-                <form class="mt-4" method="POST" action="{{ route('storeUser') }}">
+                <h3 style="text-align: center">Dar de alta alumnos</h1>
+                <form class="mt-4" method="POST" action="{{ route('storeAlumno') }}">
                     @csrf
     
                     <div>
@@ -50,26 +42,14 @@
                     </div>
     
                     <div class="mt-4">
-                        <x-jet-input  placeholder="Correo electrónico" id="email" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
-                    </div>
-    
-                    <div class="mt-4">
-                        <x-jet-input  placeholder="Contraseña" id="password" class="block mt-1 w-full form-control" type="password" name="password" required autocomplete="new-password" />
+                        <x-jet-input  placeholder="Apellidos" id="apellidos" class="block mt-1 w-full form-control" type="apellidos" name="apellidos" :value="old('apellidos')" required />
                     </div><br>
     
                     <div>
-                        <select name="role_id" x-model="role_id" class="block mt-1 w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            <option selected>Registrar como...</option>
-                            <option value="1">Superusuario</option>
-                            <option value="2">Profesor</option>
-                        </select>
-                    </div><br>
-    
-                    <div>
-                        <select name="estado" x-model="estado" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            <option selected>Selecciona estado...</option>
-                            <option value="Activo">Activo</option>
-                            <option value="Inactivo">Inactivo</option>
+                        <select name="ciclo" x-model="ciclo" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+                            @foreach ($arrayCiclos as $key => $c)
+                                <option value="{{$c->nombre}}">{{$c->nombre}}</option>
+                            @endforeach
                         </select>
                     </div><br>
     
