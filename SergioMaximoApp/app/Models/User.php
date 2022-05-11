@@ -18,6 +18,10 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
+    public function profesor(){
+        return $this->hasMany(Modulo::class, 'profesor');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

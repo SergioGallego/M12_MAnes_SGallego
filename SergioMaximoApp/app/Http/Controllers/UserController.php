@@ -29,13 +29,13 @@ class UserController extends Controller
     public function show($id)
     {
         $profesor = User::findOrFail($id);
-        return view('profesor.show', array('id'=>$id, 'profesor'=>$profesor));
+        return view('profesor.show', array('profesor'=>$profesor));
     }
 
     public function edit($id)
     {
         $profesor = User::findOrFail($id);
-        return view('profesor.edit', array('id'=>$id, 'profesor'=>$profesor));
+        return view('profesor.edit', array('profesor'=>$profesor));
     }
 
     public function store(Request $request)

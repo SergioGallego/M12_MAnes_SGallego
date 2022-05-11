@@ -32,13 +32,13 @@ class AlumnoController extends Controller
     public function show($id)
     {
         $alumno = Alumno::findOrFail($id);
-        return view('alumno.show', array('id'=>$id, 'alumno'=>$alumno));
+        return view('alumno.show', array('alumno'=>$alumno));
     }
 
     public function edit($id)
     {
         $alumno = Alumno::findOrFail($id);
-        return view('alumno.edit', array('id'=>$id, 'alumno'=>$alumno));
+        return view('alumno.edit', array('alumno'=>$alumno));
     }
 
     public function store(Request $request)
