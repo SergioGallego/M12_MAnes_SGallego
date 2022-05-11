@@ -4,7 +4,7 @@
 @stop
 @section('content')
     <div style="margin-right: auto; margin-left: auto; display: block" class="mt-5 mb-5">
-            <img class="mb-3" src='https://raw.githubusercontent.com/SergioGallego/M12DAWProyecto_MAnes_SGallego/main/cropped-logo_calafell_favorit_icon_3.png' style="margin-right: auto; margin-left: auto; display: block">
+            <img class="mb-3" src='https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/cropped-logo_calafell_favorit_icon_3.png' style="margin-right: auto; margin-left: auto; display: block">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
             <form method="POST" action="{{ route('register') }}">
                 @csrf

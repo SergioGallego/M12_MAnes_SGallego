@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-    <img src='https://raw.githubusercontent.com/SergioGallego/M12DAWProyecto_MAnes_SGallego/main/cropped-logo_calafell_favorit_icon_2.png' width="10%">
+    <img src='https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/cropped-logo_calafell_favorit_icon_2.png' width="10%">
       <a class="navbar-brand ml-5" href="{{route('menu')}}">Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -27,9 +27,8 @@
                       {{Auth::user()->name}}
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li class="nav-item"><button href="route{{'editUser'}}" type="submit" class="btn" style="display:inline;cursor:pointer;background-color: transparent">
-                                                Editar usuario
-                                            </button>
+                      <li class="nav-item">
+                              <a class="btn" style="background-color: transparent" href="{{route('showUser', Auth::user()->id)}}">Editar usuario</a>
                       <li class="nav-item">
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}
