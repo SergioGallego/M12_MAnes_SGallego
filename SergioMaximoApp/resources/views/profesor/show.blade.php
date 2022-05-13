@@ -9,12 +9,14 @@
             <x-jet-validation-errors class="mb-4" style="color: red"/>
                 <h3 style="text-align: center">Datos de usuario</h1>
                 <form class="mt-4" method="POST" action="{{ route('updateUser') }}">
+                    
                     @csrf
                     @method('PUT')
+                    
                     <div>
                         <input @if(auth()->user()->id != $profesor->id && auth()->user()->role_id == 2 || (auth()->user()->role_id == 1 && $profesor->role_id == 1)) readonly @endif value="{{$profesor->name}}" placeholder="Nombre" id="name" class="block mt-1 w-full form-control" type="text" name="name" required autofocus autocomplete="name" />
                     </div>
-    
+                    
                     <div class="mt-4">
                         <input value="{{$profesor->email}}" placeholder="Correo electrónico" id="email" class="block mt-1 w-full form-control" type="email" name="email" required />
                     </div><br>

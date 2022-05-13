@@ -12,9 +12,14 @@ class Modulo extends Model
         return $this->hasMany(Uf::class, 'id');
     }
 
+    public function users(){
+        return $this->belongsTo(User::class, 'id');
+    }
+
     protected $fillable = [
         'nombre',
         'comentario',
+        'ciclo',
         'updated_by'
     ];
 
