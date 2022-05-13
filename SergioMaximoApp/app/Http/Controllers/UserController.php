@@ -60,7 +60,7 @@ class UserController extends Controller
         $profesor->role_id=$request->input('role_id');
         $profesor->estado=$request->input('estado');
         $profesor->save();
-        return indexProfesores();
+        return redirect('/menu/user/');
     }
 
     public function destroy($id)
