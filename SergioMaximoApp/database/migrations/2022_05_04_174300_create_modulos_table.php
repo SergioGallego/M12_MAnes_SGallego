@@ -11,6 +11,7 @@ class CreateModulosTable extends Migration
      *
      * @return void
      */
+    
     public function up()
     {
         Schema::create('modulos', function (Blueprint $table) {
