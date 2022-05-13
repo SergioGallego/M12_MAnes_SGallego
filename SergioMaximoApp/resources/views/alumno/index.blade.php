@@ -38,7 +38,7 @@
                 <h3 style="text-align: center">Dar de alta alumnos</h1>
                 <form class="mt-4" method="POST" action="{{ route('storeAlumno') }}">
                     @csrf
-    
+                    
                     <div>
                         <x-jet-input placeholder="Nombre" id="name" class="block mt-1 w-full form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     </div>

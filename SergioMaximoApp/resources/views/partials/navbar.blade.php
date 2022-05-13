@@ -21,24 +21,24 @@
           </li>
         </ul>
          <ul class="navbar-nav" style="display: block; margin-left: auto;">
-                  <div class="dropdown">
+            <div class="dropdown">
 
-                    <button class="btn dropdown-toggle" style="background-color: transparent; color: white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      {{Auth::user()->name}}
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <li class="nav-item">
-                              <a class="btn" style="background-color: transparent" href="{{route('showUser', Auth::user()->id)}}">Editar usuario</a>
-                      <li class="nav-item">
-                        <form action="{{ url('/logout') }}" method="POST" style="display:inline">
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn" style="display:inline;cursor:pointer;background-color: transparent">
-                                Cerrar sesión
-                            </button>
-                        </form>
-                      </li>
-                    </div>
-                  </div>
+              <button class="btn dropdown-toggle" style="background-color: transparent; color: white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{Auth::user()->name}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li class="nav-item">
+                        <a class="btn" style="background-color: transparent" href="{{route('showUser', Auth::user()->id)}}">Editar usuario</a>
+                <li class="nav-item">
+                  <form action="{{ url('/logout') }}" method="POST" style="display:inline">
+                      {{ csrf_field() }}
+                      <button type="submit" class="btn" style="display:inline;cursor:pointer;background-color: transparent">
+                          Cerrar sesión
+                      </button>
+                  </form>
+                </li>
+              </div>
+            </div>
         </ul>
       </div>
     </div>
