@@ -35,15 +35,9 @@ class AlumnoController extends Controller
         return view('alumno.show', array('alumno'=>$alumno));
     }
 
-    public function edit($id)
-    {
-        $alumno = Alumno::findOrFail($id);
-        return view('alumno.edit', array('alumno'=>$alumno));
-    }
-
     public function update(Request $request, $id)
     {
-        $profesor = Alumno::find($id);
+        $alumno = Alumno::find($id);
         $alumno->apellidos=$request->input('apellidos');
         $alumno->nombre=$request->input('nombre');
         $alumno->ciclo=$request->input('ciclo');

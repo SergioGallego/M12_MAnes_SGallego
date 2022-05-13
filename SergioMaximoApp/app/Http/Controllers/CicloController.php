@@ -10,18 +10,19 @@ class CicloController extends Controller
 {
     public function index()
     {
-        return view('ciclo.index');
-    }
+        $ciclos = Ciclo::all();
+        return view('ciclo.index', array('arrayCiclos'=>$ciclos));
+      }
 
     public function show($id)
     {
         $ciclo = Ciclo::findOrFail($id);
-        return view('ciclo.show', array('id'=>$id, 'ciclo'=>$ciclo));
+        return view('ciclo.show', array('ciclo'=>$ciclo));
     }
 
-    public function edit($id)
+    public function stats($id)
     {
-        $ciclo = Modulo::findOrFail($id);
-        return view('ciclo.edit', array('id'=>$id, 'ciclo'=>$ciclo));
+        $ciclo = Ciclo::findOrFail($id);
+        return view('ciclo.stats', array('ciclo'=>$ciclo));
     }
 }

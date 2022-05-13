@@ -44,6 +44,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/menu/ciclo', [CicloController::class, 'index'])->name('cicloIndex');
     Route::post('/menu/ciclo/store', [CicloController::class, 'store'])->name('storeCiclo');
+    Route::get('/menu/ciclo/show/{id?}', [CicloController::class, 'stats'])->name('statsCiclo');
     Route::get('/menu/ciclo/show/{id?}', [CicloController::class, 'show'])->name('showCiclo');
     Route::put('/menu/ciclo/show/{id?}', [CicloController::class, 'update'])->name('updateCiclo');
     Route::get('/menu/ciclo/borrar/{id?}', [CicloController::class, 'destroy'])->name('destroyCiclo');
