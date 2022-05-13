@@ -21,6 +21,10 @@ class CreateModulosTable extends Migration
                   ->constrained('users')
                   ->cascadeOnDelete()
                   ->cascadeOnUpdate();
+            $table->foreignId('ciclo')
+                  ->constrained('ciclos')
+                  ->cascadeOnDelete()
+                  ->cascadeOnUpdate();
             $table->integer("updated_by");
             $table->timestamps();
         });

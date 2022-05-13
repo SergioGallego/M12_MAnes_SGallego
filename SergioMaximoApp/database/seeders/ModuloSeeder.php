@@ -18,12 +18,14 @@ class ModuloSeeder extends Seeder
             'nombre' => 'M3 Programacio',
             'comentario' => '',
             'profesor' => '3',
+            'ciclo' => '1',
             'updated_by' => 1
         ),
         array(
             'nombre' => 'M5 Entorns de desenvolupament',
             'comentario' => 'Sistemes Microinformatics i Xarxes',
             'profesor' => '2',
+            'ciclo' => '2',
             'updated_by' => 1
         )
     );
@@ -35,6 +37,7 @@ class ModuloSeeder extends Seeder
             $m->nombre = $modulo['nombre'];
             $m->comentario = $modulo['comentario'];
             $m->profesor = $modulo['profesor'];
+            $m->ciclo = $modulo['ciclo'];
             $m->updated_by = $modulo['updated_by'];
             $m->save();
         }

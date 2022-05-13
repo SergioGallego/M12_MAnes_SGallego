@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Ciclo extends Model
 {
 
+    public function modulo(){
+        return $this->hasMany(Modulo::class, 'modulo');
+    }
+
     protected $fillable = [
         'nombre',
         'descripcio',
