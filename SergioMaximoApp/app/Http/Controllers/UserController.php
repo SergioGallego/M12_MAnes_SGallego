@@ -53,12 +53,14 @@ class UserController extends Controller
     
     public function update(Request $request, $id)
     {
-        $usuario = User::find($id);
-        $usuario->name=$request->input('name');
-        $usuario->email=$request->input('email');
-        $usuario->password=$usuario->password; 
-        $usuario->role_id=$usuario->role_id;
-        $usuario->save();
+        $profesor = User::find($id);
+        $profesor->name=$request->input('name');
+        $profesor->email=$request->input('email');
+        $profesor->password=$usuario->password; 
+        $profesor->role_id=$request->input('role_id');
+        $profesor->estado=$request->input('estado');
+        $profesor->role_id=$usuario->role_id;
+        $profesor->save();
         return redirect()->back();
     }
 
