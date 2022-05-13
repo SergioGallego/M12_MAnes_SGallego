@@ -41,6 +41,16 @@ class AlumnoController extends Controller
         return view('alumno.edit', array('alumno'=>$alumno));
     }
 
+    public function update(Request $request, $id)
+    {
+        $profesor = Alumno::find($id);
+        $alumno->apellidos=$request->input('apellidos');
+        $alumno->nombre=$request->input('nombre');
+        $alumno->ciclo=$request->input('ciclo');
+        $alumno->save();
+        return redirect('/menu/alumno/');
+    }
+
     public function store(Request $request)
     { 
         $alumno = new Alumno;
