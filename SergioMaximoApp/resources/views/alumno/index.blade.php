@@ -15,12 +15,14 @@
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
+                <td class="cabecera"><b>Ciclo</b></td>
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
             @foreach ($arrayAlumnos as $key => $a)
                 <tr>
                     <td style="padding: 10px">{{$a->id}}</td>
                     <td style="padding: 10px">{{$a->nombre}}</td>
+                    <td style="padding: 10px">{{$a->ciclo}}</td>
                     <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" style="color: #FF6701">Detalles...</a>
                         @if (auth()->user()->role_id == 1)
                             <a href="{{route('destroyAlumno', $a->id)}}" style="color: #FF6701">Borrar...</a>
@@ -48,7 +50,7 @@
                     <div>
                         <select name="ciclo" x-model="ciclo" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                             @foreach ($arrayCiclos as $key => $c)
-                                <option value="{{$c->nombre}}">{{$c->nombre}}</option>
+                                <option value="{{$c->nombre}}">{{$c->nombre}} -- {{$c->descripcion}}</option>
                             @endforeach
                         </select>
                     </div><br>

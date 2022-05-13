@@ -17,10 +17,10 @@ class CreateModulosTable extends Migration
             $table->id();
             $table->string("nombre")->unique();
             $table->string("comentario");
-            $table->foreignId('profesor_id')
+            /**$table->foreignId('profesor_id')
                   ->constrained('users')
                   ->nullOnDelete()
-                  ->cascadeOnUpdate();
+                  ->cascadeOnUpdate();*/
             $table->integer("updated_by");
             $table->timestamps();
         });
