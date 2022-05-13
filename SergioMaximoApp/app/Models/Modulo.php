@@ -16,6 +16,10 @@ class Modulo extends Model
         return $this->belongsTo(User::class, 'id');
     }
 
+    public function ciclos(){
+        return $this->belongsTo(Ciclo::class, 'id');
+    }
+
     protected $fillable = [
         'nombre',
         'comentario',

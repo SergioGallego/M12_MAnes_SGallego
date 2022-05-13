@@ -50,6 +50,20 @@ class UserController extends Controller
         return redirect()->back();
     }
     
+    
+    public function update(Request $request, $id)
+    {
+        $profesor = User::find($id);
+        $profesor->name=$request->input('name');
+        $profesor->email=$request->input('email');
+        $profesor->password=$usuario->password; 
+        $profesor->role_id=$request->input('role_id');
+        $profesor->estado=$request->input('estado');
+        $profesor->role_id=$usuario->role_id;
+        $profesor->save();
+        return redirect()->back();
+    }
+
     public function destroy($id)
     {
         User::destroy($id);
