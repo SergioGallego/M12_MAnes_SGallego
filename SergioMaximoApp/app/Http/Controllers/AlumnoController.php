@@ -44,7 +44,7 @@ class AlumnoController extends Controller
     public function store(Request $request)
     { 
         $alumno = new Alumno;
-        $alumno->name=$request->input('name');
+        $alumno->nombre=$request->input('name');
         $alumno->apellidos=$request->input('apellidos');
         $alumno->ciclo=$request->input('ciclo');
         $alumno->save();

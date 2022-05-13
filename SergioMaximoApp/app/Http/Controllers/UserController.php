@@ -31,7 +31,7 @@ class UserController extends Controller
         $profesor = User::findOrFail($id);
         return view('profesor.show', array('profesor'=>$profesor));
     }
-
+ 
     public function edit($id)
     {
         $profesor = User::findOrFail($id);
