@@ -44,7 +44,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/menu/ciclo', [CicloController::class, 'index'])->name('cicloIndex');
     Route::post('/menu/ciclo/store', [CicloController::class, 'store'])->name('storeCiclo');
-    Route::get('/menu/ciclo/show/{id?}', [CicloController::class, 'stats'])->name('statsCiclo');
+    Route::get('/menu/ciclo/stats/{id?}', [CicloController::class, 'stats'])->name('statsCiclo');
     Route::get('/menu/ciclo/show/{id?}', [CicloController::class, 'show'])->name('showCiclo');
     Route::put('/menu/ciclo/show/{id?}', [CicloController::class, 'update'])->name('updateCiclo');
     Route::get('/menu/ciclo/borrar/{id?}', [CicloController::class, 'destroy'])->name('destroyCiclo');
@@ -60,6 +60,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/menu/uf/show/{id?}', [UfController::class, 'show'])->name('showUf');
     Route::put('/menu/uf/show/{id?}', [UfController::class, 'update'])->name('updateUf');
     Route::get('/menu/uf/borrar/{id?}', [UfController::class, 'destroy'])->name('destroyUf');
+
+    Route::get('/menu/alumno/boletin/{id?}', [AlumnoUfController::class, 'boletin'])->name('boletinNotas');
+
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
