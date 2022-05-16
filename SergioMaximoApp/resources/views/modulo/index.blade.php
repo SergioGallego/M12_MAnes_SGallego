@@ -21,23 +21,6 @@
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
             @foreach ($arrayModulos as $key => $m)
-<<<<<<< HEAD
-                @if(auth()->user()->role_id == 1 || auth()->user()->id == $m->profesor)
-                    <tr>
-                        <td style="padding: 10px">{{$m->id}}</td>
-                        <td style="padding: 10px">{{$m->nombre}}</td>
-                        <td style="padding: 10px">{{$m->comentario}}</td>
-                        <td style="padding: 10px">{{$m->users->name}}</td>
-                        <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
-                        <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
-                            <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Estadísticas...</a>
-                            @if (auth()->user()->role_id == 1)
-                                <a href="{{route('destroyModulo', $m->id)}}" style="color: #FF6701">Borrar...</a>
-                            @endif
-                        </td>
-                    </tr>
-                @endif
-=======
                 <tr>
                     <td style="padding: 10px">{{$m->id}}</td>
                     <td style="padding: 10px">{{$m->nombre}}</td>
@@ -50,7 +33,6 @@
                         @endif
                     </td>
                 </tr>
->>>>>>> d6ac5997f5fc3e0d8fdd1787814cca5682f0c46f
             @endforeach
         </table><br>
         <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
@@ -60,6 +42,11 @@
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
                 <h3 style="text-align: center">Dar de alta módulos</h1>
+                @if (isset($error) && $error==true)
+                    <ul>
+                        <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
+                    </ul>        
+                @endif
                 @if (isset($error) && $error==true)
                     <ul>
                         <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
