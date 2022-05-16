@@ -6,6 +6,7 @@ use App\Models\Modulo;
 use App\Http\Controllers\Controller;
 use App\Models\Ciclo;
 use App\Models\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -48,12 +49,14 @@ class ModuloController extends Controller
         $modulo->ciclo=$request->input('ciclo');
         $modulo->comentario=$request->input('comentario');
         $modulo->updated_by=Auth::id();
-        $comprobacion = DB::table('modulos')->where('nombre', $modulo->nombre)->where('ciclo', $modulo->ciclo)->get();
-        if ($comprobacion != '') {
+        try {
             $modulo->save();
             return redirect()->back();
-        } else {
-            return view('modulo.error');
+        } catch (QueryException $e){
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return view('modulo.error');
+            }
         }
     }
 

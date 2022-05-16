@@ -16,7 +16,7 @@ class CreateModulosTable extends Migration
     {
         Schema::create('modulos', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre")->unique();
+            $table->string("nombre");
             $table->string("comentario");
             $table->foreignId('profesor')
                   ->constrained('users')
@@ -27,6 +27,7 @@ class CreateModulosTable extends Migration
                   ->cascadeOnDelete()
                   ->cascadeOnUpdate();
             $table->integer("updated_by");
+            $table->unique(['nombre', 'ciclo']);
             $table->timestamps();
         });
     }
