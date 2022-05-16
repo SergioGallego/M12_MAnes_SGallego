@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Ciclo;
 use App\Models\Ufs;
 use App\Http\Controllers\Controller;
+use App\Models\Uf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class CicloController extends Controller
@@ -27,7 +29,7 @@ class CicloController extends Controller
         $ciclo = Ciclo::findOrFail($id);
         $alumnos = DB::table('alumnos')->where('ciclo', $ciclo)->get();
         $modulos = DB::table('modulos')->where('ciclo', $ciclo)->get();
-        $ufs = Ufs::all();
+        $ufs = Uf::all();
         return view('ciclo.stats', array('modulos'=>$modulos, 'ufs'=> $ufs,'ciclo'=>$ciclo, 'alumnos'=>$alumnos));
     }
 

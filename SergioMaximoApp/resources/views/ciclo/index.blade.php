@@ -14,21 +14,17 @@
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
-                <td class="cabecera"><b>Comentario</b></td>
-                <td class="cabecera"><b>Profesor</b></td>
-                <td class="cabecera"><b>Ciclo</b></td>
-                <td class="cabecera"><b>Accion</b></td>
+                <td class="cabecera"><b>Descripcion</b></td>
+                <td class="cabecera"><b>Acción</b></td>
             </tr>
-            @foreach ($arrayModulos as $key => $m)
+            @foreach ($arrayCiclos as $key => $c)
                 <tr>
-                    <td style="padding: 10px">{{$m->id}}</td>
-                    <td style="padding: 10px">{{$m->nombre}}</td>
-                    <td style="padding: 10px">{{$m->comentario}}</td>
-                    <td style="padding: 10px">{{$m->users->name}}</td>
-                    <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
-                    <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
+                    <td style="padding: 10px">{{$c->id}}</td>
+                    <td style="padding: 10px">{{$c->nombre}}</td>
+                    <td style="padding: 10px">{{$c->descripcion}}</td>
+                    <td style="padding: 10px"><a href="{{route('showCiclo', $c->id)}}" style="color: #FF6701">Detalles...</a>
                         @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyModulo', $m->id)}}" style="color: #FF6701">Borrar...</a>
+                            <a href="{{route('destroyCiclo', $c->id)}}" style="color: #FF6701">Borrar...</a>
                         @endif
                     </td>
                 </tr>
@@ -40,8 +36,8 @@
         <div class="col-md-3">
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
-                <h3 style="text-align: center">Dar de alta módulos</h1>
-                <form class="mt-4" method="POST" action="{{ route('storeModulo') }}">
+                <h3 style="text-align: center">Dar de alta ciclos</h1>
+                <form class="mt-4" method="POST" action="{{ route('storeCiclo') }}">
                     @csrf
                     
                     <div>
@@ -49,23 +45,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-jet-input  placeholder="Comentario" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
-                    </div><br>
-    
-                    <div>
-                        <select name="profesor" x-model="profesor" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            @foreach ($arrayProfesores as $key => $p)
-                                <option value="{{$p->id}}">{{$p->name}}</option>
-                            @endforeach
-                        </select>
-                    </div><br>
-    
-                    <div>
-                        <select name="ciclo" x-model="ciclo" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            @foreach ($arrayCiclos as $key => $c)
-                                <option value="{{$c->id}}">{{$c->nombre}} -- {{$c->descripcion}}</option>
-                            @endforeach
-                        </select>
+                        <x-jet-input  placeholder="Descripcion" id="descripcion" class="block mt-1 w-full form-control" type="text" name="descripcion" :value="old('descripcion')" required />
                     </div><br>
     
                     <x-jet-button class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white">
