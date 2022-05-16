@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ciclo;
+use App\Models\Ufs;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CicloController extends Controller
 {
@@ -23,7 +25,10 @@ class CicloController extends Controller
     public function stats($id)
     {
         $ciclo = Ciclo::findOrFail($id);
-        return view('ciclo.stats', array('ciclo'=>$ciclo));
+        $alumnos = DB::table('alumnos')->where('ciclo', $ciclo)->get();
+        $modulos = DB::table('modulos')->where('ciclo', $ciclo)->get();
+        $ufs = Ufs::all();
+        return view('ciclo.stats', array('modulos'=>$modulos, 'ufs'=> $ufs,'ciclo'=>$ciclo, 'alumnos'=>$alumnos));
     }
 
     public function update(Request $request, $id)
