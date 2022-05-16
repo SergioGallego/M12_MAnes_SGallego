@@ -9,7 +9,7 @@ class Ciclo extends Model
 {
 
     public function modulo(){
-        return $this->hasMany(Modulo::class, 'modulo');
+        return $this->hasMany(Modulo::class, 'id');
     }
 
     protected $fillable = [

@@ -48,7 +48,18 @@ class ModuloController extends Controller
         $modulo->ciclo=$request->input('ciclo');
         $modulo->comentario=$request->input('comentario');
         $modulo->updated_by=Auth::id();
-        $modulo->save();
+        $comprobacion = DB::table('modulos')->where('nombre', $modulo->nombre)->where('ciclo', $modulo->ciclo)->get();
+        if ($comprobacion != '') {
+            $modulo->save();
+            return redirect()->back();
+        } else {
+            return view('modulo.error');
+        }
+    }
+
+    public function destroy($id)
+    {
+        Modulo::destroy($id);
         return redirect()->back();
     }
 }

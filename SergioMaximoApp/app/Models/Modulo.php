@@ -13,16 +13,17 @@ class Modulo extends Model
     }
 
     public function users(){
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class, 'profesor');
     }
 
     public function ciclos(){
-        return $this->belongsTo(Ciclo::class, 'id');
+        return $this->belongsTo(Ciclo::class, 'ciclo');
     }
 
     protected $fillable = [
         'nombre',
         'comentario',
+        'profesor',
         'ciclo',
         'updated_by'
     ];

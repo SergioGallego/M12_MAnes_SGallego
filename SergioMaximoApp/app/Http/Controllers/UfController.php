@@ -25,4 +25,10 @@ class UfController extends Controller
         $uf = Modulo::findOrFail($id);
         return view('uf.edit', array('id'=>$id, 'uf'=>$uf));
     }
+
+    public function destroy($id)
+    {
+        Uf::destroy($id);
+        return redirect()->back();
+    }
 }
