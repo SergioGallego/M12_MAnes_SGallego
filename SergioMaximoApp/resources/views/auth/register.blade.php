@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-jet-input  placeholder="Correo electrónico" id="email" pattern="" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
+                    <x-jet-input  placeholder="Correo electrónico" id="email" pattern="[a-z\_\-\.\0-9]{1,64}@inscamidemar.cat" title="Solamente se permiten cuentas de inscamidemar" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
                 </div>
 
                 <div class="mt-4">
@@ -27,9 +27,8 @@
 
                 <div>
                     <select name="role_id" x-model="role_id" class="block mt-1 w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                        <option selected>Registrarse como...</option>
                         <option value="1">Superusuario</option>
-                        <option value="2">Profesor</option>
+                        <option selected value="2">Profesor</option>
                     </select>
                 </div>
 

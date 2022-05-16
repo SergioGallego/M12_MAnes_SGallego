@@ -38,9 +38,8 @@
                         {{ __('Olvidaste tu contraseña?') }}
                     </a>
                 @endif
-                @if (Route::has('Registrar'))
-                    <a style="color: rgb(255,103,1)" href="{{route('register')}}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                @endif
+
+                <a style="color: rgb(255,103,1)" href="{{route('register')}}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                 
                 <button class="ml-4 btn" style="background-color: rgb(255,103,1); color: white">
                     {{ __('Acceder') }}
