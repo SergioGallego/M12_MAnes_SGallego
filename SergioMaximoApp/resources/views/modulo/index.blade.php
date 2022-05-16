@@ -14,8 +14,8 @@
         <table border="1" style="width: 100%">
             <tr>
                 <td class="cabecera"><b>ID</b></td>
-                <td class="cabecera"><b>Codigo</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
+                <td class="cabecera"><b>Comentario</b></td>
                 <td class="cabecera"><b>Profesor</b></td>
                 <td class="cabecera"><b>Ciclo</b></td>
                 <td class="cabecera"><b>Accion</b></td>
