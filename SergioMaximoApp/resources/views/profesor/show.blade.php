@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @include('partials.navbar')
 @section('title')
-    <h1 style="text-align: center">Gestión de usuarios</h1>
+    <h1 style="text-align: center">Detalles de usuario</h1>
 @stop
 @section('content') 
     <div class="col-md-12">

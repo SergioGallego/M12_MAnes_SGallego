@@ -24,8 +24,8 @@ class ModuloController extends Controller
     {
         $modulo = Modulo::findOrFail($id);
         $ciclos = Ciclo::all();
-        $users = User::all();
-        return view('modulo.show', array('arrayModulos'=>$modulo,  'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
+        $users = DB::table('users')->where('role_id', 2)->get();
+        return view('modulo.show', array('modulo'=>$modulo,  'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
     }
 
     public function update(Request $request, $id)

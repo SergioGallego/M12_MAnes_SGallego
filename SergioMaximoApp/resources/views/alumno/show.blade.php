@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @include('partials.navbar')
 @section('title')
-    <h1 style="text-align: center">Gestión de usuarios</h1>
+    <h1 style="text-align: center">Detalles de alumno</h1>
 @stop
 @section('content') 
     <div class="col-md-12">
         <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
-                <h3 style="text-align: center">Datos de alumnbo</h1>
+                <h3 style="text-align: center">Datos de alumno</h1>
                 <form class="mt-4" method="POST" action="{{ route('updateAlumno', $alumno->id) }}">
                     
                     @csrf
