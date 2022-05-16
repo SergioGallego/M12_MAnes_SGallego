@@ -23,7 +23,7 @@
                         <div>
                             <select @if(auth()->user()->role_id == 2) disabled @endif name="profesor" x-model="profesor" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                                 @foreach ($arrayProfesores as $key => $p)
-                                    <option @if($modulo->profesor == $p->id) selected @endif value="{{$p->id}}">{{$modulo->users->name}}</option>
+                                    <option @if($modulo->profesor == $p->id) selected @endif value="{{$p->id}}">{{$p->name}}</option>
                                 @endforeach
                             </select>
                         </div><br>

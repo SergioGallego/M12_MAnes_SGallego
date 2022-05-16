@@ -21,6 +21,7 @@
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
             @foreach ($arrayModulos as $key => $m)
+                @if
                 <tr>
                     <td style="padding: 10px">{{$m->id}}</td>
                     <td style="padding: 10px">{{$m->nombre}}</td>
