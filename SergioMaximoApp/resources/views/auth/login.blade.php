@@ -39,7 +39,11 @@
                     </a>
                 @endif
 
+<<<<<<< HEAD
                 <a style="color: rgb(255,103,1)" href="{{route('register')}}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+=======
+                <a style="color: rgb(255,103,1)" href="{{route('register')}}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registrar</a>
+>>>>>>> aa60ddccc3c97a8bc4932c1276d44407d294e0e4
                 
                 <button class="ml-4 btn" style="background-color: rgb(255,103,1); color: white">
                     {{ __('Acceder') }}
