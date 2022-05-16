@@ -26,7 +26,7 @@
                     <td style="padding: 10px">{{$m->nombre}}</td>
                     <td style="padding: 10px">{{$m->descripcion}}</td>
                     <td style="padding: 10px">{{$m->users->name}}</td>
-                    <td style="padding: 10px">{{$m->ciclo}}</td>
+                    <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
                     <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
                         @if (auth()->user()->role_id == 1)
                             <a href="{{route('destroyModulo', $m->id)}}" style="color: #FF6701">Borrar...</a>

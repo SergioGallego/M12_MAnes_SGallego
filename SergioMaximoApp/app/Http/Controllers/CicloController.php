@@ -50,4 +50,10 @@ class CicloController extends Controller
         $ciclo->save();
         return redirect()->back();
     }
+
+    public function destroy($id)
+    {
+        Ciclo::destroy($id);
+        return redirect()->back();
+    }
 }

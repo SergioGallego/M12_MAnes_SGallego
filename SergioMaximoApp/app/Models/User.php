@@ -19,7 +19,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     public function profesor(){
-        return $this->hasMany(Modulo::class, 'profesor');
+        return $this->hasMany(Modulo::class, 'id');
     }
 
     /**
