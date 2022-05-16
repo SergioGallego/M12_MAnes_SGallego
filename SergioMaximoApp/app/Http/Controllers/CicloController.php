@@ -25,4 +25,24 @@ class CicloController extends Controller
         $ciclo = Ciclo::findOrFail($id);
         return view('ciclo.stats', array('ciclo'=>$ciclo));
     }
+
+    public function update(Request $request, $id)
+    {
+        $ciclo = Ciclo::find($id);
+        $ciclo->nombre=$request->input('nombre');
+        $ciclo->descripcion=$request->input('descripcion');
+        $ciclo->updated_by=Auth::id();
+        $ciclo->save();
+        return redirect('/menu/ciclo/');
+    }
+
+    public function store(Request $request)
+    { 
+        $ciclo = new Ciclo;
+        $ciclo->nombre=$request->input('nombre');
+        $ciclo->descripcion=$request->input('descripcion');
+        $ciclo->updated_by=Auth::id();
+        $ciclo->save();
+        return redirect()->back();
+    }
 }

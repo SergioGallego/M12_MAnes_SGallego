@@ -10,18 +10,33 @@ class ModuloController extends Controller
 {
     public function index()
     {
-        return view('modulo.index');
-    }
-    
+        $modulo = Modulo::all();
+        return view('modulo.index', array('arrayModulo'=>$modulo));
+      }
+
     public function show($id)
     {
         $modulo = Modulo::findOrFail($id);
-        return view('modulo.show', array('id'=>$id, 'modulo'=>$modulo));
+        return view('modulo.show', array('modulo'=>$modulo));
     }
 
-    public function edit($id)
+    public function update(Request $request, $id)
     {
-        $modulo = Modulo::findOrFail($id);
-        return view('modulo.edit', array('id'=>$id, 'modulo'=>$modulo));
+        $ciclo = Ciclo::find($id);
+        $ciclo->nombre=$request->input('nombre');
+        $ciclo->descripcion=$request->input('descripcion');
+        $ciclo->updated_by=Auth::id();
+        $ciclo->save();
+        return redirect('/menu/ciclo/');
+    }
+
+    public function store(Request $request)
+    { 
+        $ciclo = new Ciclo;
+        $ciclo->nombre=$request->input('nombre');
+        $ciclo->descripcion=$request->input('descripcion');
+        $ciclo->updated_by=Auth::id();
+        $ciclo->save();
+        return redirect()->back();
     }
 }
