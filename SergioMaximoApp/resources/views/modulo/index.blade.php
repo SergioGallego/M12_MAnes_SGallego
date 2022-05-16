@@ -47,11 +47,6 @@
                         <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
                     </ul>        
                 @endif
-                @if (isset($error) && $error==true)
-                    <ul>
-                        <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
-                    </ul>        
-                @endif
                 <form class="mt-4" method="POST" action="{{ route('storeModulo') }}">
                     @csrf
                     
