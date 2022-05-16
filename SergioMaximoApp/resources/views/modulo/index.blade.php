@@ -56,7 +56,7 @@
                     <div>
                         <select name="profesor" x-model="profesor" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
                             @foreach ($arrayProfesores as $key => $p)
-                                <option value="{{$p->id}}">{{$p->id}}</option>
+                                <option value="{{$p->id}}">{{$p->name}}</option>
                             @endforeach
                         </select>
                     </div><br>
