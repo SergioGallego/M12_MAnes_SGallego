@@ -18,7 +18,7 @@ class ModuloController extends Controller
         $modulo = Modulo::all();
         $ciclos = Ciclo::all();
         $users = DB::table('users')->where('role_id', 2)->get();
-        return view('modulo.index', array('arrayModulos'=>$modulo, 'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
+        return view('modulo.index', array('error'=>false, 'arrayModulos'=>$modulo, 'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
     }
 
     public function show($id)
@@ -26,7 +26,7 @@ class ModuloController extends Controller
         $modulo = Modulo::findOrFail($id);
         $ciclos = Ciclo::all();
         $users = DB::table('users')->where('role_id', 2)->get();
-        return view('modulo.show', array('modulo'=>$modulo,  'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
+        return view('modulo.show', array('error'=>false, 'modulo'=>$modulo, 'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
     }
 
     public function update(Request $request, $id)
@@ -37,8 +37,15 @@ class ModuloController extends Controller
         $modulo->ciclo=$request->input('ciclo');
         $modulo->comentario=$request->input('comentario');
         $modulo->updated_by=Auth::id();
-        $modulo->save();
-        return redirect('/menu/modulo/');
+        try {
+            $modulo->save();
+            return view('modulo.index', array('error'=>false, 'modulo'=>$modulo, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
+        } catch (QueryException $e){
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                return view('modulo.show', array('error'=>true, 'modulo'=>$modulo, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
+            }
+        }       
     }
 
     public function store(Request $request)
@@ -51,11 +58,11 @@ class ModuloController extends Controller
         $modulo->updated_by=Auth::id();
         try {
             $modulo->save();
-            return redirect()->back();
+            return view('modulo.index', array('error'=>false, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
         } catch (QueryException $e){
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
-                return view('modulo.error');
+                return view('modulo.index', array('error'=>true, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
             }
         }
     }

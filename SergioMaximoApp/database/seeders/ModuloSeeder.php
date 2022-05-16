@@ -15,15 +15,15 @@ class ModuloSeeder extends Seeder
      */
     private $arrayModulo = array(
         array(
-            'nombre' => 'M3 Programacio',
-            'comentario' => '',
+            'nombre' => 'M3',
+            'comentario' => 'Programacio',
             'profesor' => '3',
             'ciclo' => '1',
             'updated_by' => 1
         ),
         array(
-            'nombre' => 'M5 Entorns de desenvolupament',
-            'comentario' => 'Sistemes Microinformatics i Xarxes',
+            'nombre' => 'M5',
+            'comentario' => 'Entorns de desenvolupament',
             'profesor' => '2',
             'ciclo' => '2',
             'updated_by' => 1

@@ -14,14 +14,13 @@
         <table border="1" style="width: 100%">
             <tr>
                 <td class="cabecera"><b>ID</b></td>
+                <td class="cabecera"><b>Codigo</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
-                <td class="cabecera"><b>Comentario</b></td>
                 <td class="cabecera"><b>Profesor</b></td>
                 <td class="cabecera"><b>Ciclo</b></td>
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
             @foreach ($arrayModulos as $key => $m)
-                @if
                 <tr>
                     <td style="padding: 10px">{{$m->id}}</td>
                     <td style="padding: 10px">{{$m->nombre}}</td>
@@ -43,15 +42,20 @@
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
                 <h3 style="text-align: center">Dar de alta módulos</h1>
+                @if (isset($error) && $error==true)
+                    <ul>
+                        <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
+                    </ul>        
+                @endif
                 <form class="mt-4" method="POST" action="{{ route('storeModulo') }}">
                     @csrf
                     
                     <div>
-                        <x-jet-input placeholder="Nombre" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
+                        <x-jet-input placeholder="Codigo" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
                     </div>
 
                     <div class="mt-4">
-                        <x-jet-input  placeholder="Comentario" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
+                        <x-jet-input  placeholder="Nombre" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
                     </div><br>
     
                     <div>

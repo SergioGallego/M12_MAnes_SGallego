@@ -8,16 +8,21 @@
         <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
                 <h3 style="text-align: center">Datos de modulo</h1>
+                @if (isset($error) && $error==true)
+                    <ul>
+                        <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
+                    </ul>        
+                @endif
                     <form class="mt-4" method="POST" action="{{ route('updateModulo', $modulo->id) }}">
                         @csrf
                         @method('PUT')
 
                         <div>
-                            <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$modulo->nombre}}" placeholder="Nombre" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
+                            <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$modulo->nombre}}" placeholder="Codigo" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
                         </div>
     
                         <div class="mt-4">
-                            <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$modulo->comentario}}" placeholder="Comentario" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
+                            <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$modulo->comentario}}" placeholder="Nombre" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
                         </div><br>
         
                         <div>
