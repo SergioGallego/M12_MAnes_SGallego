@@ -4,39 +4,51 @@ namespace App\Http\Controllers;
 
 use App\Models\Modulo;
 use App\Http\Controllers\Controller;
+use App\Models\Ciclo;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ModuloController extends Controller
 {
     public function index()
     {
         $modulo = Modulo::all();
-        return view('modulo.index', array('arrayModulo'=>$modulo));
-      }
+        $ciclos = Ciclo::all();
+        $users = DB::table('users')->where('role_id', 2)->get();
+        return view('modulo.index', array('arrayModulos'=>$modulo, 'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
+    }
 
     public function show($id)
     {
         $modulo = Modulo::findOrFail($id);
-        return view('modulo.show', array('modulo'=>$modulo));
+        $ciclos = Ciclo::all();
+        $users = User::all();
+        return view('modulo.show', array('arrayModulos'=>$modulo,  'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
     }
 
     public function update(Request $request, $id)
     {
-        $ciclo = Ciclo::find($id);
-        $ciclo->nombre=$request->input('nombre');
-        $ciclo->descripcion=$request->input('descripcion');
-        $ciclo->updated_by=Auth::id();
-        $ciclo->save();
-        return redirect('/menu/ciclo/');
+        $modulo = Modulo::find($id);
+        $modulo->nombre=$request->input('nombre');
+        $modulo->profesor=$request->input('profesor');
+        $modulo->ciclo=$request->input('ciclo');
+        $modulo->comentario=$request->input('comentario');
+        $modulo->updated_by=Auth::id();
+        $modulo->save();
+        return redirect('/menu/modulo/');
     }
 
     public function store(Request $request)
     { 
-        $ciclo = new Ciclo;
-        $ciclo->nombre=$request->input('nombre');
-        $ciclo->descripcion=$request->input('descripcion');
-        $ciclo->updated_by=Auth::id();
-        $ciclo->save();
+        $modulo = new Modulo;
+        $modulo->nombre=$request->input('nombre');
+        $modulo->profesor=$request->input('profesor');
+        $modulo->ciclo=$request->input('ciclo');
+        $modulo->comentario=$request->input('comentario');
+        $modulo->updated_by=Auth::id();
+        $modulo->save();
         return redirect()->back();
     }
 }
