@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="mt-4">
-                    <x-jet-input  placeholder="Correo electrónico" id="email" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
+                    <x-jet-input  placeholder="Correo electrónico" id="email" pattern="" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
                 </div>
 
                 <div class="mt-4">
