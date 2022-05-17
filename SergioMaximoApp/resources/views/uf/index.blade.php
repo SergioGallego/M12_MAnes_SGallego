@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @include('partials.navbar')
 @section('title')
-    <h1 style="text-align: center">Gestión de módulos</h1>
+    <h1 style="text-align: center">Gestión de ufs</h1>
 @stop
 @section('content') 
     
@@ -15,21 +15,28 @@
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
+                <td class="cabecera"><b>Profesor</b></td>
                 <td class="cabecera"><b>Modulo</b></td>
                 <td class="cabecera"><b>Horas</b></td>
+                <td class="cabecera"><b>Acciones</b></td>
             </tr>
-            @foreach ($arrayModulos as $key => $m)
-                @if(auth()->user()->role_id == 1 || auth()->user()->id == $m->profesor)
+            @foreach ($arrayUfs as $key => $u)
+                @if(auth()->user()->role_id == 1 || auth()->user()->id == $u->profesor)
                     <tr>
-                        <td style="padding: 10px">{{$m->id}}</td>
-                        <td style="padding: 10px">{{$m->nombre}}</td>
-                        <td style="padding: 10px">{{$m->modulo}}</td>
-                        <td style="padding: 10px">{{$m->users->name}}</td>
-                        <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
-                        <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
-                            <a href="{{route('ufIndex', $m->id)}}" style="color: #FF6701">Ver UF...</a>
+                        <td style="padding: 10px">{{$u->id}}</td>
+                        <td style="padding: 10px">{{$u->nombre}}</td>
+                        
+                        @foreach ($arrayProf as $key => $p)
+                            @if ($p->id == $u->profesor)
+                                <td style="padding: 10px">{{$p->name }}</td>
+                            @endif
+                        @endforeach
+                        
+                        <td style="padding: 10px">{{$u->modulo}}</td>
+                        <td style="padding: 10px">{{$u->horas}}</td>
+                        <td style="padding: 10px"><a href="{{route('showUf', $u->id)}}" style="color: #FF6701">Detalles...</a>
                             @if (auth()->user()->role_id == 1)
-                                <a href="{{route('destroyModulo', $m->id)}}" style="color: #FF6701">Borrar...</a>
+                                <a href="{{route('destroyUf', $u->id)}}" style="color: #FF6701">Borrar...</a>
                             @endif
                         </td>
                     </tr>
@@ -42,37 +49,27 @@
         <div class="col-md-3">
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
-                <h3 style="text-align: center">Dar de alta módulos</h1>
+                <h3 style="text-align: center">Dar de alta ufs</h1>
                 @if (isset($error) && $error==true)
                     <ul>
-                        <div class="mb-4" style="color: red"><li>El modulo ya existe</li></div>
+                        <div class="mb-4" style="color: red"><li>La uf ya existe</li></div>
                     </ul>        
                 @endif
-                <form class="mt-4" method="POST" action="{{ route('storeModulo') }}">
+                <form class="mt-4" method="POST" action="{{ route('storeUf') }}">
                     @csrf
                     
                     <div>
-                        <x-jet-input placeholder="Codigo" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
+                        <x-jet-input placeholder="Nombre" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
                     </div>
 
                     <div class="mt-4">
-                        <x-jet-input  placeholder="Nombre" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
-                    </div><br>
+                        <x-jet-input placeholder="Horas" id="horas" class="block mt-1 w-full form-control" type="text" name="horas" :value="old('horas')" required />
+                    </div>
+
+                    <x-jet-input hidden id="modulo" type="text" name="modulo" value="{{$modulo->nombre}}"/>
+                    <x-jet-input hidden id="modulo_id" type="text" name="modulo_id" value="{{$modulo->id}}"/>
     
                     <div>
-                        <select name="profesor" x-model="profesor" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            @foreach ($arrayProfesores as $key => $p)
-                                <option value="{{$p->id}}">{{$p->name}}</option>
-                            @endforeach
-                        </select>
-                    </div><br>
-    
-                    <div>
-                        <select name="ciclo" x-model="ciclo" class="block mt-1  w-full form-control border-gray-300 focus:border-indigo-300 focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            @foreach ($arrayCiclos as $key => $c)
-                                <option value="{{$c->id}}">{{$c->nombre}} -- {{$c->descripcion}}</option>
-                            @endforeach
-                        </select>
                     </div><br>
     
                     <x-jet-button class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white">
