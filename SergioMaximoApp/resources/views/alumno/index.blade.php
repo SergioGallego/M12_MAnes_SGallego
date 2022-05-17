@@ -26,7 +26,7 @@
                     <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
                         <a href="{{route('boletinNotas', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Boletín</a>
                         @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyAlumno', $a->id)}}" style="color: #FF6701">Borrar...</a>
+                            <a href="{{route('destroyAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Borrar</a>
                         @endif</td>
                 </tr>
             @endforeach

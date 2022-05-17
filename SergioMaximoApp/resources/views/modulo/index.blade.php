@@ -29,7 +29,8 @@
                         <td style="padding: 10px">{{$m->users->name}}</td>
                         <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
                         <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
-                            <a href="{{route('ufIndex', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Ver UF</a>
+                            <a href="{{route('showNotas', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Notas</a>
+                            <a href="{{route('ufIndex', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Ver UFs</a>
                             @if (auth()->user()->role_id == 1)
                                 <a href="{{route('destroyModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Borrar</a>
                             @endif

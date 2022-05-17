@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@include('partials.navbar')
+@include('partials.navbar-start')
 @section('title')
     <h1 style="text-align: center">Gestión de datos</h1>
 @stop

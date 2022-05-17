@@ -18,6 +18,7 @@
                         @endforeach
                 @endif
             @endforeach
+            <a class="btn block mt-1 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
         </ul>
     </div>
     <script src="{{ asset('js/index.js') }}" defer></script>
