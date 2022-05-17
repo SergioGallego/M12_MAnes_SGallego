@@ -6,12 +6,14 @@ use App\Models\Uf;
 use App\Http\Controllers\Controller;
 use App\Models\Modulo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UfController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('uf.index');
+        $ufs = DB::table('ufs')->where('modulo_id', $id)->get();
+        return view('uf.index', array('arrayUfs'=>$ufs));
     }
 
     public function show($id)

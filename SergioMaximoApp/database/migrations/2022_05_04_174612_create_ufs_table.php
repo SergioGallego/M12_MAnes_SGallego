@@ -22,6 +22,7 @@ class CreateUfsTable extends Migration
                     ->constrained('modulos')
                     ->cascadeOnUpdate()
                     ->cascadeOnDelete();
+            $table->unique(['nombre', 'modulo_id']);
             $table->string("updated_by");
             $table->timestamps();
         });

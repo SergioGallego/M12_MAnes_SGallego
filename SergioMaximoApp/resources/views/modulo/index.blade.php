@@ -21,7 +21,6 @@
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
             @foreach ($arrayModulos as $key => $m)
-<<<<<<< HEAD
                 @if(auth()->user()->role_id == 1 || auth()->user()->id == $m->profesor)
                     <tr>
                         <td style="padding: 10px">{{$m->id}}</td>
@@ -30,26 +29,13 @@
                         <td style="padding: 10px">{{$m->users->name}}</td>
                         <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
                         <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
+                            <a href="{{route('ufIndex', $m->id)}}" style="color: #FF6701">Ver UF...</a>
                             @if (auth()->user()->role_id == 1)
                                 <a href="{{route('destroyModulo', $m->id)}}" style="color: #FF6701">Borrar...</a>
                             @endif
                         </td>
                     </tr>
                 @endif
-=======
-                <tr>
-                    <td style="padding: 10px">{{$m->id}}</td>
-                    <td style="padding: 10px">{{$m->nombre}}</td>
-                    <td style="padding: 10px">{{$m->comentario}}</td>
-                    <td style="padding: 10px">{{$m->users->name}}</td>
-                    <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
-                    <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
-                        @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyModulo', $m->id)}}" style="color: #FF6701">Borrar...</a>
-                        @endif
-                    </td>
-                </tr>
->>>>>>> 19336f56fdba76d9a21ebaa849d9075d1fcfce7a
             @endforeach
         </table><br>
         <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
