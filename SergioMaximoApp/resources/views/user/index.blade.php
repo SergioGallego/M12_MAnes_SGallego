@@ -4,8 +4,17 @@
     <h1 style="text-align: center">Gestión de datos</h1>
 @stop
 @section('content')
-<div id="info2" class="col-md-4 p-3" style="background-color: white; border-style: solid; border-color: gray; display: none; height: 50%">
-       
+<div id="info2" class="col-md-4 p-3" style="display: none; height: 50%">
+     <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" style="width: 80%">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="1000">
+              <img id="img1" src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="1000">
+              <img id="img2" src="..." class="d-block w-100" alt="...">
+            </div>
+          </div>
+        </div>
 </div>
 <div class="col-md-3" style="margin-left: auto; margin-right: auto; display: block"> <!--col-md-9 col-md-3-->
      <div class="row m-2 mb-5 mt-3">
@@ -29,7 +38,7 @@
          </a>
       </div>
      </div>
-    <div id="info" class="col-md-4 p-3" style="background-color: white; border-style: solid; border-color: gray; display: none; height: 50%">
+    <div id="info" class="col-md-4 p-3" style="background-color: #ffe6cf; display: none; height: 50%">
        
     </div>
     <script src="{{ asset('js/index.js') }}" defer></script>
