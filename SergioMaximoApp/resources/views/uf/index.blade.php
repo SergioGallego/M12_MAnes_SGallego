@@ -23,9 +23,8 @@
                     <tr>
                         <td style="padding: 10px">{{$m->id}}</td>
                         <td style="padding: 10px">{{$m->nombre}}</td>
-                        <td style="padding: 10px">{{$m->modulo}}</td>
-                        <td style="padding: 10px">{{$m->users->name}}</td>
-                        <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
+                        <td style="padding: 10px">{{$m->modulos->name}}</td>
+                        <td style="padding: 10px">{{$m->horas}}</td>
                         <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" style="color: #FF6701">Detalles...</a>
                             <a href="{{route('ufIndex', $m->id)}}" style="color: #FF6701">Ver UF...</a>
                             @if (auth()->user()->role_id == 1)

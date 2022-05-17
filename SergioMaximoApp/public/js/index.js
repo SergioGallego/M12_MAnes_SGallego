@@ -1,5 +1,6 @@
 $("#alumno").mouseenter(function(){
     $("#info").html("Desde esta vista podrás consultar toda la informacion de los alumnos registrados en la base de datos, así como dar de alta y baja en caso de entrar como superusuario.<br> <img src='https://raw.githubusercontent.com/SergioGallego/M12DAWProyecto_MAnes_SGallego/main/cropped-logo_calafell_favorit_icon.png' width='10%'>");
+    $("#info2").html("");
 });
 
 $("#usuario").mouseenter(function(){
@@ -17,9 +18,11 @@ $("#modulo").mouseenter(function(){
 $("#modulo, #ciclo, #usuario, #alumno").mouseenter(function(){
     $(this).css("background-color", "#fcddbd");
     $("#info").css("display", "block");
+    $("#info2").css("display", "block");
 });
 
 $("#modulo, #ciclo, #usuario, #alumno").mouseleave(function(){
     $("#info").css("display", "none");
+    $("#info2").css("display", "none");
     $(this).css("background-color", "#FFC288");
 });

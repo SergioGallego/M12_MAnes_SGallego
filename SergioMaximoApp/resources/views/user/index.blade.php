@@ -4,7 +4,10 @@
     <h1 style="text-align: center">Gestión de datos</h1>
 @stop
 @section('content')
-<div class="col-md-4"> <!--col-md-9 col-md-3-->
+<div id="info2" class="col-md-4 p-3" style="background-color: white; border-style: solid; border-color: gray; display: none; height: 50%">
+       
+</div>
+<div class="col-md-3" style="margin-left: auto; margin-right: auto; display: block"> <!--col-md-9 col-md-3-->
      <div class="row m-2 mb-5 mt-3">
         <a id="alumno" href="{{ route('alumnoIndex') }}"  class="btn pt-3 pb-3 botones">
              <b>Alumno</b>
