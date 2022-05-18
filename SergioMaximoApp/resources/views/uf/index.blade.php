@@ -43,7 +43,7 @@
                 @endif
             @endforeach
         </table><br>
-        <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
+        <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
     </div>
     @if (auth()->user()->role_id == 1)
         <div class="col-md-3">
@@ -81,7 +81,6 @@
                         <x-jet-label for="terms">
                             <div class="flex items-center">
                                 <x-jet-checkbox name="terms" id="terms"/>
-
                                 <div class="ml-2">
                                     {!! __('I agree to the :terms_of_service and :privacy_policy', [
                                             'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',

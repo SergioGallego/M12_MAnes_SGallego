@@ -26,4 +26,16 @@ class AlumnoUfController extends Controller
         $ufs = DB::table('ufs')->where('modulo_id', $id)->get();
         return view('notas.show', array('arrayAlumnos'=>$alumnos, 'modulo'=>$modulo, 'arrayUfs'=>$ufs));
     }
+
+    public function update(Request $request){
+        
+        DB::table('alumno_ufs')->where('uf_id')->update();
+
+        //$name = $request->name;
+
+        //for($i=0; $i < count($name); $i++){
+           
+        //}
+    }
+
 }
