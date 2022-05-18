@@ -18,7 +18,7 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
 
-    public function profesor(){
+    public function modulos(){
         return $this->hasMany(Modulo::class, 'id');
     }
 

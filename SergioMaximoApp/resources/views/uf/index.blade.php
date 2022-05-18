@@ -25,13 +25,7 @@
                     <tr>
                         <td style="padding: 10px">{{$u->id}}</td>
                         <td style="padding: 10px">{{$u->nombre}}</td>
-                        
-                        @foreach ($arrayProf as $key => $p)
-                            @if ($p->id == $u->profesor)
-                                <td style="padding: 10px">{{$p->name }}</td>
-                            @endif
-                        @endforeach
-                        
+                        <td style="padding: 10px">{{$modulo->profesor}}</td>
                         <td style="padding: 10px">{{$u->modulo}}</td>
                         <td style="padding: 10px">{{$u->horas}}</td>
                         <td style="padding: 10px"><a href="{{route('showUf', $u->id)}}" style="color: #FF6701">Detalles...</a>
@@ -96,5 +90,6 @@
         </div>
     @endif
     <script src="{{ asset('js/index.js') }}" defer></script>
+    <script src="{{ asset('js/ufForm.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop
