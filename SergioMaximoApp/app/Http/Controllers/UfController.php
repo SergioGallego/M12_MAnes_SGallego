@@ -53,9 +53,6 @@ class UfController extends Controller
         $uf->nombre=$request->input('nombre');
         $uf->horas=$request->input('horas');
         $uf->modulo=$request->input('modulo');
-        $modulo = DB::table('modulos')->where('nombre', $uf->modulo)->get('profesor');
-        $profesor = $modulo->id;
-        $uf->profesor= $profesor;
         $uf->modulo_id=$request->input('modulo_id');
         $uf->updated_by=Auth::id();
         try {
@@ -64,7 +61,7 @@ class UfController extends Controller
         } catch (QueryException $e){
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
-                return view('uf.index', array('error'=>true, 'modulo'=>$uf->modulo_id, 'arrayUfs'=>$ufs = DB::table('ufs')->where('modulo_id', $uf->modulo_id)->get(), 'arrayProf'=>User::all()));
+                return redirect('/menu/uf/' . $uf->modulo_id);
             }
         }
     }
