@@ -7,6 +7,7 @@ use App\Models\Alumno;
 use App\Models\Modulo;
 use App\Models\Uf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AlumnoUfController extends Controller
 {
@@ -20,6 +21,9 @@ class AlumnoUfController extends Controller
 
     public function show($id)
     {
-        return view('notas.show');
+        $modulo = Modulo::findOrFail($id);
+        $alumnos = Alumno::all();
+        $ufs = DB::table('ufs')->where('modulo_id', $id)->get();
+        return view('notas.show', array('arrayAlumnos'=>$alumnos, 'modulo'=>$modulo, 'arrayUfs'=>$ufs));
     }
 }

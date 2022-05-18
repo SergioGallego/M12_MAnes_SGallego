@@ -11,6 +11,6 @@ class Alumno extends Model
     protected $fillable = ['name'];
 
     public function ufs(){
-        return $this->belongsToMany(Uf::class, 'notas');
+        return $this->belongsToMany(Uf::class, 'alumno_ufs')->withPivot('nota');
     }
 }

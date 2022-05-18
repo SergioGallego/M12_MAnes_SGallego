@@ -16,17 +16,17 @@ class NotasSeeder extends Seeder
     private $arrayNotas = array(
         array(
             'uf_id' => '1',
-            'alumno' => '1',
+            'alumno_id' => '1',
             'nota' => '9',
         ),
         array(
             'uf_id' => '1',
-            'alumno' => '2',
+            'alumno_id' => '2',
             'nota' => '7',
         ),
         array(
             'uf_id' => '2',
-            'alumno' => '1',
+            'alumno_id' => '1',
             'nota' => '6',
         ),
     );
@@ -36,7 +36,7 @@ class NotasSeeder extends Seeder
         foreach($this->arrayNotas as $nota){
             $n = new AlumnoUf;
             $n->uf_id = $nota['uf_id'];
-            $n->alumno = $nota['alumno'];
+            $n->alumno_id = $nota['alumno_id'];
             $n->nota = $nota['nota'];
             $n->save();
         }

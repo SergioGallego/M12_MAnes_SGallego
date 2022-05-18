@@ -3,52 +3,51 @@
 @section('title')
     <h1 style="text-align: center">Notas de alumnos</h1>
 @stop
-@section('content') 
-<div class="col-md-12">
-    <div class="accordion" id="accordionExample">
-        <div class="card">
-        <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                Collapsible Group Item #1
-            </button>
-            </h2>
-        </div>
-    
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-            <div class="card-body">
-            Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
-            </div>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Collapsible Group Item #2
-            </button>
-            </h2>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body">
-            Some placeholder content for the second accordion panel. This panel is hidden by default.
-            </div>
-        </div>
-        </div>
-        <div class="card">
-        <div class="card-header" id="headingThree">
-            <h2 class="mb-0">
-            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                Collapsible Group Item #3
-            </button>
-            </h2>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body">
-            And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
-            </div>
-        </div>
-        </div>
-    </div>
-</div>
+@section('content')
+        <table border="1" style="width: 100%">
+            <form method="POST" action="{{ route('storeUser') }}">
+                @csrf
+                @method('PUT')        
+                <tr>
+                    <td class="cabecera"><b>Alumno</b></td>
+                    @foreach($arrayUfs as $key => $u)
+                        <td class="cabecera"><b>{{$u->nombre}}</b></td>
+                    @endforeach
+                </tr>
+                @foreach($arrayAlumnos as $key => $a)
+                    @if($modulo->ciclos->nombre == $a->ciclo)
+                        <tr>
+                            <td>{{$a->nombre}}</td>
+                            @foreach($a->ufs as $u)
+                                @if($u->modulo_id == $modulo->id)
+                                    <td>
+                                        <select name="notas[]" class="col-md-12" style="text-align: center">{{$u->pivot->nota}}
+                                            <option value="1" @if ($u->pivot->nota == 1) selected @endif>1</option>  
+                                            <option value="2" @if ($u->pivot->nota == 2) selected @endif>2</option>  
+                                            <option value="3" @if ($u->pivot->nota == 3) selected @endif>3</option>        
+                                            <option value="4" @if ($u->pivot->nota == 4) selected @endif>4</option>  
+                                            <option value="5" @if ($u->pivot->nota == 5) selected @endif>5</option>  
+                                            <option value="6" @if ($u->pivot->nota == 6) selected @endif>6</option>  
+                                            <option value="7" @if ($u->pivot->nota == 7) selected @endif>7</option>  
+                                            <option value="8" @if ($u->pivot->nota == 8) selected @endif>8</option>  
+                                            <option value="9" @if ($u->pivot->nota == 9) selected @endif>9</option>  
+                                            <option value="10" @if ($u->pivot->nota == 10) selected @endif>10</option>
+                                        </select>
+                                    </td>
+                                @endif
+                            @endforeach
+                        </tr>
+                    @endif
+                @endforeach
+            </form>
+        </table><br>
+        <a class="btn block mt-1 w-full" href="{{route('userIndex')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>&nbsp
+        @if(auth()->user()->role_id == 1 || (auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor))
+            <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
+                {{ __('Guardar cambios') }}
+            </x-jet-button>
+        @endif
+
+    <script src="{{ asset('js/index.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop

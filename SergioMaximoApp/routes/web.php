@@ -62,7 +62,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/menu/uf/borrar/{id?}', [UfController::class, 'destroy'])->name('destroyUf');
 
     Route::get('/menu/alumno/boletin/{id?}', [AlumnoUfController::class, 'boletin'])->name('boletinNotas');
-    Route::get('/menu/modulos/notas/{id?}', [AlumnoUfController::class, 'show'])->name('showNotas');
+    Route::get('/menu/modulos/notas/{id?}/{nombre?}', [AlumnoUfController::class, 'show'])->name('showNotas');
 
 });
 

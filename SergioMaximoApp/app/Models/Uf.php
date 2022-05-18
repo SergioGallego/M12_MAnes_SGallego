@@ -13,7 +13,7 @@ class Uf extends Model
     }
 
     public function ufs(){
-        return $this->belongsToMany(Alumno::class, 'notas');
+        return $this->belongsToMany(Alumno::class, 'alumno_ufs')->withPivot('nota');;
     }
 
     protected $fillable = [
