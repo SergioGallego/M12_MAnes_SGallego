@@ -22,10 +22,10 @@
                     <td style="padding: 10px">{{$c->id}}</td>
                     <td style="padding: 10px">{{$c->nombre}}</td>
                     <td style="padding: 10px">{{$c->descripcion}}</td>
-                    <td style="padding: 10px"><a href="{{route('showCiclo', $c->id)}}" style="color: #FF6701">Detalles...</a>
-                        <a href="{{route('statsCiclo', $c->id)}}" style="color: #FF6701">Estadisticas...</a>
+                    <td style="padding: 10px"><a href="{{route('showCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
+                        <a href="{{route('statsCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701">Estadísticas</a>
                         @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyCiclo', $c->id)}}" style="color: #FF6701">Borrar...</a>
+                            <a href="{{route('destroyCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701">Borrar</a>
                         @endif
                     </td>
                 </tr>
