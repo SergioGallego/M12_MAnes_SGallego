@@ -17,4 +17,9 @@ class AlumnoUfController extends Controller
         $modulos = Modulo::orderBy('nombre', 'asc')->get();
         return view('notas.boletin', array('alumno'=>$alumno, 'arrayUFs'=>$ufs, 'arrayModulos'=>$modulos));
     }
+
+    public function show($id)
+    {
+        return view('notas.show');
+    }
 }
