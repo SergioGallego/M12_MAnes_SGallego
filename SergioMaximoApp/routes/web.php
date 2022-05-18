@@ -55,8 +55,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::put('/menu/modulo/show/{id?}', [ModuloController::class, 'update'])->name('updateModulo');
     Route::get('/menu/modulo/borrar/{id?}', [ModuloController::class, 'destroy'])->name('destroyModulo');
     
-    Route::get('/menu/uf', [UfController::class, 'index'])->name('ufIndex');
-    Route::post('/menu/uf/store', [UfController::class, 'store'])->name('storeUf');
+    Route::get('/menu/uf/{id?}', [UfController::class, 'index'])->name('ufIndex');
+    Route::post('/menu/uf/store/{id?}', [UfController::class, 'store'])->name('storeUf');
     Route::get('/menu/uf/show/{id?}', [UfController::class, 'show'])->name('showUf');
     Route::put('/menu/uf/show/{id?}', [UfController::class, 'update'])->name('updateUf');
     Route::get('/menu/uf/borrar/{id?}', [UfController::class, 'destroy'])->name('destroyUf');

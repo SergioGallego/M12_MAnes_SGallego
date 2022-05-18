@@ -16,17 +16,19 @@ class UfSeeder extends Seeder
 
     private $arrayUf = array(
         array(
-            'nombre' => 'UF4 Programacio orientada a objectes',
+            'nombre' => 'UF4',
+            'profesor' => 3,
             'modulo' => 'M3',
             'horas' => 120,
             'modulo_id' => 1,
             'updated_by' => 1
         ),
         array(
-            'nombre' => 'UF1 Desenvolupament de programari',
+            'nombre' => 'UF1',
+            'profesor' => 2,
             'modulo' => 'M5',
             'horas' => 100,
-            'modulo_id' => 1,
+            'modulo_id' => 2,
             'updated_by' => 1
         )
     );
@@ -36,6 +38,7 @@ class UfSeeder extends Seeder
         foreach($this->arrayUf as $uf){
             $u = new Uf;
             $u->nombre = $uf['nombre'];
+            $u->profesor = $uf['profesor'];
             $u->modulo = $uf['modulo'];
             $u->horas = $uf['horas'];
             $u->modulo_id = $uf['modulo_id'];

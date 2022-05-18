@@ -18,10 +18,7 @@ class CreateModulosTable extends Migration
             $table->id();
             $table->string("nombre");
             $table->string("comentario");
-            $table->foreignId('profesor')
-                  ->constrained('users')
-                  ->cascadeOnDelete()
-                  ->cascadeOnUpdate();
+            $table->string("profesor");
             $table->foreignId('ciclo')
                   ->constrained('ciclos')
                   ->cascadeOnDelete()

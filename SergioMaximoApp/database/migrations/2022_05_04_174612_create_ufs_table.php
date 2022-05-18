@@ -17,6 +17,11 @@ class CreateUfsTable extends Migration
             $table->id();
             $table->string("nombre");
             $table->string('modulo');
+            $table->foreignId('profesor')
+                    ->nullable()
+                    ->constrained('users')
+                    ->nullOnUpdate()
+                    ->cascadeOnDelete();
             $table->integer("horas");
             $table->foreignId('modulo_id')
                     ->constrained('modulos')
