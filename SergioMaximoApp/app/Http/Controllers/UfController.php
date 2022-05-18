@@ -24,27 +24,26 @@ class UfController extends Controller
     public function show($id)
     {
         $uf = Uf::findOrFail($id);
-        return view('uf.show', array('id'=>$id, 'uf'=>$uf));
+        return view('uf.show', array('uf'=>$uf));
     }
 
-    public function update(Request $request, $id, $idMod)
+    public function update(Request $request, $id)
     {
         $uf = Uf::find($id);
         $uf->nombre=$request->input('nombre');
         $uf->horas=$request->input('horas');
-        $uf->profesor=$request->input('profesor');
         $uf->modulo=$request->input('modulo');
         $uf->modulo_id=$request->input('modulo_id');
         $uf->updated_by=Auth::id();
         try {
             $uf->save();
-            return view('uf.index', array('error'=>false, 'modulo'=>Modulo::findOrFail($idMod), 'arrayUfs'=>$ufs = DB::table('ufs')->where('modulo_id', $idMod)->get(), 'arrayProf'=>User::all()));
+            return redirect('/menu/uf/' . $uf->modulo_id);
         } catch (QueryException $e){
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
-                return view('uf.index', array('error'=>true, 'modulo'=>Modulo::findOrFail($idMod), 'arrayUfs'=>$ufs = DB::table('ufs')->where('modulo_id', $idMod)->get(), 'arrayProf'=>User::all()));
+                return redirect('/menu/uf/' . $uf->modulo_id);
             }
-        }       
+        }  
     }
 
     public function store(Request $request)
