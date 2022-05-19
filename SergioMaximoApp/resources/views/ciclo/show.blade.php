@@ -20,7 +20,7 @@
                             <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$ciclo->descripcion}}" placeholder="Descripcion" id="descripcion" class="block mt-1 w-full form-control" type="text" name="descripcion" :value="old('descripcion')" required />
                         </div><br>
 
-                        <a class="btn block mt-1 w-full" href="{{route('cicloIndex')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
+                        <a class="btn block mt-1 w-full" href="{{route('cicloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
                         @if(auth()->user()->role_id == 1)
                             <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
                                 {{ __('Enviar') }}

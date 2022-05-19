@@ -1034,7 +1034,7 @@ a desgraça, matava-se. Minha mãe falou-lhe com bondade, mas elle não
 attendia a cousa nenhuma.
 
 --Não, minha senhora, não consentirei em tal vergonha! Fazer descer
-a familia, tornar atraz... Já disse, mato-me! Não hei de confessar á
+a familia, Volver atraz... Já disse, mato-me! Não hei de confessar á
 minha gente esta miseria. E os outros? Que dirão os visinhos? E os
 amigos? E o publico?
 
@@ -1669,7 +1669,7 @@ e o prazer que eu contava dar-lhe com a escolha da protecção não se
 mostrou em nenhum dos musculos. Toda a cara delle era pouca para a
 estupefacção. Realmente, a materia do discurso revelára em mim uma alma
 nova; eu proprio não me conhecia. Mas a palavra final é que trouxe um
-vigor unico. José Dias ficou aturdido. Quando os olhos tornaram ás
+vigor unico. José Dias ficou aturdido. Quando os olhos Volveram ás
 dimensões ordinarias:
 
 --Mas que posso eu fazer? perguntou.
@@ -1761,7 +1761,7 @@ lado para outro... Oh! as leis são bellissimas!
 vontade de servir é poder de mandar, estamos aqui, estamos a bordo.
 Ali! você não imagina o que é a Europa; oh! a Europa...
 
-Levantou a perna e fez uma pirueta. Uma das suas ambições era tornar á
+Levantou a perna e fez uma pirueta. Uma das suas ambições era Volver á
 Europa, falava della muitos vezes, sem acabar de tentar minha mãe nem
 tio Cosme, por mais que louvasse os ares e as bellezas... Não contava
 com esta possibilidade de ir commigo, e lá ficar durante a eternidade

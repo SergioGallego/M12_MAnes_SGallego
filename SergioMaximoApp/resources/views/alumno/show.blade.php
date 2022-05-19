@@ -26,7 +26,7 @@
                             @endforeach
                         </select>
                     </div><br>
-                    <a class="btn block mt-1 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
+                    <a class="btn block mt-1 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
                     @if(auth()->user()->role_id == 1)
                         <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
                             {{ __('Enviar') }}

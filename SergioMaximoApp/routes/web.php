@@ -63,6 +63,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::get('/menu/alumno/boletin/{id?}', [AlumnoUfController::class, 'boletin'])->name('boletinNotas');
     Route::get('/menu/modulos/notas/{id?}/{nombre?}', [AlumnoUfController::class, 'show'])->name('showNotas');
+    Route::put('/menu/modulos/notas/update', [AlumnoUfController::class, 'update'])->name('updateNotas');
 
 });
 

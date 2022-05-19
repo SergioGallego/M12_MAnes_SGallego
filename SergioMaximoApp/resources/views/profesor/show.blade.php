@@ -33,7 +33,7 @@
                                 <option @if($profesor->estado == "Inactivo") selected @endif value="Inactivo">Inactivo</option>
                             </select>
                         </div><br>
-                        <a class="btn block mt-1 w-full" href="{{route('userIndex')}}" style="background-color: rgb(255,103,1); color: white">Tornar</a>
+                        <a class="btn block mt-1 w-full" href="{{route('userIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
                         @if(auth()->user()->id != $profesor->id && auth()->user()->role_id == 2 || (auth()->user()->role_id == 1 && $profesor->role_id == 1 && auth()->user()->id != 1 && auth()->user()->id != $profesor->id)) @else
                             <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
                                 {{ __('Enviar') }}

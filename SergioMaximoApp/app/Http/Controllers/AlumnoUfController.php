@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Alumno;
+use App\Models\AlumnoUf;
 use App\Models\Modulo;
 use App\Models\Uf;
 use Illuminate\Http\Request;
@@ -24,13 +25,14 @@ class AlumnoUfController extends Controller
         $modulo = Modulo::findOrFail($id);
         $alumnos = Alumno::all();
         $ufs = DB::table('ufs')->where('modulo_id', $id)->get();
+        
         return view('notas.show', array('arrayAlumnos'=>$alumnos, 'modulo'=>$modulo, 'arrayUfs'=>$ufs));
     }
 
     public function update(Request $request){
         
-        DB::table('alumno_ufs')->where('uf_id')->update();
-
+        AlumnoUf::where(['uf_id' => 1, 'alumno_id' => 2])->update(['nota' => 5]);
+        return redirect()->back();
         //$name = $request->name;
 
         //for($i=0; $i < count($name); $i++){

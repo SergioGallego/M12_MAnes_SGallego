@@ -5,7 +5,7 @@
 @stop
 @section('content')
         <table border="1" style="width: 100%">
-            <form method="POST" action="{{ route('storeUser') }}">
+            <form method="POST" action="{{ route('updateNotas') }}">
                 @csrf
                 @method('PUT')        
                 <tr>
@@ -39,14 +39,15 @@
                         </tr>
                     @endif
                 @endforeach
+                @if(auth()->user()->role_id == 1 || (auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor))
+                    <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
+                        {{ __('Guardar cambios') }}
+                    </x-jet-button>
+                @endif
             </form>
         </table><br>
-        <a class="btn block mt-1 w-full" href="{{route('userIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>&nbsp
-        @if(auth()->user()->role_id == 1 || (auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor))
-            <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
-                {{ __('Guardar cambios') }}
-            </x-jet-button>
-        @endif
+        <a class="btn block mt-1 w-full" href="{{route('moduloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>&nbsp
+        
 
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">

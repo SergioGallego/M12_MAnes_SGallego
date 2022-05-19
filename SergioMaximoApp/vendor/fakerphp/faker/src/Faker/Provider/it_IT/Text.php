@@ -82,7 +82,7 @@ class Text extends \Faker\Provider\Text
      * XVII Pinocchio mangia lo zucchero, ma non vuol purgarsi: Però quando vede i becchini che vengono a portarlo via, allora si purga. Poi dice una bugia e per gastigo gli cresce il naso.
      * XVIII Pinocchio ritrova la Volpe e il Gatto, e va con loro a seminare le quattro monete nel Campo de’ Miracoli.
      * XIX Pinocchio è derubato delle sue monete d’oro e, per gastigo, si busca quattro mesi di prigione.
-     * XX Liberato dalla prigione, si avvia per tornare a casa della Fata; ma lungo la strada trova un serpente orribile, e poi rimane preso alla tagliuola.
+     * XX Liberato dalla prigione, si avvia per Volvere a casa della Fata; ma lungo la strada trova un serpente orribile, e poi rimane preso alla tagliuola.
      * XXI Pinocchio è preso da un contadino, il quale lo costringe a far da can da guardia a un pollaio.
      * XXII Pinocchio scuopre i ladri e, in ricompensa di essere stato fedele, vien posto in libertà.
      * XXIII Pinocchio piange la morte della bella Bambina dai capelli turchini: poi trova un Colombo che lo porta sulla riva del mare, e lì si getta nell’acqua per andare in aiuto del suo babbo Geppetto.
@@ -224,7 +224,7 @@ Allora lo prese per la collottola, e, mentre lo riconduceva indietro, gli disse 
 – Andiamo a casa. Quando saremo a casa, non dubitare che faremo i nostri conti!
 Pinocchio, a questa antifona, si buttò per terra, e non volle più camminare. Intanto i curiosi e i bighelloni principiavano a fermarsi lì dintorno e a far capannello.
 Chi ne diceva una, chi un’altra.
-– Povero burattino! – dicevano alcuni, – ha ragione a non voler tornare a casa! Chi lo sa come lo picchierebbe quell’omaccio di Geppetto!...
+– Povero burattino! – dicevano alcuni, – ha ragione a non voler Volvere a casa! Chi lo sa come lo picchierebbe quell’omaccio di Geppetto!...
 E gli altri soggiungevano malignamente:
 – Quel Geppetto pare un galantuomo! ma è un vero tiranno coi ragazzi! Se gli lasciano quel povero burattino fra le mani, è capacissimo di farlo a pezzi!...
 Insomma, tanto dissero e tanto fecero, che il carabiniere rimise in libertà Pinocchio e condusse in prigione quel pover’uomo di Geppetto. Il quale, non avendo parole lì per lì per difendersi, piangeva come un vitellino, e nell’avviarsi verso il carcere, balbettava singhiozzando:
@@ -233,7 +233,7 @@ Quello che accadde dopo, è una storia da non potersi credere, e ve la racconter
 
 IV La storia di Pinocchio col Grillo-parlante, dove si vede come i ragazzi cattivi hanno a noia di sentirsi correggere da chi ne sa più di loro.
 
-Vi dirò dunque, ragazzi, che mentre il povero Geppetto era condotto senza sua colpa in prigione, quel monello di Pinocchio, rimasto libero dalle grinfie del carabiniere, se la dava a gambe giù attraverso ai campi, per far più presto a tornarsene a casa; e nella gran furia del correre saltava greppi altissimi, siepi di pruni e fossi pieni d’acqua, tale e quale come avrebbe potuto fare un capretto o un leprottino inseguito dai cacciatori.
+Vi dirò dunque, ragazzi, che mentre il povero Geppetto era condotto senza sua colpa in prigione, quel monello di Pinocchio, rimasto libero dalle grinfie del carabiniere, se la dava a gambe giù attraverso ai campi, per far più presto a Volversene a casa; e nella gran furia del correre saltava greppi altissimi, siepi di pruni e fossi pieni d’acqua, tale e quale come avrebbe potuto fare un capretto o un leprottino inseguito dai cacciatori.
 Giunto dinanzi a casa, trovò l’uscio di strada socchiuso. Lo spinse, entrò dentro, e appena ebbe messo tanto di paletto, si gettò a sedere per terra, lasciando andare un gran sospirone di contentezza.
 Ma quella contentezza durò poco, perché sentì nella stanza qualcuno che fece:
 – Crì - crì - crì!
@@ -441,7 +441,7 @@ All’apparizione inaspettata del burattinaio, ammutolirono tutti: nessuno fiat�
 – Basta così! Stasera faremo i nostri conti.
 Difatti, finita la recita della commedia, il burattinaio andò in cucina, dov’egli s’era preparato per cena un bel montone, che girava lentamente infilato nello spiedo. E perché gli mancavano la legna per finirlo di cuocere e di rosolare, chiamò Arlecchino e Pulcinella e disse loro:
 – Portatemi di qua quel burattino che troverete attaccato al chiodo. Mi pare un burattino fatto di un legname molto asciutto, e sono sicuro che, a buttarlo sul fuoco, mi darà una bellissima fiammata all’arrosto.
-Arlecchino e Pulcinella da principio esitarono; ma impauriti da un’occhiataccia del loro padrone, obbedirono: e dopo poco tornarono in cucina, portando sulle braccia il povero Pinocchio, il quale, divincolandosi come un’anguilla fuori dell’acqua, strillava disperatamente:
+Arlecchino e Pulcinella da principio esitarono; ma impauriti da un’occhiataccia del loro padrone, obbedirono: e dopo poco Volverono in cucina, portando sulle braccia il povero Pinocchio, il quale, divincolandosi come un’anguilla fuori dell’acqua, strillava disperatamente:
 – Babbo mio, salvatemi! Non voglio morire, non voglio morire!...
 
 XI Mangiafoco starnutisce e perdona a Pinocchio, il quale poi difende dalla morte il suo amico Arlecchino.
@@ -493,7 +493,7 @@ Il giorno dipoi Mangiafoco chiamò in disparte Pinocchio e gli domandò:
 – Guadagna molto?
 – Guadagna tanto, quanto ci vuole per non aver mai un centesimo in tasca. Si figuri che per comprarmi l’Abbecedario della scuola dové vendere l’unica casacca che aveva addosso: una casacca che, fra toppe e rimendi, era tutta una piaga.
 – Povero diavolo! Mi fa quasi compassione. Ecco qui cinque monete d’oro. Vai subito a portargliele e salutalo tanto da parte mia.
-Pinocchio, com’è facile immaginarselo, ringraziò mille volte il burattinaio, abbracciò, a uno a uno, tutti i burattini della Compagnia, anche i giandarmi: e fuori di sé dalla contentezza, si mise in viaggio per tornarsene a casa sua.
+Pinocchio, com’è facile immaginarselo, ringraziò mille volte il burattinaio, abbracciò, a uno a uno, tutti i burattini della Compagnia, anche i giandarmi: e fuori di sé dalla contentezza, si mise in viaggio per Volversene a casa sua.
 Ma non aveva fatto ancora mezzo chilometro, che incontrò per la strada una Volpe zoppa da un piede e un Gatto cieco da tutt’e due gli occhi, che se ne andavano là là, aiutandosi fra di loro, da buoni compagni di sventura. La Volpe che era zoppa, camminava appoggiandosi al Gatto: e il Gatto, che era cieco, si lasciava guidare dalla Volpe.
 – Buon giorno, Pinocchio, – gli disse la Volpe, salutandolo garbatamente.
 – Com’è che sai il mio nome? – domandò il burattino.
@@ -526,11 +526,11 @@ Erano giunti più che a mezza strada, quando la Volpe, fermandosi di punto in bi
 – Cioè?
 – Vuoi tu, di cinque miserabili zecchini, farne cento, mille, duemila?
 – Magari! E la maniera?
-– La maniera è facilissima. Invece di tornartene a casa tua, dovresti venire con noi.
+– La maniera è facilissima. Invece di Volvertene a casa tua, dovresti venire con noi.
 – E dove mi volete condurre?
 – Nel paese dei Barbagianni.
 Pinocchio ci pensò un poco, e poi disse risolutamente:
-– No, non ci voglio venire. Oramai sono vicino a casa, e voglio andarmene a casa, dove c’è il mio babbo che m’aspetta. Chi lo sa, povero vecchio, quanto ha sospirato ieri, a non vedermi tornare. Pur troppo io sono stato un figliolo cattivo, e il Grillo-parlante aveva ragione quando diceva: «I ragazzi disobbedienti non possono aver bene in questo mondo». E io l’ho provato a mie spese, Perché mi sono capitate dimolte disgrazie, e anche ieri sera in casa di Mangiafoco, ho corso pericolo... Brrr! mi viene i bordoni soltanto a pensarci!
+– No, non ci voglio venire. Oramai sono vicino a casa, e voglio andarmene a casa, dove c’è il mio babbo che m’aspetta. Chi lo sa, povero vecchio, quanto ha sospirato ieri, a non vedermi Volvere. Pur troppo io sono stato un figliolo cattivo, e il Grillo-parlante aveva ragione quando diceva: «I ragazzi disobbedienti non possono aver bene in questo mondo». E io l’ho provato a mie spese, Perché mi sono capitate dimolte disgrazie, e anche ieri sera in casa di Mangiafoco, ho corso pericolo... Brrr! mi viene i bordoni soltanto a pensarci!
 – Dunque, – disse la Volpe, – vuoi proprio andare a casa tua? Allora vai pure, e tanto peggio per te!
 – Tanto peggio per te! – ripeté il Gatto.
 – Pensaci bene, Pinocchio, perché tu dai un calcio alla fortuna.
@@ -853,7 +853,7 @@ E lì v’ebbe a rimanere quattro mesi: quattro lunghissimi mesi: e vi sarebbe r
 – Domando scusa, – replicò Pinocchio, – sono un malandrino anch’io.
 – In questo caso avete mille ragioni, – disse il carceriere; e levandosi il berretto rispettosamente e salutandolo, gli aprì le porte della prigione e lo lasciò scappare.
 
-XX Liberato dalla prigione, si avvia per tornare a casa della Fata; ma lungo la strada trova un serpente orribile, e poi rimane preso alla tagliuola.
+XX Liberato dalla prigione, si avvia per Volvere a casa della Fata; ma lungo la strada trova un serpente orribile, e poi rimane preso alla tagliuola.
 
 Figuratevi l’allegrezza di Pinocchio, quando si sentì libero. Senza stare a dire che è e che non è, uscì subito fuori della città e riprese la strada che doveva ricondurlo alla Casina della Fata.
 A motivo del tempo piovigginoso, la strada era diventata tutta un pantano e ci si andava fino a mezza gamba.
@@ -946,7 +946,7 @@ Quindi, avvicinatosi a Pinocchio, cominciò a fargli molte carezze, e, fra le al
 Il burattino, allora, avrebbe potuto raccontare quel che sapeva: avrebbe potuto, cioè, raccontare i patti vergognosi che passavano fra il cane e le faine: ma ricordatosi che il cane era morto, pensò subito dentro di sé: – A che serve accusare i morti?... I morti son morti, e la miglior cosa che si possa fare è quella di lasciarli in pace!...
 – All’arrivo delle faine sull’aia, eri sveglio o dormivi? – continuò a chiedergli il contadino.
 – Dormivo, – rispose Pinocchio, – ma le faine mi hanno svegliato coi loro chiacchiericci, e una è venuta fin qui al casotto per dirmi: «Se prometti di non abbaiare e di non svegliare il padrone, noi ti regaleremo una pollastra bell’e pelata!...». Capite, eh? Avere la sfacciataggine di fare a me una simile proposta! Perché bisogna sapere che io sono un burattino, che avrò tutti i difetti di questo mondo: ma non avrò mai quello di star di balla e di reggere il sacco alla gente disonesta!
-– Bravo ragazzo! – gridò il contadino, battendogli sur una spalla. – Cotesti sentimenti ti fanno onore: e per provarti la mia grande soddisfazione, ti lascio libero fin d’ora di tornare a casa.
+– Bravo ragazzo! – gridò il contadino, battendogli sur una spalla. – Cotesti sentimenti ti fanno onore: e per provarti la mia grande soddisfazione, ti lascio libero fin d’ora di Volvere a casa.
 E gli levò il collare da cane.
 
 XXIII Pinocchio piange la morte della bella Bambina dai capelli turchini: poi trova un Colombo che lo porta sulla riva del mare, e lì si getta nell’acqua per andare in aiuto del suo babbo Geppetto.
@@ -1001,12 +1001,12 @@ Pinocchio appuntò gli occhi da quella parte, e dopo aver guardato attentamente,
 Intanto la barchetta, sbattuta dall’infuriare dell’onde, ora spariva fra i grossi cavalloni, ora tornava a galleggiare: e Pinocchio ritto sulla punta di un alto scoglio non finiva più dal chiamare il suo babbo per nome e dal fargli molti segnali colle mani e col moccichino da naso e perfino col berretto che aveva in capo.
 E parve che Geppetto, sebbene fosse molto lontano dalla spiaggia, riconoscesse il figliuolo, perché si levò il berretto anche lui e lo salutò e, a furia di gesti, gli fece capire che sarebbe tornato volentieri indietro, ma il mare era tanto grosso, che gl’impediva di lavorare col remo e di potersi avvicinare alla terra.
 Tutt’a un tratto, venne una terribile ondata, e la barca sparì.
-Aspettarono che la barca tornasse a galla: ma la barca non si vide più tornare.
-– Pover’omo! – dissero allora i pescatori, che erano raccolti sulla spiaggia: e brontolando sottovoce una preghiera si mossero per tornarsene alle loro case.
+Aspettarono che la barca tornasse a galla: ma la barca non si vide più Volvere.
+– Pover’omo! – dissero allora i pescatori, che erano raccolti sulla spiaggia: e brontolando sottovoce una preghiera si mossero per Volversene alle loro case.
 Quand’ecco che udirono un urlo disperato, e, voltandosi indietro, videro un ragazzetto che, di vetta a uno scoglio, si gettava in mare gridando:
 – Voglio salvare il mio babbo!
 Pinocchio, essendo tutto di legno, galleggiava facilmente e nuotava come un pesce. Ora si vedeva sparire sott’acqua, portato dall’impeto dei flutti, ora riappariva fuori con una gamba o con un braccio, a grandissima distanza dalla terra. Alla fine lo persero d’occhio e non lo videro più.
-– Povero ragazzo! - dissero allora i pescatori, che erano raccolti sulla spiaggia: e brontolando sottovoce una preghiera tornarono alle loro case.
+– Povero ragazzo! - dissero allora i pescatori, che erano raccolti sulla spiaggia: e brontolando sottovoce una preghiera Volverono alle loro case.
 
 XXIV Pinocchio arriva all’isola delle Api industriose e ritrova la Fata.
 
@@ -1215,7 +1215,7 @@ Uno di quei monelli agguantò quel volume e, presa di mira la testa di Pinocchio
 Poi cadde disteso sulla rena del lido.
 Alla vista di quel morticino, i ragazzi spaventati si dettero a scappare a gambe e in pochi minuti non si videro più.
 Ma Pinocchio rimase lì, e sebbene per il dolore e per lo spavento, anche lui fosse più morto che vivo, nondimeno corse a inzuppare il suo fazzoletto nell’acqua del mare e si pose a bagnare la tempia del suo povero compagno di scuola. E intanto piangendo dirottamente e disperandosi, lo chiamava per nome e gli diceva:
-– Eugenio!... povero Eugenio mio!... apri gli occhi, e guardami!... Perché non mi rispondi? Non sono stato io, sai, che ti ho fatto tanto male! Credilo, non sono stato io!... Apri gli occhi, Eugenio... Se tieni gli occhi chiusi, mi farai morire anche me... O Dio mio! come farò ora a tornare a casa?... Con che coraggio potrò presentarmi alla mia buona mamma? Che sarà di me?... Dove fuggirò?... Dove andrò a nascondermi?... Oh! quant’era meglio, mille volte meglio che fossi andato a scuola!... Perché ho dato retta a questi compagni, che sono la mia dannazione?... E il maestro me l’aveva detto!... e la mia mamma me lo aveva ripetuto: «Guàrdati dai cattivi compagni!». Ma io sono un testardo... un caparbiaccio... lascio dir tutti, e poi fo sempre a modo mio!... E dopo mi tocca a scontarle... E così, da che sono al mondo, non ho mai avuto un quarto d’ora di bene. Dio mio! Che sarà di me, che sarà di me, che sarà di me?...
+– Eugenio!... povero Eugenio mio!... apri gli occhi, e guardami!... Perché non mi rispondi? Non sono stato io, sai, che ti ho fatto tanto male! Credilo, non sono stato io!... Apri gli occhi, Eugenio... Se tieni gli occhi chiusi, mi farai morire anche me... O Dio mio! come farò ora a Volvere a casa?... Con che coraggio potrò presentarmi alla mia buona mamma? Che sarà di me?... Dove fuggirò?... Dove andrò a nascondermi?... Oh! quant’era meglio, mille volte meglio che fossi andato a scuola!... Perché ho dato retta a questi compagni, che sono la mia dannazione?... E il maestro me l’aveva detto!... e la mia mamma me lo aveva ripetuto: «Guàrdati dai cattivi compagni!». Ma io sono un testardo... un caparbiaccio... lascio dir tutti, e poi fo sempre a modo mio!... E dopo mi tocca a scontarle... E così, da che sono al mondo, non ho mai avuto un quarto d’ora di bene. Dio mio! Che sarà di me, che sarà di me, che sarà di me?...
 E Pinocchio continuava a piangere, e berciare, a darsi pugni nel capo e a chiamar per nome il povero Eugenio: quando sentì a un tratto un rumore sordo di passi che si avvicinavano.
 Si voltò: erano due carabinieri
 – Che cosa fai così sdraiato per terra? – domandarono a Pinocchio.
@@ -1293,7 +1293,7 @@ Allora Pinocchio mortificato di sentirsi scambiare per un granchio, disse con ac
 – È verissimo, – soggiunse il pescatore, – e siccome vedo che sei un pesce, che hai la fortuna di parlare e di ragionare, come me, così voglio usarti anch’io i dovuti riguardi.
 – E questi riguardi sarebbero?...
 – In segno di amicizia e di stima particolare, lascerò a te la scelta del come vuoi essere cucinato. Desideri essere fritto in padella, oppure preferisci di essere cotto nel tegame colla salsa di pomidoro?
-– A dir la verità, – rispose Pinocchio, – se io debbo scegliere, preferisco piuttosto di essere lasciato libero, per potermene tornare a casa mia.
+– A dir la verità, – rispose Pinocchio, – se io debbo scegliere, preferisco piuttosto di essere lasciato libero, per potermene Volvere a casa mia.
 – Tu scherzi? Ti pare che io voglia perdere l’occasione di assaggiare un pesce così raro? Non capita mica tutti i giorni un pesce burattino in questi mari. Lascia fare a me: ti friggerò in padella assieme a tutti gli altri pesci, e te ne troverai contento. L’esser fritto in compagnia è sempre una consolazione.
 L’infelice Pinocchio, a quest’antifona, cominciò a piangere, a strillare, a raccomandarsi e piangendo diceva: – Quant’era meglio, che fossi andato a scuola!... Ho voluto dar retta ai compagni, e ora la pago! Ih!... Ih!... Ih!...
 E perché si divincolava come un anguilla e faceva sforzi incredibili, per isgusciare dalle grinfie del pescatore verde, questi prese una bella buccia di giunco, e dopo averlo legato per le mani e per i piedi, come un salame, lo gettò in fondo alla conca cogli altri.
@@ -1313,7 +1313,7 @@ In quel mentre si udì nella grotta una vocina fioca fioca, che disse:
 – Salvami, Alidoro!... Se non mi salvi, son fritto!
 Il cane riconobbe subito la voce di Pinocchio e si accorse con sua grandissima maraviglia che la vocina era uscita da quel fagotto infarinato che il pescatore teneva in mano.
 Allora che cosa fa? Spicca un gran lancio da terra, abbocca quel fagotto infarinato e tenendolo leggermente coi denti, esce correndo dalla grotta, e via come un baleno!
-Il pescatore, arrabbiatissimo di vedersi strappar di mano un pesce, che egli avrebbe mangiato tanto volentieri, si provò a rincorrere il cane; ma fatti pochi passi, gli venne un nodo di tosse e dové tornarsene indietro.
+Il pescatore, arrabbiatissimo di vedersi strappar di mano un pesce, che egli avrebbe mangiato tanto volentieri, si provò a rincorrere il cane; ma fatti pochi passi, gli venne un nodo di tosse e dové Volversene indietro.
 Intanto Alidoro, ritrovata che ebbe la viottola che conduceva al paese, si fermò e posò delicatamente in terra l’amico Pinocchio.
 – Quanto ti debbo ringraziare! – disse il burattino.
 – Non c’è bisogno, – replicò il cane. – Tu salvasti me, e quel che è fatto, è reso. Si sa: in questo mondo bisogna tutti aiutarsi l’uno coll’altro.
@@ -1343,7 +1343,7 @@ Appena ebbe pronunziate queste parole, il suo naso raccorcì e tornò della gran
 – E perché sei tutto bianco a codesto modo? – gli domandò a un tratto il vecchietto.
 – Vi dirò... senza avvedermene, mi sono strofinato a un muro, che era imbiancato di fresco, – rispose il burattino, vergognandosi a confessare che lo avevano infarinato come un pesce, per poi friggerlo in padella.
 – O della tua giacchetta, de’ tuoi calzoncini e del tuo berretto che cosa ne hai fatto?
-– Ho incontrato i ladri e mi hanno spogliato. Dite, buon vecchio, non avreste per caso da darmi un po’ di vestituccio, tanto perché io possa ritornare a casa?
+– Ho incontrato i ladri e mi hanno spogliato. Dite, buon vecchio, non avreste per caso da darmi un po’ di vestituccio, tanto perché io possa riVolvere a casa?
 – Ragazzo mio, in fatto di vestiti, io non ho che un piccolo sacchetto, dove ci tengo i lupini. Se vuoi, piglialo: eccolo là.
 E Pinocchio non se lo fece dire due volte: prese subito il sacchetto dei lupini che era vuoto, e dopo averci fatto colle forbici una piccola buca nel fondo e due buche dalle parti, se lo infilò a uso camicia. E vestito leggerino a quel modo, si avviò verso il paese.
 Ma, lungo la strada, non si sentiva punto tranquillo; tant’è vero che faceva un passo avanti e uno indietro e, discorrendo da se solo, andava dicendo:
@@ -1382,7 +1382,7 @@ Quella brava bestiola della Lumaca, a scendere dal quarto piano fino all’uscio
 – Divèrtiti a contare le formicole che passano per la strada.
 – Portatemi almeno qualche cosa da mangiare, perché mi sento rifinito.
 – Subito! – disse la Lumaca.
-Difatti dopo tre ore e mezzo Pinocchio la vide tornare con un vassoio d’argento in capo. Nel vassoio c’era un pane, un pollastro arrosto e quattro albicocche mature.
+Difatti dopo tre ore e mezzo Pinocchio la vide Volvere con un vassoio d’argento in capo. Nel vassoio c’era un pane, un pollastro arrosto e quattro albicocche mature.
 – Ecco la colazione che vi manda la Fata, – disse la Lumaca.
 Alla vista di quella grazia di Dio, il burattino sentì consolarsi tutto.
 Ma quale fu il suo disinganno, quando incominciando a mangiare, si dové accorgere che il pane era di gesso, il pollastro di cartone e le quattro albicocche di alabastro, colorite al naturale.
@@ -1399,7 +1399,7 @@ Disgraziatamente, nella vita dei burattini c’è sempre un ma, che sciupa ogni 
 XXX Pinocchio, invece di diventare un ragazzo, parte di nascosto col suo amico Lucignolo per il Paese dei Balocchi.
 
 Com’è naturale, Pinocchio chiese subito alla Fata il permesso di andare in giro per la città a fare gli inviti: e la Fata gli disse:
-– Vai pure a invitare i tuoi compagni per la colazione di domani: ma ricordati di tornare a casa prima che faccia notte. Hai capito?
+– Vai pure a invitare i tuoi compagni per la colazione di domani: ma ricordati di Volvere a casa prima che faccia notte. Hai capito?
 – Fra un’ora prometto di essere bell’e ritornato, – replicò il burattino.
 – Bada, Pinocchio! I ragazzi fanno presto a promettere: ma il più delle volte, fanno tardi a mantenere.
 – Ma io non sono come gli altri: io, quando dico una cosa, la mantengo.
@@ -1453,7 +1453,7 @@ Dove poterlo ripescare? Cerca di qua, cerca di là, finalmente lo vide nascosto 
 – Perché?
 – Per vedervi partire tutti insieme.
 – Rimani qui un altro poco e ci vedrai.
-– No, no: voglio ritornare a casa.
+– No, no: voglio riVolvere a casa.
 – Aspetta altri due minuti.
 – Ho indugiato anche troppo. La Fata starà in pensiero per me.
 – Povera Fata! Che ha paura forse che ti mangino i pipistrelli?
@@ -1481,7 +1481,7 @@ Poi, fatto un animo risoluto, soggiunse in fretta e furia:
 – Fra due ore!
 – Peccato! Se alla partenza mancasse un’ora sola, sarei quasi quasi capace di aspettare.
 – E la Fata?...
-– Oramai ho fatto tardi!... E tornare a casa un’ora prima o un’ora dopo, è lo stesso.
+– Oramai ho fatto tardi!... E Volvere a casa un’ora prima o un’ora dopo, è lo stesso.
 – Povero Pinocchio! E se la Fata ti grida?
 – Pazienza! La lascerò gridare. Quando avrà gridato ben bene, si cheterà.
 Intanto si era già fatta notte e notte buia: quando a un tratto videro muoversi in lontananza un lumicino... e sentirono un suono di bubboli e uno squillo di trombetta, così piccolino e soffocato, che pareva il sibilo di una zanzara!
@@ -1508,7 +1508,7 @@ Appena che il carro si fu fermato, l’omino si volse a Lucignolo e con mille sm
 – Pazienza! – replicò Lucignolo, – se non c’è posto dentro, io mi adatterò a star seduto sulle stanghe del carro.
 E spiccato un salto, montò a cavalcioni sulle stanghe.
 – E tu, amor mio?... – disse l’omino volgendosi tutto complimentoso a Pinocchio. – Che intendi fare? Vieni con noi, o rimani?...
-– Io rimango, – rispose Pinocchio. – Io voglio tornarmene a casa mia: voglio studiare e voglio farmi onore alla scuola, come fanno tutti i ragazzi perbene.
+– Io rimango, – rispose Pinocchio. – Io voglio Volvermene a casa mia: voglio studiare e voglio farmi onore alla scuola, come fanno tutti i ragazzi perbene.
 – Buon pro ti faccia!
 – Pinocchio! – disse allora Lucignolo. – Dai retta a me: vieni via con noi e staremo allegri.
 – No, no, no!
@@ -1549,7 +1549,7 @@ Questo paese non somigliava a nessun altro paese del mondo. La sua popolazione e
 Pinocchio, Lucignolo e tutti gli altri ragazzi, che avevano fatto il viaggio coll’omino, appena ebbero messo il piede dentro la città, si ficcarono subito in mezzo alla gran baraonda, e in pochi minuti, come è facile immaginarselo, diventarono gli amici di tutti. Chi più felice, chi più contento di loro?
 In mezzo ai continui spassi e agli svariati divertimenti, le ore, i giorni, le settimane, passavano come tanti baleni.
 – Oh! che bella vita! – diceva Pinocchio tutte le volte che per caso s’imbatteva in Lucignolo.
-– Vedi, dunque, se avevo ragione?... – ripigliava quest’ultimo. – E dire che tu non volevi partire! E pensare che t’eri messo in capo di tornartene a casa dalla tua Fata, per perdere il tempo a studiare!.... Se oggi ti sei liberato dalla noia dei libri e delle scuole, lo devi a me, ai miei consigli, alle mie premure, ne convieni? Non vi sono che i veri amici che sappiano rendere di questi grandi favori.
+– Vedi, dunque, se avevo ragione?... – ripigliava quest’ultimo. – E dire che tu non volevi partire! E pensare che t’eri messo in capo di Volvertene a casa dalla tua Fata, per perdere il tempo a studiare!.... Se oggi ti sei liberato dalla noia dei libri e delle scuole, lo devi a me, ai miei consigli, alle mie premure, ne convieni? Non vi sono che i veri amici che sappiano rendere di questi grandi favori.
 – È vero, Lucignolo! Se oggi io sono un ragazzo veramente contento, è tutto merito tuo. E il maestro, invece, sai che cosa mi diceva, parlando di te? Mi diceva sempre: «Non praticare quella birba di Lucignolo perché Lucignolo è un cattivo compagno e non può consigliarti altro che a far del male!...».
 – Povero maestro! – replicò l’altro tentennando il capo. – Lo so purtroppo che mi aveva a noia e che si divertiva sempre a calunniarmi, ma io sono generoso e gli perdono!
 – Anima grande! – disse Pinocchio, abbracciando affettuosamente l’amico e dandogli un bacio in mezzo agli occhi.
@@ -1585,7 +1585,7 @@ La Marmottina alzò la zampa destra davanti: e dopo aver tastato il polso di Pin
 – Purtroppo è così! E ora i pianti sono inutili. Bisognava pensarci prima!
 – Ma la colpa non è mia: la colpa, credilo, Marmottina, è tutta di Lucignolo!...
 – E chi è questo Lucignolo!...
-– Un mio compagno di scuola. Io volevo tornare a casa: io volevo essere ubbidiente: io volevo seguitare a studiare e a farmi onore... ma Lucignolo mi disse: «Perché vuoi annoiarti a studiare? Perché vuoi andare alla scuola? Vieni piuttosto con me, nel Paese dei Balocchi: lì non studieremo più: lì ci divertiremo dalla mattina alla sera e staremo sempre allegri».
+– Un mio compagno di scuola. Io volevo Volvere a casa: io volevo essere ubbidiente: io volevo seguitare a studiare e a farmi onore... ma Lucignolo mi disse: «Perché vuoi annoiarti a studiare? Perché vuoi andare alla scuola? Vieni piuttosto con me, nel Paese dei Balocchi: lì non studieremo più: lì ci divertiremo dalla mattina alla sera e staremo sempre allegri».
 – E perché seguisti il consiglio di quel falso amico? di quel cattivo compagno?
 – Perché?... Perché, Marmottina mia, io sono un burattino senza giudizio... e senza cuore. Oh! se avessi avuto un zinzino di cuore, non avrei mai abbandonato quella buona Fata, che mi voleva bene come una mamma e che aveva fatto tanto per me!... E a quest’ora non sarei più un burattino... ma sarei invece un ragazzino a modo, come ce n’è tanti! Oh!... ma se incontro Lucignolo, guai a lui! Gliene voglio dire un sacco e una sporta!
 E fece l’atto di volere uscire. Ma quando fu sulla porta, si ricordò che aveva gli orecchi d’asino, e vergognandosi di mostrarli al pubblico, che cosa inventò?... Prese un gran berretto di cotone, e, ficcatoselo in testa, se lo ingozzò fin sotto la punta del naso.
@@ -1720,7 +1720,7 @@ Ma quale fu la sua disperazione quando, voltandosi in su una seconda volta, vide
 Si sentì come morire: gli occhi gli si empirono di lacrime e cominciò a piangere dirottamente. Nessuno però se ne accorse e, meno degli altri, il direttore, il quale, anzi, schioccando la frusta, gridò:
 – Da bravo, Pinocchio! Ora farete vedere a questi signori con quanta grazia sapete saltare i cerchi.
 Pinocchio si provò due o tre volte: ma ogni volta che arrivava davanti al cerchio, invece di attraversarlo, ci passava più comodamente di sotto. Alla fine spiccò un salto e l’attraversò: ma le gambe di dietro gli rimasero disgraziatamente impigliate nel cerchio: motivo per cui ricadde in terra dall’altra parte tutto in un fascio.
-Quando si rizzò, era azzoppito, e a malapena poté ritornare alla scuderia.
+Quando si rizzò, era azzoppito, e a malapena poté riVolvere alla scuderia.
 – Fuori Pinocchio! Vogliamo il ciuchino! Fuori il ciuchino! – gridavano i ragazzi dalla platea, impietositi e commossi al tristissimo caso.
 Ma il ciuchino per quella sera non si fece rivedere.
 La mattina dopo il veterinario, ossia il medico delle bestie, quando l’ebbe visitato, dichiarò che sarebbe rimasto zoppo per tutta la vita.
@@ -1819,7 +1819,7 @@ E più andava avanti, e più il chiarore si faceva rilucente e distinto: finché
 A quella vista il povero Pinocchio ebbe un’allegrezza così grande e così inaspettata, che ci mancò un ette non cadesse in delirio. Voleva ridere, voleva piangere, voleva dire un monte di cose; e invece mugolava confusamente e balbettava delle parole tronche e sconclusionate. Finalmente gli riuscì di cacciar fuori un grido di gioia e spalancando le braccia e gettandosi al collo del vecchietto, cominciò a urlare:
 – Oh! babbino mio! finalmente vi ho ritrovato! Ora poi non vi lascio più, mai più, mai più!
 – Dunque gli occhi mi dicono il vero? – replicò il vecchietto stropicciandosi gli occhi, – Dunque tu sé proprio il mi’ caro Pinocchio?
-– Sì, sì, sono io, proprio io! E voi mi avete digià perdonato, non è vero? Oh! babbino mio, come siete buono!... e pensare che io, invece... Oh! ma se sapeste quante disgrazie mi son piovute sul capo e quante cose mi son andate per traverso! Figuratevi che il giorno che voi, povero babbino, col vendere la vostra casacca mi compraste l’Abbecedario per andare a scuola, io scappai a vedere i burattini, e il burattinaio mi voleva mettere sul fuoco perché gli cocessi il montone arrosto, che fu quello poi che mi dette cinque monete d’oro, perché le portassi a voi, ma io trovai la Volpe e il Gatto, che mi condussero all’osteria del Gambero Rosso dove mangiarono come lupi, e partito solo di notte incontrai gli assassini che si messero a corrermi dietro, e io via, e loro dietro, e io via e loro sempre dietro, e io via, finché m’impiccarono a un ramo della Quercia grande, dovecché la bella Bambina dai capelli turchini mi mandò a prendere con una carrozzina, e i medici, quando m’ebbero visitato, dissero subito: «Se non è morto, è segno che è sempre vivo», e allora mi scappò detto una bugia, e il naso cominciò a crescermi e non mi passava più dalla porta di camera, motivo per cui andai con la Volpe e col Gatto a sotterrare le quattro monete d’oro, che una l’avevo spesa all’osteria, e il pappagallo si messe a ridere, e viceversa di duemila monete non trovai più nulla, la quale il giudice quando seppe che ero stato derubato, mi fece subito mettere in prigione, per dare una soddisfazione ai ladri, di dove, col venir via, vidi un bel grappolo d’uva in un campo, che rimasi preso alla tagliola e il contadino di santa ragione mi messe il collare da cane perché facessi la guardia al pollaio, che riconobbe la mia innocenza e mi lasciò andare, e il Serpente, colla coda che gli fumava, cominciò a ridere e gli si strappò una vena sul petto e così ritornai alla Casa della bella Bambina, che era morta, e il Colombo vedendo che piangevo mi disse: «Ho visto il tu’ babbo che si fabbricava una barchettina per venirti a cercare», e io gli dissi: «Oh! se avessi l’ali anch’io», e lui mi disse: «Vuoi venire dal tuo babbo?», e io gli dissi: «Magari! ma chi mi ci porta», e lui mi disse: «Ti ci porto io», e io gli dissi: «Come?», e lui mi disse: «Montami sulla groppa», e così abbiamo volato tutta la notte, e poi la mattina tutti i pescatori che guardavano verso il mare mi dissero: «C’è un pover’uomo in una barchetta che sta per affogare», e io da lontano vi riconobbi subito, perché me lo diceva il core, e vi feci cenno di tornare alla spiaggia...
+– Sì, sì, sono io, proprio io! E voi mi avete digià perdonato, non è vero? Oh! babbino mio, come siete buono!... e pensare che io, invece... Oh! ma se sapeste quante disgrazie mi son piovute sul capo e quante cose mi son andate per traverso! Figuratevi che il giorno che voi, povero babbino, col vendere la vostra casacca mi compraste l’Abbecedario per andare a scuola, io scappai a vedere i burattini, e il burattinaio mi voleva mettere sul fuoco perché gli cocessi il montone arrosto, che fu quello poi che mi dette cinque monete d’oro, perché le portassi a voi, ma io trovai la Volpe e il Gatto, che mi condussero all’osteria del Gambero Rosso dove mangiarono come lupi, e partito solo di notte incontrai gli assassini che si messero a corrermi dietro, e io via, e loro dietro, e io via e loro sempre dietro, e io via, finché m’impiccarono a un ramo della Quercia grande, dovecché la bella Bambina dai capelli turchini mi mandò a prendere con una carrozzina, e i medici, quando m’ebbero visitato, dissero subito: «Se non è morto, è segno che è sempre vivo», e allora mi scappò detto una bugia, e il naso cominciò a crescermi e non mi passava più dalla porta di camera, motivo per cui andai con la Volpe e col Gatto a sotterrare le quattro monete d’oro, che una l’avevo spesa all’osteria, e il pappagallo si messe a ridere, e viceversa di duemila monete non trovai più nulla, la quale il giudice quando seppe che ero stato derubato, mi fece subito mettere in prigione, per dare una soddisfazione ai ladri, di dove, col venir via, vidi un bel grappolo d’uva in un campo, che rimasi preso alla tagliola e il contadino di santa ragione mi messe il collare da cane perché facessi la guardia al pollaio, che riconobbe la mia innocenza e mi lasciò andare, e il Serpente, colla coda che gli fumava, cominciò a ridere e gli si strappò una vena sul petto e così ritornai alla Casa della bella Bambina, che era morta, e il Colombo vedendo che piangevo mi disse: «Ho visto il tu’ babbo che si fabbricava una barchettina per venirti a cercare», e io gli dissi: «Oh! se avessi l’ali anch’io», e lui mi disse: «Vuoi venire dal tuo babbo?», e io gli dissi: «Magari! ma chi mi ci porta», e lui mi disse: «Ti ci porto io», e io gli dissi: «Come?», e lui mi disse: «Montami sulla groppa», e così abbiamo volato tutta la notte, e poi la mattina tutti i pescatori che guardavano verso il mare mi dissero: «C’è un pover’uomo in una barchetta che sta per affogare», e io da lontano vi riconobbi subito, perché me lo diceva il core, e vi feci cenno di Volvere alla spiaggia...
 – Ti riconobbi anch’io, – disse Geppetto, – e sarei volentieri tornato alla spiaggia: ma come fare? Il mare era grosso e un cavallone m’arrovesciò la barchetta. Allora un orribile Pesce-cane che era lì vicino, appena m’ebbe visto nell’acqua corse subito verso di me, e tirata fuori la lingua, mi prese pari pari, e m’inghiottì come un tortellino di Bologna.
 – E quant’è che siete chiuso qui dentro? – domandò Pinocchio.
 – Da quel giorno in poi, saranno oramai due anni: due anni, Pinocchio mio, che mi son parsi due secoli!
