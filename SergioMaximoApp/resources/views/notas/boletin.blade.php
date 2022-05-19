@@ -10,10 +10,14 @@
                 @if ($alumno->ciclo == $m->ciclos->nombre)
                     <li class="mb-3 mt-3">{{$m->nombre}} - {{$m->comentario}}</li>
                         @foreach ($arrayUFs as $key => $u)
-                            @if ($u->modulo_id==$m->id)
-                                <div class="mt-3 mb-3">
-                                    <span>{{$u->nombre}} -- Nota: {{$alumno->pivot->nota}}</span><br>
-                                </div>
+                            @if ($u->modulo_id == $m->id)
+                                @foreach ($alumno->ufs as $uf)
+                                    @if($uf->id == $u->id)
+                                        <div class="mt-3 mb-3">
+                                            <span>{{$u->nombre}} - Nota: {{$uf->pivot->nota}}</span><br>
+                                        </div>
+                                    @endif
+                                @endforeach
                             @endif
                         @endforeach
                 @endif

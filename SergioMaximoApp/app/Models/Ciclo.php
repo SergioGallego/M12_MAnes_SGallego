@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ciclo extends Model
 {
 
-    public function modulo(){
+    public function modulos(){
         return $this->hasMany(Modulo::class, 'id');
     }
 
