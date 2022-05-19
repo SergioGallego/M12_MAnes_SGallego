@@ -12,7 +12,7 @@
                         @foreach ($arrayUFs as $key => $u)
                             @if ($u->modulo_id==$m->id)
                                 <div class="mt-3 mb-3">
-                                    <span>{{$u->nombre}} -- Nota: </span><br>
+                                    <span>{{$u->nombre}} -- Nota: {{$alumno->pivot->nota}}</span><br>
                                 </div>
                             @endif
                         @endforeach

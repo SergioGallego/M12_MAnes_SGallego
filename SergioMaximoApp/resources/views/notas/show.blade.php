@@ -49,9 +49,6 @@
                     </x-jet-button>
                 @endif
         </form><br>
-        
-        
-
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop

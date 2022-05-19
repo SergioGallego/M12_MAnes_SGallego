@@ -15,6 +15,7 @@
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
+                <td class="cabecera"><b>Apellidos</b></td>
                 <td class="cabecera"><b>Ciclo</b></td>
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
