@@ -15,19 +15,96 @@ class ModuloSeeder extends Seeder
      */
     private $arrayModulo = array(
         array(
+            'nombre' => 'M1',
+            'comentario' => '',
+            'profesor' => '2',
+            'ciclo' => '1',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M2',
+            'comentario' => '',
+            'profesor' => '2',
+            'ciclo' => '1',
+            'updated_by' => 1
+        ),
+        array(
             'nombre' => 'M3',
             'comentario' => 'Programacio',
-            'profesor' => '3',
+            'profesor' => '6',
             'ciclo' => '1',
             'updated_by' => 1
         ),
         array(
             'nombre' => 'M5',
             'comentario' => 'Entorns de desenvolupament',
+            'profesor' => '5',
+            'ciclo' => '1',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M9',
+            'comentario' => '',
+            'profesor' => '4',
+            'ciclo' => '2',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M5',
+            'comentario' => '',
+            'profesor' => '5',
+            'ciclo' => '2',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M3',
+            'comentario' => '',
             'profesor' => '2',
             'ciclo' => '2',
             'updated_by' => 1
-        )
+        ),
+        array(
+            'nombre' => 'M2',
+            'comentario' => '',
+            'profesor' => '4',
+            'ciclo' => '2',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M2',
+            'comentario' => '',
+            'profesor' => '4',
+            'ciclo' => '3',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M7',
+            'comentario' => '',
+            'profesor' => '5',
+            'ciclo' => '3',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M1',
+            'comentario' => '',
+            'profesor' => '5',
+            'ciclo' => '3',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M8',
+            'comentario' => '',
+            'profesor' => '2',
+            'ciclo' => '3',
+            'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'M6',
+            'comentario' => '',
+            'profesor' => '4',
+            'ciclo' => '3',
+            'updated_by' => 1
+        ),
     );
 
     public function seedModulo(){

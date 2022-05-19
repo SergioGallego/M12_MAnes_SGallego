@@ -29,8 +29,29 @@ class UserSeeder extends Seeder
         array(
             'name' => 'Maximo',
 			'email' => 'maximo@gmail.com',
-            'estado' => 'Inactivo',
+            'estado' => 'Activo',
             'password' => 'maximomaximo',
+            'role_id' => 2
+        ),
+        array(
+            'name' => 'Jordi',
+			'email' => 'jordi@gmail.com',
+            'estado' => 'Activo',
+            'password' => 'jordijordi',
+            'role_id' => 2
+        ),
+        array(
+            'name' => 'Didac',
+			'email' => 'didac@gmail.com',
+            'estado' => 'Activo',
+            'password' => 'didacdidac',
+            'role_id' => 2
+        ),
+        array(
+            'name' => 'Ramon',
+			'email' => 'ramon@gmail.com',
+            'estado' => 'Activo',
+            'password' => 'ramonramon',
             'role_id' => 2
         ),
     );
