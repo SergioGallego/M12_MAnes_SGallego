@@ -30,14 +30,14 @@ class AlumnoUfController extends Controller
     }
 
     public function update(Request $request){
-        
-        AlumnoUf::where(['uf_id' => 1, 'alumno_id' => 2])->update(['nota' => 5]);
-        return redirect()->back();
-        //$name = $request->name;
+        $notas = $request->notas;
 
-        //for($i=0; $i < count($name); $i++){
-           
-        //}
+        for($i=0; $i < count($notas); $i++){
+            $datos = explode("_", $notas[$i]);
+            AlumnoUf::where(['uf_id' => $datos[1], 'alumno_id' => $datos[0]])->update(['nota' => $datos[2]]);
+        }
+
+        return redirect()->back();
     }
 
 }

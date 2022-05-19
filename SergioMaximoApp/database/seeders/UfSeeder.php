@@ -28,6 +28,13 @@ class UfSeeder extends Seeder
             'horas' => 100,
             'modulo_id' => 2,
             'updated_by' => 1
+        ),
+        array(
+            'nombre' => 'UF5',
+            'modulo' => 'M3',
+            'horas' => 100,
+            'modulo_id' => 1,
+            'updated_by' => 1
         )
     );
 

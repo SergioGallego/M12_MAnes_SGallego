@@ -22,6 +22,7 @@
                 <tr>
                     <td style="padding: 10px">{{$a->id}}</td>
                     <td style="padding: 10px">{{$a->nombre}}</td>
+                    <td style="padding: 10px">{{$a->apellidos}}</td>
                     <td style="padding: 10px">{{$a->ciclo}}</td>
                     <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
                         <a href="{{route('boletinNotas', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Boletín</a>
