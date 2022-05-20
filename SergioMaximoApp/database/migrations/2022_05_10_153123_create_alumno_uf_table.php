@@ -22,7 +22,8 @@ class CreateAlumnoUfTable extends Migration
                   ->constrained('alumnos')
                   ->cascadeOnDelete()
                   ->cascadeOnUpdate();
-            $table->integer('nota');
+            $table->integer('nota')
+                  ->nullable();
             $table->primary(['uf_id', 'alumno_id']);
             $table->timestamps();
         });

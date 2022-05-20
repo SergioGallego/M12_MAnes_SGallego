@@ -25,6 +25,26 @@ class NotasSeeder extends Seeder
             'nota' => '7',
         ),
         array(
+            'uf_id' => '1',
+            'alumno_id' => '3',
+            'nota' => '7',
+        ),
+        array(
+            'uf_id' => '2',
+            'alumno_id' => '3',
+            'nota' => '7',
+        ),
+        array(
+            'uf_id' => '3',
+            'alumno_id' => '3',
+            'nota' => null,
+        ),
+        array(
+            'uf_id' => '4',
+            'alumno_id' => '3',
+            'nota' => null,
+        ),
+        array(
             'uf_id' => '3',
             'alumno_id' => '1',
             'nota' => '9',

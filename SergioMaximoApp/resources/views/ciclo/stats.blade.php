@@ -27,10 +27,6 @@
                     <table border="1" style="width: 100%">      
                         <tr>
                             <td class="cabecera"><b>Alumno</b></td>
-<<<<<<< HEAD
-                            @foreach($m->ufs as $key => $u)
-                                <td class="cabecera"><b>{{$u->nombre}} [{{$u->horas}} horas]</b></td>
-=======
                                 @php
                                     $contadorUfs = 0;
                                 @endphp
@@ -41,7 +37,6 @@
                                     @endphp
                                     <td class="cabecera"><b>{{$u->nombre}} [{{$u->horas}} horas]</b></td>
                                 @endif
->>>>>>> 245467513bc071f0b83b826bb341f4131682f29a
                             @endforeach
                             <td class="cabecera"><b>Aprobado actual</b></td>
                             <td class="cabecera"><b>Aprobado final</b></td>
