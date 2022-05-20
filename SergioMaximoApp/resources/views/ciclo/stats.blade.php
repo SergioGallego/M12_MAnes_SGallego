@@ -12,9 +12,6 @@
             </div>
         </div>
     </div>
-    @foreach($m->ufs as $key => $u)
-            {{$u->nombre}}
-        @endforeach
     @foreach($arrayModulos as $key => $m)
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -30,36 +27,56 @@
                     <table border="1" style="width: 100%">      
                         <tr>
                             <td class="cabecera"><b>Alumno</b></td>
+<<<<<<< HEAD
                             @foreach($m->ufs as $key => $u)
                                 <td class="cabecera"><b>{{$u->nombre}} [{{$u->horas}} horas]</b></td>
+=======
+                                @php
+                                    $contadorUfs = 0;
+                                @endphp
+                            @foreach($arrayUfs as $u)
+                                @if($u->modulo_id == $m->id)
+                                    @php
+                                        $contadorUfs = $contadorUfs + 1;
+                                    @endphp
+                                    <td class="cabecera"><b>{{$u->nombre}} [{{$u->horas}} horas]</b></td>
+                                @endif
+>>>>>>> 245467513bc071f0b83b826bb341f4131682f29a
                             @endforeach
+                            <td class="cabecera"><b>Aprobado actual</b></td>
+                            <td class="cabecera"><b>Aprobado final</b></td>
                         </tr>
                         @foreach($arrayAlumnos as $key => $a)
-                            @if($modulo->ciclos->nombre == $a->ciclo)
+                            @if($m->ciclos->nombre == $a->ciclo)
                                 <tr>
                                     <td>{{$a->nombre}} {{$a->apellidos}}</td>
+                                    @php 
+                                        $totalActual = 0;
+                                        $aprobadasAlumno = 0;
+                                    @endphp
                                     @foreach($a->ufs as $u)
-                                        @if($u->modulo_id == $modulo->id)
+                                        @if($u->modulo_id == $m->id)
+                                            @php 
+                                                if(is_null($u->pivot->nota) == false)
+                                                    $totalActual = $totalActual + 1;
+                                                if($u->pivot->nota >= 5)
+                                                    $aprobadasAlumno = $aprobadasAlumno + 1;
+                                            @endphp
                                             <td> 
-                                                @if(auth()->user()->role_id == 2)
-                                                    <select name="notas[]" class="col-md-12" style="text-align: center">{{$u->pivot->nota}}
-                                                        <option value="{{$a->id . "_" . $u->id . "_1"}}" @if ($u->pivot->nota == 1) selected @endif>1</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_2"}}" @if ($u->pivot->nota == 2) selected @endif>2</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_3"}}" @if ($u->pivot->nota == 3) selected @endif>3</option>        
-                                                        <option value="{{$a->id . "_" . $u->id . "_4"}}" @if ($u->pivot->nota == 4) selected @endif>4</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_5"}}" @if ($u->pivot->nota == 5) selected @endif>5</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_6"}}" @if ($u->pivot->nota == 6) selected @endif>6</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_7"}}" @if ($u->pivot->nota == 7) selected @endif>7</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_8"}}" @if ($u->pivot->nota == 8) selected @endif>8</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_9"}}" @if ($u->pivot->nota == 9) selected @endif>9</option>  
-                                                        <option value="{{$a->id . "_" . $u->id . "_10"}}" @if ($u->pivot->nota == 10) selected @endif>10</option>
-                                                    </select>
-                                                @else
-                                                    {{$u->pivot->nota}}
-                                                @endif
+                                                {{$u->pivot->nota}}
                                             </td>
                                         @endif
                                     @endforeach
+                                    <td> 
+                                        @php 
+                                            echo @number_format(($aprobadasAlumno * 100 / $totalActual)) . "%";
+                                        @endphp
+                                    </td>
+                                    <td> 
+                                        @php 
+                                            echo @number_format(($aprobadasAlumno * 100 / $contadorUfs)) . "%";
+                                        @endphp
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
