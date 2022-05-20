@@ -22,7 +22,7 @@
                                 @if($u->modulo_id == $modulo->id)
                                     <td> 
                                         @if(auth()->user()->role_id == 2)
-                                            <select name="notas[]" class="col-md-12" style="text-align: center">{{$u->pivot->nota}}
+                                            <select name="notas[]" class="col-md-12" style="text-align: center">
                                                 <option value="{{$a->id . "_" . $u->id . "_1"}}" @if ($u->pivot->nota == 1) selected @endif>1</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_2"}}" @if ($u->pivot->nota == 2) selected @endif>2</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_3"}}" @if ($u->pivot->nota == 3) selected @endif>3</option>        
