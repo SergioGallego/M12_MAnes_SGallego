@@ -8,11 +8,15 @@
             <form method="POST" action="{{ route('updateNotas') }}">
                 @csrf
                 @method('PUT')        
+                <?php $horasTotales = 0; $notaMedia = 0;?>
                 <tr>
                     <td class="cabecera"><b>Alumno</b></td>
                     @foreach($arrayUfs as $key => $u)
-                        <td class="cabecera"><b>{{$u->nombre}} [{{$u->horas}} horas]</b></td>
+                        <td class="cabecera"><b>{{$u->nombre}}</b></td>
+                        <td class="cabecera"><b>Horas</b></td>
                     @endforeach
+                    <td class="cabecera"><b>Nota Final</b></td>
+                    <td class="cabecera"><b>Horas totales</b></td>
                 </tr>
                 @foreach($arrayAlumnos as $key => $a)
                     @if($modulo->ciclos->nombre == $a->ciclo)
@@ -38,8 +42,13 @@
                                             {{$u->pivot->nota}}
                                         @endif
                                     </td>
+                                    <td><b>{{$u->horas}}</b></td>
+                                    <?php $notaMedia += $u->pivot->nota?>
+                                    <?php $horasTotales += $u->horas; ?>
                                 @endif
                             @endforeach
+                            <td><b>{{$notaMedia}}</b></td>
+                            <td><b>{{$horasTotales}}</b></td>
                         </tr>
                     @endif
                 @endforeach

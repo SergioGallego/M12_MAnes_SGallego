@@ -25,7 +25,6 @@ class AlumnoUfController extends Controller
         $modulo = Modulo::findOrFail($id);
         $alumnos = Alumno::all();
         $ufs = DB::table('ufs')->where('modulo_id', $id)->get();
-        
         return view('notas.show', array('arrayAlumnos'=>$alumnos, 'modulo'=>$modulo, 'arrayUfs'=>$ufs));
     }
 

@@ -39,6 +39,11 @@ class NotasSeeder extends Seeder
             'alumno_id' => '1',
             'nota' => '6',
         ),
+        array(
+            'uf_id' => '4',
+            'alumno_id' => '1',
+            'nota' => '6',
+        ),
     );
 
     public function seedModulo(){
