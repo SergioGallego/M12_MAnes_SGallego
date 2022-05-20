@@ -8,7 +8,7 @@
             <form method="POST" action="{{ route('updateNotas') }}">
                 @csrf
                 @method('PUT')        
-                <?php $horasTotales = 0; $notaMedia = 0;?>
+                <?php $horasTotales = 0; $notaMedia = 0; $contador = 0;?>
                 <tr>
                     <td class="cabecera"><b>Alumno</b></td>
                     @foreach($arrayUfs as $key => $u)
@@ -43,11 +43,11 @@
                                         @endif
                                     </td>
                                     <td><b>{{$u->horas}}</b></td>
-                                    <?php $notaMedia += $u->pivot->nota?>
+                                    <?php $notaMedia += $u->pivot->nota; $contador++?>
                                     <?php $horasTotales += $u->horas; ?>
                                 @endif
                             @endforeach
-                            <td><b>{{$notaMedia}}</b></td>
+                            <td><b>{{($notaMedia / $contador)}}</b></td>
                             <td><b>{{$horasTotales}}</b></td>
                         </tr>
                     @endif
