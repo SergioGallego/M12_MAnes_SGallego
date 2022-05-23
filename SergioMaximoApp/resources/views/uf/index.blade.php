@@ -29,7 +29,7 @@
                             @if ($p->id == $modulo->profesor)
                                 <td style="padding: 10px">{{$p->name}}</td>                        
                             @endif
-                        @endforeach
+                        @endforeachUndefined property: stdClass::$profesor
                         <td style="padding: 10px">{{$u->modulo}}</td>
                         <td style="padding: 10px">{{$u->horas}}</td>
                         <td style="padding: 10px"><a href="{{route('showUf', $u->id)}}" style="color: #FF6701">Detalles...</a>
