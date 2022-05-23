@@ -55,6 +55,7 @@
                                     <td>{{$a->nombre}} {{$a->apellidos}}</td>
                                     @php 
                                         $totalActual = 0;
+                                        $aprobadasActual = 0;
                                         $aprobadasAlumno = 0;
                                         $contadorAlumnos = $contadorAlumnos + 1;
 
@@ -63,12 +64,12 @@
                                         @if($u->modulo_id == $m->id)
                                             @php 
                                                 if(is_null($u->pivot->nota) == false){
-                                                    $totalActual = $totalActual + 1;
-                                                    
+                                                    $totalActual++;
                                                 }
                                                 if($u->pivot->nota >= 5){
-                                                    $aprobadasAlumno = $aprobadasAlumno + 1;
+                                                    $aprobadasAlumno++;
                                                 }
+                                                $aprobadasActual = @number_format(($aprobadasAlumno * 100 / $totalActual));
                                             @endphp
                                             <td> 
                                                 {{$u->pivot->nota}}
@@ -77,14 +78,14 @@
                                     @endforeach
                                     @php
                                         if (@number_format(($aprobadasAlumno * 100 / $contadorUfs)) >= 50) {
-                                            $aprobadosTotal = $aprobadosTotal + 1;
-                                        } else{
-                                            $suspendidosTotal = $suspendidosTotal + 1;
+                                            $aprobadosTotal++;
+                                        } else {
+                                            $suspendidosTotal++;
                                         }
                                     @endphp
                                     <td> 
-                                        @php 
-                                            echo @number_format(($aprobadasAlumno * 100 / $totalActual)) . "%";
+                                        @php
+                                            echo $aprobadasActual . "%"
                                         @endphp
                                     </td>
                                     <td> 
