@@ -8,7 +8,7 @@
             <form method="POST" action="{{ route('updateNotas') }}">
                 @csrf
                 @method('PUT')        
-                @php $horasTotales = 0; $contador = 0; @endphp
+                @php $horasTotales = 0; $contador = 0; $contadorSinNotas = 0; @endphp
                 <tr>
                     <td class="cabecera"><b>Alumno</b></td>
                     @foreach($arrayUfs as $key => $u)
@@ -48,16 +48,51 @@
                                                 <option value="{{$a->id . "_" . $u->id . "_10"}}" @if ($u->pivot->nota == 10) selected @endif>10</option>
                                             </select>
                                         @else
-                                            {{$u->pivot->nota}}
+                                            @if ($u->pivot->nota == 0)
+                                                NE
+                                            @else
+                                                {{$u->pivot->nota}}
+                                            @endif
                                         @endif
                                     </td>
                                     <td><b>{{$u->horas}}</b></td>
-                                    <?php $notaMedia += $u->pivot->nota*$u->horas; $contador++;?>
+                                    @php $notaMedia += $u->pivot->nota*$u->horas;@endphp
                                     @if ($u->pivot->nota == 0)
                                     @else
-                                        <?php $horasTotalesHechas += $u->horas; ?>
+                                        @php $horasTotalesHechas += $u->horas;@endphp
                                     @endif
                                 @endif
+                                @php
+                                    $contador++;
+                                @endphp
+                            @endforeach
+                            @foreach($arrayUfs as $key => $uf)
+                            @if ($contador<=$contadorSinNotas)
+                                <td>
+                                    @if(auth()->user()->role_id == 2)
+                                    <select name="notas[]" class="col-md-12" style="text-align: center">
+                                        <option value="{{$a->id . "_" . $uf->id . "_0"}}" selected>NE</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_1"}}">1</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_2"}}">2</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_3"}}">3</option>        
+                                        <option value="{{$a->id . "_" . $uf->id . "_4"}}">4</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_5"}}">5</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_6"}}">6</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_7"}}">7</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_8"}}">8</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_9"}}">9</option>  
+                                        <option value="{{$a->id . "_" . $uf->id . "_10"}}">10</option>
+                                    </select>
+                                    @else
+                                        NE
+                                    @endif
+                                </td>
+                                <td><b>{{$uf->horas}}</b></td>
+                            @else
+                                @php
+                                    $contadorSinNotas++;
+                                @endphp
+                            @endif
                             @endforeach
                             <td><b>{{@number_format($notaMedia / $horasTotales)}}</b></td>
                             <td><b>{{$horasTotalesHechas}}</b></td>
@@ -66,8 +101,8 @@
                     @endif
                 @endforeach
             </table>
-            @if(auth()->user()->role_id == 1 || (auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor))
             <a class="btn block mt-1 w-full" href="{{route('moduloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>&nbsp
+            @if(auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor))
                     <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white; float: left">
                         {{ __('Guardar cambios') }}
                     </x-jet-button>

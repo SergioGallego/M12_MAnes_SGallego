@@ -30,10 +30,17 @@ class AlumnoUfController extends Controller
 
     public function update(Request $request){
         $notas = $request->notas;
-
         for($i=0; $i < count($notas); $i++){
             $datos = explode("_", $notas[$i]);
-            AlumnoUf::where(['uf_id' => $datos[1], 'alumno_id' => $datos[0]])->update(['nota' => $datos[2]]);
+            if((AlumnoUf::where(['alumno_id' => $datos[0]])->count() == 0)){
+                $nota = new AlumnoUf;
+                $nota->uf_id=$datos[1];
+                $nota->alumno_id=$datos[0];
+                $nota->nota=$datos[2];
+                $nota->save();
+            } else {
+                AlumnoUf::where(['uf_id' => $datos[1], 'alumno_id' => $datos[0]])->update(['nota' => $datos[2]]);
+            }
         }
 
         return redirect()->back();
