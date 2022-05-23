@@ -8,17 +8,25 @@
             <form method="POST" action="{{ route('updateNotas') }}">
                 @csrf
                 @method('PUT')        
-                <?php $horasTotales = 0; $notaMedia = 0; $contador = 0; $horasTotalesHechas = 0;?>
+                @php $horasTotales = 0; $contador = 0; @endphp
                 <tr>
                     <td class="cabecera"><b>Alumno</b></td>
                     @foreach($arrayUfs as $key => $u)
                         <td class="cabecera"><b>{{$u->nombre}}</b></td>
                         <td class="cabecera"><b>Horas</b></td>
+                        @php 
+                            $horasTotales += $u->horas;
+                        @endphp
                     @endforeach
                     <td class="cabecera"><b>Nota Final</b></td>
+                    <td class="cabecera"><b>Horas cursadas</b></td>
                     <td class="cabecera"><b>Horas totales</b></td>
                 </tr>
                 @foreach($arrayAlumnos as $key => $a)
+                @php
+                     $horasTotalesHechas = 0;
+                     $notaMedia = 0;
+                @endphp
                     @if($modulo->ciclos->nombre == $a->ciclo)
                         <tr>
                             <td>{{$a->nombre}} {{$a->apellidos}}</td>
@@ -44,15 +52,15 @@
                                     </td>
                                     <td><b>{{$u->horas}}</b></td>
                                     <?php $notaMedia += $u->pivot->nota*$u->horas; $contador++;?>
-                                    <?php $horasTotales += $u->horas; ?>
                                     @if ($u->pivot->nota == NULL)
                                     @else
                                         <?php $horasTotalesHechas += $u->horas; ?>
                                     @endif
                                 @endif
                             @endforeach
-                            <td><b>{{($notaMedia / $horasTotales)}}</b></td>
+                            <td><b>{{@number_format($notaMedia / $horasTotales)}}</b></td>
                             <td><b>{{$horasTotalesHechas}}</b></td>
+                            <td><b>{{$horasTotales}}</b></td>
                         </tr>
                     @endif
                 @endforeach

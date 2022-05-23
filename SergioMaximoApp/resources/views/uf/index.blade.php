@@ -21,7 +21,7 @@
                 <td class="cabecera"><b>Acciones</b></td>
             </tr>
             @foreach ($arrayUfs as $key => $u)
-                @if(auth()->user()->role_id == 1 || auth()->user()->id == $u->profesor)
+                @if(auth()->user()->role_id == 1 || auth()->user()->id == $modulo->profesor)
                     <tr>
                         <td style="padding: 10px">{{$u->id}}</td>
                         <td style="padding: 10px">{{$u->nombre}}</td>
