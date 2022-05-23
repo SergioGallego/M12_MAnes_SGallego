@@ -41,7 +41,7 @@
                 @endif
             @endforeach
         </table><br>
-        <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
+        <a class="btn block mt-1 w-full"  href="{{ route('moduloIndex') }}" style="background-color: rgb(255,103,1); color: white">Volver</a>
     </div>
     @if (auth()->user()->role_id == 1)
         <div class="col-md-3">
