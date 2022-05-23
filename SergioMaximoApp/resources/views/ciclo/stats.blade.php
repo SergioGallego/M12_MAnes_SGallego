@@ -57,7 +57,6 @@
                                         $totalActual = 0;
                                         $aprobadasAlumno = 0;
                                         $contadorAlumnos = $contadorAlumnos + 1;
-
                                     @endphp
                                     @foreach($a->ufs as $u)
                                         @if($u->modulo_id == $m->id)

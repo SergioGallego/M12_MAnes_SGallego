@@ -6,23 +6,37 @@
 @section('content') 
     <div style="background-color: #ffe6cf" class="p-3 pr-5 d-flex justify-content-center col-md-12">
         <ul class="mt-5 mb-5">
+
             @foreach ($arrayModulos as $key => $m)
+                @php
+                    $horas = 0;
+                    $notaMedia = 0;
+                @endphp
                 @if ($alumno->ciclo == $m->ciclos->nombre)
                     <li class="mb-3 mt-3">{{$m->nombre}} - {{$m->comentario}}</li>
                         @foreach ($arrayUFs as $key => $u)
                             @if ($u->modulo_id == $m->id)
                                 @foreach ($alumno->ufs as $uf)
                                     @if($uf->id == $u->id)
+                                        @php 
+                                            $notaMedia += $uf->pivot->nota*$u->horas;
+                                        @endphp
                                         <div class="mt-3 mb-3">
-                                            <span>{{$u->nombre}} w- Nota: {{$uf->pivot->nota}}</span><br>
+                                            <span>{{$u->nombre}} - Nota: {{$uf->pivot->nota}}</span><br>
                                         </div>
                                     @endif
                                 @endforeach
+                                @php 
+                                    $horas += $u->horas;
+                                @endphp
                             @endif
+                            
                         @endforeach
+                    <b>Final:</b> {{@number_format($notaMedia / $horas)}}<br>
                 @endif
             @endforeach
-            <a class="btn block mt-1 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
+            <a class="btn block mt-3 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
+            <a class="btn block mt-3 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Descargar</a>
         </ul>
     </div>
     <script src="{{ asset('js/index.js') }}" defer></script>
