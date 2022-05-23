@@ -32,7 +32,7 @@ class AlumnoUfController extends Controller
         $notas = $request->notas;
         for($i=0; $i < count($notas); $i++){
             $datos = explode("_", $notas[$i]);
-            if((AlumnoUf::where(['alumno_id' => $datos[0]])->count() == 0)){
+            if((AlumnoUf::where(['alumno_id' => $datos[0], 'uf_id' => $datos[1]])->count() == 0)){
                 $nota = new AlumnoUf;
                 $nota->uf_id=$datos[1];
                 $nota->alumno_id=$datos[0];
