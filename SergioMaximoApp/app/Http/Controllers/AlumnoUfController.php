@@ -28,6 +28,10 @@ class AlumnoUfController extends Controller
         return view('notas.show', array('arrayAlumnos'=>$alumnos, 'modulo'=>$modulo, 'arrayUfs'=>$ufs));
     }
 
+    public function download($id){
+        
+    }
+
     public function update(Request $request){
         $notas = $request->notas;
         for($i=0; $i < count($notas); $i++){
