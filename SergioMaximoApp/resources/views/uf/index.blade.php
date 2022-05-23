@@ -21,7 +21,7 @@
                 <td class="cabecera"><b>Acciones</b></td>
             </tr>
             @foreach ($arrayUfs as $key => $u)
-                @if(auth()->user()->role_id == 1 || auth()->user()->id == $u->profesor)
+                @if(auth()->user()->role_id == 1 || auth()->user()->id == $modulo->profesor)
                     <tr>
                         <td style="padding: 10px">{{$u->id}}</td>
                         <td style="padding: 10px">{{$u->nombre}}</td>
@@ -29,7 +29,7 @@
                             @if ($p->id == $modulo->profesor)
                                 <td style="padding: 10px">{{$p->name}}</td>                        
                             @endif
-                        @endforeach
+                        @endforeachUndefined property: stdClass::$profesor
                         <td style="padding: 10px">{{$u->modulo}}</td>
                         <td style="padding: 10px">{{$u->horas}}</td>
                         <td style="padding: 10px"><a href="{{route('showUf', $u->id)}}" style="color: #FF6701">Detalles...</a>
