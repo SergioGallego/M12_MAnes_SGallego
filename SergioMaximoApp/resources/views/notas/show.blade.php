@@ -94,7 +94,11 @@
                                 @endphp
                             @endif
                             @endforeach
-                            <td><b>{{@number_format($notaMedia / $horasTotales)}}</b></td>
+                            @if ($notaMedia == 0)
+                                <td><b>NE</b></td>
+                            @else
+                                <td><b>{{@number_format($notaMedia / $horasTotales)}}</b></td>
+                            @endif
                             <td><b>{{$horasTotalesHechas}}</b></td>
                             <td><b>{{$horasTotales}}</b></td>
                         </tr>
@@ -102,7 +106,7 @@
                 @endforeach
             </table>
             <a class="btn block mt-1 w-full" href="{{route('moduloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>&nbsp
-            @if(auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor))
+            @if(auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor)
                     <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white; float: left">
                         {{ __('Guardar cambios') }}
                     </x-jet-button>
