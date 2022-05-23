@@ -14,7 +14,7 @@
                                 @foreach ($alumno->ufs as $uf)
                                     @if($uf->id == $u->id)
                                         <div class="mt-3 mb-3">
-                                            <span>{{$u->nombre}} - Nota: {{$uf->pivot->nota}}</span><br>
+                                            <span>{{$u->nombre}} w- Nota: {{$uf->pivot->nota}}</span><br>
                                         </div>
                                     @endif
                                 @endforeach
