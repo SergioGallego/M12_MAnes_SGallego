@@ -35,7 +35,7 @@
                                     <td> 
                                         @if(auth()->user()->role_id == 2)
                                             <select name="notas[]" class="col-md-12" style="text-align: center">
-                                                <option value="{{$a->id . "_" . $u->id . "_NULL"}}" @if ($u->pivot->nota == NULL) selected @endif>No evaluado</option>  
+                                                <option value="{{$a->id . "_" . $u->id . "_0"}}" @if ($u->pivot->nota == 0) selected @endif>NE</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_1"}}" @if ($u->pivot->nota == 1) selected @endif>1</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_2"}}" @if ($u->pivot->nota == 2) selected @endif>2</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_3"}}" @if ($u->pivot->nota == 3) selected @endif>3</option>        
@@ -53,7 +53,7 @@
                                     </td>
                                     <td><b>{{$u->horas}}</b></td>
                                     <?php $notaMedia += $u->pivot->nota*$u->horas; $contador++;?>
-                                    @if ($u->pivot->nota == NULL)
+                                    @if ($u->pivot->nota == 0)
                                     @else
                                         <?php $horasTotalesHechas += $u->horas; ?>
                                     @endif
