@@ -23,9 +23,9 @@
                     <td style="padding: 10px">{{$c->nombre}}</td>
                     <td style="padding: 10px">{{$c->descripcion}}</td>
                     <td style="padding: 10px"><a href="{{route('showCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
-                        <a href="{{route('statsCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701">Estadísticas</a>
+                        <a href="{{route('statsCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/stats.png" width="24px"/></a>
                         @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701">Borrar</a>
+                            <a href="{{route('destroyCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
                         @endif
                     </td>
                 </tr>
