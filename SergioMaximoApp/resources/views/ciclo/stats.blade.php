@@ -8,7 +8,7 @@
     <div class="accordion">
         <div class="card">
             <div class="card-header">
-                {{$ciclo->nombre}} - {{$ciclo->descripcion}}
+                <b>{{$ciclo->nombre}} - {{$ciclo->descripcion}}</b>
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
                   </button>
                 </h2>
               </div>
-              <div id="{{$m->id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div id="{{$m->id}}" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                     <table border="1" style="width: 100%">      
                         <tr>
@@ -102,5 +102,7 @@
             </div>
           </div>
     @endforeach
+    <a class="btn block mt-1 w-full" href="{{route('cicloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
 </div>
+<link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop
