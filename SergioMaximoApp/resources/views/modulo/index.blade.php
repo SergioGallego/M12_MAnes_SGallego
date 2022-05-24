@@ -26,7 +26,11 @@
                         <td style="padding: 10px">{{$m->id}}</td>
                         <td style="padding: 10px">{{$m->nombre}}</td>
                         <td style="padding: 10px">{{$m->comentario}}</td>
-                        <td style="padding: 10px">{{$m->users->name}}</td>
+                        @if ($m->profesor == null)
+                            <td style="padding: 10px">Sin profesor</td>
+                        @else
+                            <td style="padding: 10px">{{$m->users->name}}</td>
+                        @endif
                         <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
                         <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
                             <a href="{{route('showNotas', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Notas</a>
