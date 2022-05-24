@@ -4,8 +4,6 @@
 @stop
 @section('content')
 
-
-
     <div style="margin-right: auto; margin-left: auto; display: block" class="mt-5 mb-5">
         
         @if (session('status'))
@@ -27,6 +25,8 @@
                 <label for="password" value="{{ __('Password') }}" >
                 <input placeholder="Contraseña" id="password" class="mt-1 form-control" style="width: 170%"  type="password" name="password" required autocomplete="current-password" />
             </div>
+            {!! NoCaptcha::renderJs() !!}
+            {!! NoCaptcha::display() !!}
             @if ($errors->has('g-recaptcha-response'))
                 <span class="help-block">
                     <strong>{{ $errors->first('g-recaptcha-response') }}</strong>

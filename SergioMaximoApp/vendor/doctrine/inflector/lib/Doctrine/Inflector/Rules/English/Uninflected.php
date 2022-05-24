@@ -122,7 +122,6 @@ final class Uninflected
         yield new Pattern('Maltese');
         yield new Pattern('management');
         yield new Pattern('metadata');
-        yield new Pattern('mews');
         yield new Pattern('money');
         yield new Pattern('moose');
         yield new Pattern('mumps');
