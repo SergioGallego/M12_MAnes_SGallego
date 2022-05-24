@@ -32,12 +32,13 @@
                             <td style="padding: 10px">{{$m->users->name}}</td>
                         @endif
                         <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
-                        <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
-                            <a href="{{route('showNotas', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Notas</a>
-                            <a href="{{route('ufIndex', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Ver UFs</a>
+                        <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
+                            <a href="{{route('showNotas', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/notas.png" width="24px"/></a>
+                            <a href="{{route('ufIndex', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/uf.png" width="24px"/></a>
                             @if (auth()->user()->role_id == 1)
-                                <a href="{{route('destroyModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701">Borrar</a>
+                                <a href="{{route('destroyModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
                             @endif
+                            
                         </td>
                     </tr>
                 @endif

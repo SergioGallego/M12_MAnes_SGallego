@@ -9,6 +9,7 @@ use App\Models\Modulo;
 use App\Models\Uf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class AlumnoUfController extends Controller
 {
@@ -29,7 +30,6 @@ class AlumnoUfController extends Controller
     }
 
     public function download($id){
-        
     }
 
     public function update(Request $request){

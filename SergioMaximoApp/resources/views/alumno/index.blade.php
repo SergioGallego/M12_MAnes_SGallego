@@ -25,10 +25,10 @@
                     <td style="padding: 10px">{{$a->nombre}}</td>
                     <td style="padding: 10px">{{$a->apellidos}}</td>
                     <td style="padding: 10px">{{$a->ciclo}}</td>
-                    <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Detalles</a>
-                        <a href="{{route('boletinNotas', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Boletín</a>
+                    <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
+                        <a href="{{route('boletinNotas', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/boletin.png" width="24px"/></a>
                         @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701">Borrar</a>
+                            <a href="{{route('destroyAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/stats.png" width="24px"/></a>
                         @endif</td>
                 </tr>
             @endforeach
