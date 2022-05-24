@@ -3,6 +3,9 @@
     <h1 style="text-align: center">Login</h1>
 @stop
 @section('content')
+
+
+
     <div style="margin-right: auto; margin-left: auto; display: block" class="mt-5 mb-5">
         
         @if (session('status'))
@@ -24,6 +27,11 @@
                 <label for="password" value="{{ __('Password') }}" >
                 <input placeholder="Contraseña" id="password" class="mt-1 form-control" style="width: 170%"  type="password" name="password" required autocomplete="current-password" />
             </div>
+            @if ($errors->has('g-recaptcha-response'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                </span>
+            @endif
             
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
