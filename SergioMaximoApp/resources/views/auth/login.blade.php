@@ -27,11 +27,6 @@
             </div>
             {!! NoCaptcha::renderJs() !!}
             {!! NoCaptcha::display() !!}
-            @if ($errors->has('g-recaptcha-response'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                </span>
-            @endif
             
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
