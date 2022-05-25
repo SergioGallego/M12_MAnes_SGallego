@@ -32,7 +32,13 @@
                             @endif
                             
                         @endforeach
-                    <b>Final:</b> {{@number_format($notaMedia / $horas)}}<br>
+                        <br>
+                  
+                        <b>Final:</b> {{@number_format($notaMedia / $horas)}}<br>
+        
+                        <hr color="black">
+        
+                        <br>
                 @endif
             @endforeach
             <a class="btn block mt-3 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>

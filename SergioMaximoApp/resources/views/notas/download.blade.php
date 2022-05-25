@@ -1,11 +1,12 @@
 <div>
-    <h1>{{$alumno->nombre}} {{$alumno->apellidos}} - {{$alumno->ciclo}}</h1>
+    <h1 style="text-align: center">{{$alumno->nombre}} {{$alumno->apellidos}} - {{$alumno->ciclo}}</h1>
     <ul>
         @php 
             
             $info = $alumno->nombre;
             
         @endphp
+    <hr>
         @foreach ($arrayModulos as $key => $m)
             @php
                 $horas = 0;
@@ -29,9 +30,14 @@
                                 $horas += $u->horas;
                             @endphp
                         @endif
-                        
                     @endforeach
+                <br>
+                  
                 <b>Final:</b> {{@number_format($notaMedia / $horas)}}<br>
+
+                <hr>
+
+                <br>
             @endif
         @endforeach
     </ul>
