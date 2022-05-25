@@ -9,7 +9,7 @@ use App\Models\Modulo;
 use App\Models\Uf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class AlumnoUfController extends Controller
 {
@@ -29,7 +29,12 @@ class AlumnoUfController extends Controller
         return view('notas.show', array('arrayAlumnos'=>$alumnos, 'modulo'=>$modulo, 'arrayUfs'=>$ufs));
     }
 
-    public function download($id){
+    public function downloadNotas($id){
+        $alumno = Alumno::findOrFail($id);
+        $arrayUFs = Uf::orderBy('nombre', 'asc')->get();
+        $arrayModulos = Modulo::orderBy('nombre', 'asc')->get();
+        $pdf = PDF::loadView('notas.download', compact('alumno', 'arrayUFs', 'arrayModulos'));
+        return $pdf->download('boletin_' . $alumno->nombre . $alumno->ciclo . '.pdf');
     }
 
     public function update(Request $request){

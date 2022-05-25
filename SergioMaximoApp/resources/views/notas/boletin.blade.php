@@ -6,7 +6,7 @@
 @section('content') 
     <div style="background-color: #ffe6cf" class="p-3 pr-5 d-flex justify-content-center col-md-12">
         <ul class="mt-5 mb-5">
-
+            <h1>{{$alumno->nombre}} {{$alumno->apellidos}} - {{$alumno->ciclo}}</h1>
             @foreach ($arrayModulos as $key => $m)
                 @php
                     $horas = 0;
