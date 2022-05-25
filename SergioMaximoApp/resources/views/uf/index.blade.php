@@ -11,7 +11,7 @@
         @if (auth()->user()->role_id == 2)
             <div class="col-md-12">
         @endif
-        <table border="1" style="width: 100%">
+        <table border="1" style="width: 100%; overflow-y:scroll;">
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
