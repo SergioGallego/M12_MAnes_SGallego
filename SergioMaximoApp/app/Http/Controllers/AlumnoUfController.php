@@ -10,6 +10,8 @@ use App\Models\Uf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AlumnoUfController extends Controller
 {
@@ -35,6 +37,31 @@ class AlumnoUfController extends Controller
         $arrayModulos = Modulo::orderBy('nombre', 'asc')->get();
         $pdf = PDF::loadView('notas.download', compact('alumno', 'arrayUFs', 'arrayModulos'));
         return $pdf->download('boletin_' . $alumno->nombre . $alumno->ciclo . '.pdf');
+    }
+
+    public function sendNotas($id){
+
+        $data["email"] = Auth::user()->email;
+        $data["client_name"] = Auth::user()->name;
+        $data["subject"] = "Boletín de notas";
+      
+        $alumno = Alumno::findOrFail($id);
+        $arrayUFs = Uf::orderBy('nombre', 'asc')->get();
+        $arrayModulos = Modulo::orderBy('nombre', 'asc')->get();
+        $pdf = PDF::loadView('notas.download', compact('alumno', 'arrayUFs', 'arrayModulos'));  
+
+        try{
+            Mail::send('notas.mail', $data, function($message)use($data,$pdf) {
+            $message->to($data["email"], $data["client_name"])
+            ->subject($data["subject"])
+            ->attachData($pdf->output(), 'boletin.pdf');
+            });
+        }catch(JWTException $exception){
+            $this->serverstatuscode = "0";
+            $this->serverstatusdes = $exception->getMessage();
+        }
+
+        return redirect()->back();
     }
 
     public function update(Request $request){

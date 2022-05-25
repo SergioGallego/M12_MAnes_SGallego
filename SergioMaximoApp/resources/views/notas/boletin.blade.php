@@ -43,6 +43,7 @@
             @endforeach
             <a class="btn block mt-3 w-full" href="{{route('alumnoIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
             <a class="btn block mt-3 w-full" href="{{route('downloadNotas', $alumno->id)}}" style="background-color: rgb(255,103,1); color: white">Descargar</a>
+            <a class="btn block mt-3 w-full" href="{{route('sendNotas', $alumno->id)}}" style="background-color: rgb(255,103,1); color: white">Enviar</a>
         </ul>
     </div>
     <script src="{{ asset('js/index.js') }}" defer></script>
