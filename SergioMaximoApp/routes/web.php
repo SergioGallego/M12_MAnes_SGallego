@@ -65,7 +65,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/menu/modulos/notas/{id?}/{nombre?}', [AlumnoUfController::class, 'show'])->name('showNotas');
     Route::put('/menu/modulos/notas/update', [AlumnoUfController::class, 'update'])->name('updateNotas');
     Route::get('/menu/alumno/boletin/download/{info?}', [AlumnoUfController::class, 'downloadNotas'])->name('downloadNotas');
-
+    Route::get('/menu/alumno/boletin/send/{id?}', [AlumnoUfController::class, 'sendNotas'])->name('sendNotas');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

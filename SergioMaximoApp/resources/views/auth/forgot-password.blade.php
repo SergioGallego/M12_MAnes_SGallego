@@ -28,6 +28,9 @@
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
+                    <a class="btn" style="background-color: rgb(255,103,1); color: white; margin-right: auto;" href="{{ route('login') }}">
+                        {{ __('Volver') }}
+                    </a>
                     <x-jet-button style="background-color: rgb(255,103,1); color: white">
                         {{ __('Reiniciar contraseña') }}
                     </x-jet-button>
