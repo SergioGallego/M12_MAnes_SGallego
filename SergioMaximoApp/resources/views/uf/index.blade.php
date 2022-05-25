@@ -32,9 +32,9 @@
                         @endforeach
                         <td style="padding: 10px">{{$u->modulo}}</td>
                         <td style="padding: 10px">{{$u->horas}}</td>
-                        <td style="padding: 10px"><a href="{{route('showUf', $u->id)}}" style="color: #FF6701">Detalles...</a>
+                        <td style="padding: 10px"><a href="{{route('showUf', $u->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
                             @if (auth()->user()->role_id == 1)
-                                <a href="{{route('destroyUf', $u->id)}}" style="color: #FF6701">Borrar...</a>
+                                <a href="{{route('destroyUf', $u->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
                             @endif
                         </td>
                     </tr>
