@@ -64,9 +64,7 @@
                         </select>
                     </div><br>
     
-                    <x-jet-button class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white">
-                        {{ __('Enviar') }}
-                    </x-jet-button>
+                    <input type="submit" id="enviar" class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white" name="Enviar" value="Enviar">
                 </form>
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="mt-4">
@@ -87,6 +85,6 @@
             </div>
         </div>
     @endif
-    <script src="{{ asset('js/index.js') }}" defer></script>
+    <script src="{{ asset('js/dni.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop
