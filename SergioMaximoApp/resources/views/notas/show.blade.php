@@ -61,9 +61,6 @@
                                     @else
                                         @php $horasTotalesHechas += $u->horas;@endphp
                                     @endif
-<<<<<<< HEAD
-                                @endif
-=======
                                 @php
                                     $contador++;
                                 @endphp
@@ -96,7 +93,6 @@
                                     $contadorSinNotas++;
                                 @endphp
                             @endif
->>>>>>> 65d970b68dcac557becb0cb5d386f051cd88da4b
                             @endforeach
                             @if ($notaMedia == 0)
                                 <td><b>NE</b></td>
