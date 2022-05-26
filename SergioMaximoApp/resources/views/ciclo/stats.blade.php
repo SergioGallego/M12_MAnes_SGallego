@@ -20,6 +20,8 @@
             $contadorAlumnos = 0;
             $aprobadosTotal = 0;
             $suspendidosTotal = 0;
+            $contador = 0;
+            $contadorSinNotas = 0; 
         @endphp
         <div class="accordion" id="accordionExample">
             <div class="card">
@@ -62,9 +64,13 @@
                                     @foreach($a->ufs as $u)
                                         @if($u->modulo_id == $m->id)
                                             @php 
+<<<<<<< HEAD
                                                 if($u->pivot->nota != 0){
                                                     $totalActual++;
                                                 }
+=======
+                                                $totalActual++;
+>>>>>>> 65d970b68dcac557becb0cb5d386f051cd88da4b
                                                 if($u->pivot->nota >= 5){
                                                     $aprobadasAlumno++;
                                                 }
@@ -89,7 +95,7 @@
                                     @endphp
                                     <td> 
                                         @php
-                                            echo $aprobadasActual . "%"
+                                            echo $aprobadasActual . "%";
                                         @endphp
                                     </td>
                                     <td> 

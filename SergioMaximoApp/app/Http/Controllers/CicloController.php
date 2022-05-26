@@ -30,7 +30,7 @@ class CicloController extends Controller
     {
         $ciclo = Ciclo::findOrFail($id);
         $modulos = Modulo::where('ciclo', $id)->get();
-        $ufs = UF::all();
+        $ufs = Uf::all();
         $alumnos = Alumno::all();
         return view('ciclo.stats', array('ciclo'=>$ciclo, 'arrayAlumnos'=>$alumnos, 'arrayModulos'=>$modulos, 'arrayUfs'=>$ufs));
     }

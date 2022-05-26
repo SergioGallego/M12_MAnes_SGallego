@@ -14,6 +14,7 @@
         <table border="1" style="width: 100%">
             <tr>
                 <td class="cabecera"><b>ID</b></td>
+                <td class="cabecera"><b>DNI</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
                 <td class="cabecera"><b>Apellidos</b></td>
                 <td class="cabecera"><b>Ciclo</b></td>
@@ -22,6 +23,7 @@
             @foreach ($arrayAlumnos as $key => $a)
                 <tr>
                     <td style="padding: 10px">{{$a->id}}</td>
+                    <td style="padding: 10px">{{$a->dni}}</td>
                     <td style="padding: 10px">{{$a->nombre}}</td>
                     <td style="padding: 10px">{{$a->apellidos}}</td>
                     <td style="padding: 10px">{{$a->ciclo}}</td>
@@ -42,7 +44,10 @@
                 <h3 style="text-align: center">Dar de alta alumnos</h1>
                 <form class="mt-4" method="POST" action="{{ route('storeAlumno') }}">
                     @csrf
-                    
+                    <div>
+                        <x-jet-input placeholder="DNI" id="dni" class="block mt-1 w-full form-control" type="text" name="dni" :value="old('dni')" required autofocus autocomplete="dni" />
+                    </div><br>
+
                     <div>
                         <x-jet-input placeholder="Nombre" id="name" class="block mt-1 w-full form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     </div>
@@ -59,9 +64,7 @@
                         </select>
                     </div><br>
     
-                    <x-jet-button class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white">
-                        {{ __('Enviar') }}
-                    </x-jet-button>
+                    <input type="submit" id="enviar" class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white" name="Enviar" value="Enviar">
                 </form>
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="mt-4">
@@ -82,6 +85,6 @@
             </div>
         </div>
     @endif
-    <script src="{{ asset('js/index.js') }}" defer></script>
+    <script src="{{ asset('js/dni.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop
