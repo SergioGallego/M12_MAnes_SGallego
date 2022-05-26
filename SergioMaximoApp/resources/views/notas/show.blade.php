@@ -61,10 +61,10 @@
                                     @else
                                         @php $horasTotalesHechas += $u->horas;@endphp
                                     @endif
-                                @endif
                                 @php
                                     $contador++;
                                 @endphp
+                                @endif
                             @endforeach
                             @foreach($arrayUfs as $key => $uf)
                             @if ($contador<=$contadorSinNotas)
