@@ -11,7 +11,7 @@
         @if (auth()->user()->role_id == 2)
             <div class="col-md-12">
         @endif
-        <table border="1" style="height: 500px; width: 100%; display:block; overflow-y:scroll">
+        <table border="1" style="width: 100%;">
             <tr>
                 <td class="cabecera"><b>ID</b></td>
                 <td class="cabecera"><b>Nombre</b></td>
@@ -38,7 +38,6 @@
                             @if (auth()->user()->role_id == 1)
                                 <a href="{{route('destroyModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
                             @endif
-                            
                         </td>
                     </tr>
                 @endif

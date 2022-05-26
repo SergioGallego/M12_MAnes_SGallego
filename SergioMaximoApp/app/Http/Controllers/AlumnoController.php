@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumno;
 use App\Models\Ciclo;
+use App\Models\Modulo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AlumnoController extends Controller
 {
@@ -39,6 +41,7 @@ class AlumnoController extends Controller
     public function update(Request $request, $id)
     {
         $alumno = Alumno::find($id);
+        $alumno->dni=$request->input('dni');
         $alumno->apellidos=$request->input('apellidos');
         $alumno->nombre=$request->input('nombre');
         $alumno->ciclo=$request->input('ciclo');
@@ -47,8 +50,9 @@ class AlumnoController extends Controller
     }
 
     public function store(Request $request)
-    { 
+    {
         $alumno = new Alumno;
+        $alumno->dni=$request->input('dni');
         $alumno->nombre=$request->input('name');
         $alumno->apellidos=$request->input('apellidos');
         $alumno->ciclo=$request->input('ciclo');
