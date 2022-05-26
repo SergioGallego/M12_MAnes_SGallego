@@ -11,30 +11,32 @@
         @if (auth()->user()->role_id == 2)
             <div class="col-md-12">
         @endif
-        <table border="1" style="width: 100%">
-            <tr>
-                <td class="cabecera"><b>ID</b></td>
-                <td class="cabecera"><b>DNI</b></td>
-                <td class="cabecera"><b>Nombre</b></td>
-                <td class="cabecera"><b>Apellidos</b></td>
-                <td class="cabecera"><b>Ciclo</b></td>
-                <td class="cabecera"><b>Accion</b></td>
-            </tr>
-            @foreach ($arrayAlumnos as $key => $a)
+        <div style="overflow-y: scroll; height: 400px">
+            <table border="1" style="width: 100%; ">
                 <tr>
-                    <td style="padding: 10px">{{$a->id}}</td>
-                    <td style="padding: 10px">{{$a->dni}}</td>
-                    <td style="padding: 10px">{{$a->nombre}}</td>
-                    <td style="padding: 10px">{{$a->apellidos}}</td>
-                    <td style="padding: 10px">{{$a->ciclo}}</td>
-                    <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
-                        <a href="{{route('boletinNotas', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/boletin.png" width="24px"/></a>
-                        @if (auth()->user()->role_id == 1)
-                            <a href="{{route('destroyAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
-                        @endif</td>
+                    <td class="cabecera"><b>ID</b></td>
+                    <td class="cabecera"><b>DNI</b></td>
+                    <td class="cabecera"><b>Nombre</b></td>
+                    <td class="cabecera"><b>Apellidos</b></td>
+                    <td class="cabecera"><b>Ciclo</b></td>
+                    <td class="cabecera"><b>Accion</b></td>
                 </tr>
-            @endforeach
-        </table><br>
+                @foreach ($arrayAlumnos as $key => $a)
+                    <tr>
+                        <td style="padding: 10px">{{$a->id}}</td>
+                        <td style="padding: 10px">{{$a->dni}}</td>
+                        <td style="padding: 10px">{{$a->nombre}}</td>
+                        <td style="padding: 10px">{{$a->apellidos}}</td>
+                        <td style="padding: 10px">{{$a->ciclo}}</td>
+                        <td style="padding: 10px"><a href="{{route('showAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
+                            <a href="{{route('boletinNotas', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/boletin.png" width="24px"/></a>
+                            @if (auth()->user()->role_id == 1)
+                                <a href="{{route('destroyAlumno', $a->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
+                            @endif</td>
+                    </tr>
+                @endforeach
+            </table><br>
+        </div>
         <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
     </div>
     @if (auth()->user()->role_id == 1)

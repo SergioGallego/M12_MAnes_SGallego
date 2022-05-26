@@ -11,38 +11,40 @@
         @if (auth()->user()->role_id == 2)
             <div class="col-md-12">
         @endif
-        <table border="1" style="width: 100%;">
-            <tr>
-                <td class="cabecera"><b>ID</b></td>
-                <td class="cabecera"><b>Nombre</b></td>
-                <td class="cabecera"><b>Comentario</b></td>
-                <td class="cabecera"><b>Profesor</b></td>
-                <td class="cabecera"><b>Ciclo</b></td>
-                <td class="cabecera"><b>Accion</b></td>
-            </tr>
-            @foreach ($arrayModulos as $key => $m)
-                @if(auth()->user()->role_id == 1 || auth()->user()->id == $m->profesor)
-                    <tr>
-                        <td style="padding: 10px">{{$m->id}}</td>
-                        <td style="padding: 10px">{{$m->nombre}}</td>
-                        <td style="padding: 10px">{{$m->comentario}}</td>
-                        @if ($m->profesor == null)
-                            <td style="padding: 10px">Sin profesor</td>
-                        @else
-                            <td style="padding: 10px">{{$m->users->name}}</td>
-                        @endif
-                        <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
-                        <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
-                            <a href="{{route('showNotas', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/notas.png" width="24px"/></a>
-                            <a href="{{route('ufIndex', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/uf.png" width="24px"/></a>
-                            @if (auth()->user()->role_id == 1)
-                                <a href="{{route('destroyModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
+        <div style="overflow-y: scroll; height: 400px">
+            <table border="1" style="width: 100%;">
+                <tr>
+                    <td class="cabecera"><b>ID</b></td>
+                    <td class="cabecera"><b>Nombre</b></td>
+                    <td class="cabecera"><b>Comentario</b></td>
+                    <td class="cabecera"><b>Profesor</b></td>
+                    <td class="cabecera"><b>Ciclo</b></td>
+                    <td class="cabecera"><b>Accion</b></td>
+                </tr>
+                @foreach ($arrayModulos as $key => $m)
+                    @if(auth()->user()->role_id == 1 || auth()->user()->id == $m->profesor)
+                        <tr>
+                            <td style="padding: 10px">{{$m->id}}</td>
+                            <td style="padding: 10px">{{$m->nombre}}</td>
+                            <td style="padding: 10px">{{$m->comentario}}</td>
+                            @if ($m->profesor == null)
+                                <td style="padding: 10px">Sin profesor</td>
+                            @else
+                                <td style="padding: 10px">{{$m->users->name}}</td>
                             @endif
-                        </td>
-                    </tr>
-                @endif
-            @endforeach
-        </table><br>
+                            <td style="padding: 10px">{{$m->ciclos->nombre}}</td>
+                            <td style="padding: 10px"><a href="{{route('showModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
+                                <a href="{{route('showNotas', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/notas.png" width="24px"/></a>
+                                <a href="{{route('ufIndex', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/uf.png" width="24px"/></a>
+                                @if (auth()->user()->role_id == 1)
+                                    <a href="{{route('destroyModulo', $m->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
+                                @endif
+                            </td>
+                        </tr>
+                    @endif
+                @endforeach
+            </table><br>
+        </div>
         <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
     </div>
     @if (auth()->user()->role_id == 1)

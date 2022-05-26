@@ -4,6 +4,7 @@
     <h1 style="text-align: center">Detalles de uf</h1>
 @stop
 @section('content') 
+@if(auth()->user()->id == $uf->modulos->profesor || auth()->user()->role_id == 1)
     <div class="col-md-12">
         <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
@@ -44,4 +45,11 @@
     </div>
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-@stop
+    @stop
+@else
+    @section('content')
+        <div class="col-md-12 text-center">
+            <h1 class="text-danger">No tienes permisos para ver este contenido</h1>
+        </div>
+    @stop
+@endif

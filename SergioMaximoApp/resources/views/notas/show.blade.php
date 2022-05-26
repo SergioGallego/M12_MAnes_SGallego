@@ -23,10 +23,10 @@
                     <td class="cabecera"><b>Horas totales</b></td>
                 </tr>
                 @foreach($arrayAlumnos as $key => $a)
-                @php
-                     $horasTotalesHechas = 0;
-                     $notaMedia = 0;
-                @endphp
+                    @php
+                        $horasTotalesHechas = 0;
+                        $notaMedia = 0;
+                    @endphp
                     @if($modulo->ciclos->nombre == $a->ciclo)
                         <tr>
                             <td>{{$a->nombre}} {{$a->apellidos}}</td>
