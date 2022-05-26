@@ -18,7 +18,15 @@
           </div>
         </div>
         <div class="row p-2 mt-2 ml-1 mr-1 "  style="background-color: white; padding: 1%; border-style: solid; border-color: rgba(255,103,1,1)">
+            @if(!(Auth::check()))
               @yield('content')
+            @else
+              @if(auth()->user()->estado == "Activo")
+                @yield('content')
+              @else
+                <h2 class="text-danger">No tienes permisos para acceder a este contenido</h2>
+              @endif
+            @endif
         </div>
     </div>
     <!-- Optional JavaScript -->

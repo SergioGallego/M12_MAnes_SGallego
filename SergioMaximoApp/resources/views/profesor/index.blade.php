@@ -71,10 +71,8 @@
                             <option value="Inactivo">Inactivo</option>
                         </select>
                     </div><br>
-    
-                    <x-jet-button class="btn block mt-1 w-full " style="background-color: rgb(255,103,1); color: white">
-                        {{ __('Enviar') }}
-                    </x-jet-button>
+                    
+                    <input class="btn" type="submit" id="enviar" name="Enviar"  style="background-color: rgb(255,103,1); color: white">
                 </form>
                 @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                     <div class="mt-4">
@@ -96,5 +94,6 @@
         </div>
     @endif
     <script src="{{ asset('js/index.js') }}" defer></script>
+    <script src="{{ asset('js/email.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop

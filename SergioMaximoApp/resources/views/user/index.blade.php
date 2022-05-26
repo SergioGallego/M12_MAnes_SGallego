@@ -3,7 +3,6 @@
 @section('title')
     <h1 style="text-align: center">Gestión de datos</h1>
 @stop
-@if(auth()->user()->estado == "Activo")
      @section('content')
      <div id="info2" class="col-md-4 p-3" style="display: none; height: 50%">
           <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" style="width: 80%">
@@ -44,9 +43,4 @@
      </div>
      <script src="{{ asset('js/index.js') }}" defer></script>
      <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-     @stop
-@else
-     @section('content')
-          <h2 class="text-danger d-flex justify-content-center col-md-12">No tienes permisos para acceder al contenido.</h2>
-     @stop
-@endif
+@stop
