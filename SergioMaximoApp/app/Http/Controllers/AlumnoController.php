@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Alumno;
 use App\Models\Ciclo;
+use App\Models\Modulo;
+use App\Models\Uf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AlumnoController extends Controller
 {
@@ -53,6 +56,14 @@ class AlumnoController extends Controller
         $alumno->apellidos=$request->input('apellidos');
         $alumno->ciclo=$request->input('ciclo');
         $alumno->save();
+
+        $arrayUfs = Uf::all()->pluck('id')->toArray();
+
+        for($i=0; $i < count($arrayUfs); $i++){
+            $id = $arrayUfs[$i];
+            $alumno->ufs()->attach($id);
+        }
+
         return redirect()->back();
     }
     

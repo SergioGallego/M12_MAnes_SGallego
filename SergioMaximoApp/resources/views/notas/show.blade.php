@@ -62,37 +62,6 @@
                                         @php $horasTotalesHechas += $u->horas;@endphp
                                     @endif
                                 @endif
-                                @php
-                                    $contador++;
-                                @endphp
-                            @endforeach
-                            @foreach($arrayUfs as $key => $uf)
-                            @if ($contador<=$contadorSinNotas)
-                                <td>
-                                    @if(auth()->user()->role_id == 2)
-                                    <select name="notas[]" class="col-md-12" style="text-align: center">
-                                        <option value="{{$a->id . "_" . $uf->id . "_0"}}" selected>NE</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_1"}}">1</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_2"}}">2</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_3"}}">3</option>        
-                                        <option value="{{$a->id . "_" . $uf->id . "_4"}}">4</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_5"}}">5</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_6"}}">6</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_7"}}">7</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_8"}}">8</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_9"}}">9</option>  
-                                        <option value="{{$a->id . "_" . $uf->id . "_10"}}">10</option>
-                                    </select>
-                                    @else
-                                        NE
-                                    @endif
-                                </td>
-                                <td><b>{{$uf->horas}}</b></td>
-                            @else
-                                @php
-                                    $contadorSinNotas++;
-                                @endphp
-                            @endif
                             @endforeach
                             @if ($notaMedia == 0)
                                 <td><b>NE</b></td>

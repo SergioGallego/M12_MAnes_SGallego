@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Alumno;
+use App\Models\Uf;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -166,12 +167,22 @@ class AlumnoSeeder extends Seeder
 
     private function seedAlumno(){
         DB::table('alumnos')->delete();
+
+        $arrayUfs = Uf::all()->pluck('id')->toArray();
+
         foreach($this->arrayAlumnos as $alumno){
             $al = new Alumno;
             $al->apellidos = $alumno['apellidos'];
             $al->nombre = $alumno['nombre'];
             $al->ciclo = $alumno['ciclo'];
             $al->save();
+
+            
+        for($i=0; $i < count($arrayUfs); $i++){
+            $id = $arrayUfs[$i];
+            $al->ufs()->attach($id);
+        }
+
         }
     }
     /**
