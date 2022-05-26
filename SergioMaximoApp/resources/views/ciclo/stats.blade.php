@@ -64,13 +64,9 @@
                                     @foreach($a->ufs as $u)
                                         @if($u->modulo_id == $m->id)
                                             @php 
-<<<<<<< HEAD
                                                 if($u->pivot->nota != 0){
                                                     $totalActual++;
                                                 }
-=======
-                                                $totalActual++;
->>>>>>> 65d970b68dcac557becb0cb5d386f051cd88da4b
                                                 if($u->pivot->nota >= 5){
                                                     $aprobadasAlumno++;
                                                 }
@@ -79,7 +75,6 @@
                                                 } else{
                                                     $aprobadasActual = @number_format(($aprobadasAlumno * 100 / $totalActual ));
                                                 }
-                                                
                                             @endphp
                                             <td> 
                                                 {{$u->pivot->nota}}
