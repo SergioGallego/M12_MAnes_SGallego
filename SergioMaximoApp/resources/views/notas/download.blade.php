@@ -1,5 +1,5 @@
-<div>
-    <h1 style="text-align: center">{{$alumno->nombre}} {{$alumno->apellidos}} - {{$alumno->ciclo}}</h1>
+<div>  <!-- Esta vistá es identica a nivel funcional que la vista boletín, la unica diferencia es que no tiene estilos bootstrap. Sirve para descargar las notas en formato PDF -->
+    <h1 style="text-align: center">{{$alumno->nombre}} {{$alumno->apellidos}} - {{$alumno->ciclo}}</h1>  
     <ul>
         @php 
             

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  <!-- Vista que sirve a modo de correo -->
 <html>
 <head>
  <title>Laravel 8 Send Email Example</title>

@@ -5,7 +5,7 @@
 @stop
 @section('content') 
     
-        @if (auth()->user()->role_id == 1)
+        @if (auth()->user()->role_id == 1) <!-- Comprueba el rol del usuario logeado, si es superuser la columna ocupará menos para añadir el form -->
             <div class="col-md-9">
         @endif
         @if (auth()->user()->role_id == 2)
@@ -20,16 +20,18 @@
                 <td class="cabecera"><b>Estado</b></td>
                 <td class="cabecera"><b>Accion</b></td>
             </tr>
-            @foreach ($arrayUsuarios as $key => $u)
+            @foreach ($arrayUsuarios as $key => $u) <!-- Recorre cada usuario -->
                 <tr>
-                    <td style="padding: 10px">{{$u->id}}</td>
+                    <td style="padding: 10px">{{$u->id}}</td> <!-- Imprime los datos de cada usuario -->
                     <td style="padding: 10px">{{$u->name}}</td>
                     <td style="padding: 10px">{{$u->email}}</td>
                     <td style="padding: 10px">{{$u->role_id}}</td>
                     <td style="padding: 10px">{{$u->estado}}</td>
-                    <td style="padding: 10px"><a href="{{route('showUser', $u->id)}}" class="btn" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
-                        @if (auth()->user()->role_id == 1)
-                            @if ($u->role_id == 2 || (auth()->user()->id == 1 && $u->id != 1))
+                    <td style="padding: 10px">
+                        <!-- Crea un enlace pasando la id del usuario -->
+                        <a href="{{route('showUser', $u->id)}}" class="btn" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
+                        @if (auth()->user()->role_id == 1) <!-- Si el auth es superuser, puede borrar al usuario -->
+                            @if ($u->role_id == 2 || (auth()->user()->id == 1 && $u->id != 1)) <!-- El superusuario solo puede borrar al usuario si es profesor o si no es el superusuario fundador (el primer superusuario creado en la BBDD) -->
                                 <a href="{{route('destroyUser', $u->id)}}"  class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
                             @endif
                         @endif</td>
@@ -38,7 +40,7 @@
         </table><br>
         <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
     </div>
-    @if (auth()->user()->role_id == 1)
+    @if (auth()->user()->role_id == 1) <!-- Si el auth es superusuario aparecerá un formulario para añadir usuarios a la BBDD -->
         <div class="col-md-3">
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
@@ -49,7 +51,7 @@
                     <div>
                         <x-jet-input placeholder="Nombre" id="name" class="block mt-1 w-full form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                     </div>
-    
+                    <!-- Este campo valida si el email introducido es válido -->
                     <div class="mt-4">
                         <x-jet-input  placeholder="Correo electrónico" id="email" class="block mt-1 w-full form-control" type="email" name="email" :value="old('email')" required />
                     </div>

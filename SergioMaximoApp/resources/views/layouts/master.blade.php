@@ -18,13 +18,13 @@
           </div>
         </div>
         <div class="row p-2 mt-2 ml-1 mr-1 "  style="background-color: white; padding: 1%; border-style: solid; border-color: rgba(255,103,1,1)">
-            @if(!(Auth::check()))
+            @if(!(Auth::check())) <!-- Comprueba si el auth ha iniciado sesion. En caso negativo, muestra siempre el contenido de la vista -->
               @yield('content')
             @else
-              @if(auth()->user()->estado == "Activo")
-                @yield('content')
+              @if(auth()->user()->estado == "Activo") <!-- En caso afirmativo, comprueba si el usuario que ha iniciado sesion tiene de estado Inactivo o Activo -->
+                @yield('content') <!-- Si es un usuario activo, muestra el contenido de la vista -->
               @else
-                <h2 class="text-danger">No tienes permisos para acceder a este contenido</h2>
+                <h2 class="text-danger">No tienes permisos para acceder a este contenido</h2> <!-- Si es un usuario inactivo, aparecerá un mensaje en la vista -->
               @endif
             @endif
         </div>

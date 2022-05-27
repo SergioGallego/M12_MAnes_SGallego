@@ -12,8 +12,11 @@
                     
                     @csrf
                     @method('PUT')
-                    
-                    <div>
+                    <!-- Para que pueda editar los campos hace las siguientes comprobaciones: -->
+                    <!-- 1. Que el usuario se quiera editar a si mismo (si eres el usuario fundador o un profesor, solo puedes editar el nombre y el email) -->
+                    <!-- 2. Un superusuario no puede editar a otro superusuario a menos que seas el fundador (existe una jerarquía de superusuarios)-->
+                    <!-- 3. Un profesor no puede editar a otro profesor que no sea el mismo -->
+                    <div> 
                         <input @if(auth()->user()->id != $profesor->id && auth()->user()->role_id == 2 || (auth()->user()->role_id == 1 && $profesor->role_id == 1 && auth()->user()->id != 1 && auth()->user()->id != $profesor->id)) readonly @endif value="{{$profesor->name}}" placeholder="Nombre" id="name" class="block mt-1 w-full form-control" type="text" name="name" required autofocus autocomplete="name" />
                     </div>
 
@@ -34,6 +37,7 @@
                             </select>
                         </div><br>
                         <a class="btn block mt-1 w-full" href="{{route('userIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
+                        <!-- Para enviar los campos sigue las mismas condiciones que al editarlos -->
                         @if(auth()->user()->id != $profesor->id && auth()->user()->role_id == 2 || (auth()->user()->role_id == 1 && $profesor->role_id == 1 && auth()->user()->id != 1 && auth()->user()->id != $profesor->id)) @else
                             <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
                                 {{ __('Enviar') }}

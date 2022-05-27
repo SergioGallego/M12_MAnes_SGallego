@@ -7,7 +7,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <li class="nav-item"> <!-- Enlaces a las rutas principales de la app -->
             <a class="nav-link active" aria-current="page" href="{{route('alumnoIndex')}}">Alumnos</a>
           </li>
           <li class="nav-item">
@@ -24,10 +24,10 @@
             <div class="dropdown">
 
               <button class="btn dropdown-toggle" style="background-color: transparent; color: white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{Auth::user()->name}}
+                {{Auth::user()->name}} <!-- Muestra el nombre del usuario conectado -->
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li class="nav-item">
+                <li class="nav-item"> <!-- Enlace para editar los datos del usuario conectado -->
                         <a class="btn" style="background-color: transparent" href="{{route('showUser', Auth::user()->id)}}">Editar usuario</a>
                 <li class="nav-item">
                   <form action="{{ url('/logout') }}" method="POST" style="display:inline">

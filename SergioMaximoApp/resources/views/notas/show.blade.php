@@ -8,33 +8,38 @@
             <form method="POST" action="{{ route('updateNotas') }}">
                 @csrf
                 @method('PUT')        
-                @php $horasTotales = 0; $contador = 0; $contadorSinNotas = 0; @endphp
+                @php //Crea las siguientes variables
+                    $horasTotales = 0; //Cuenta las horas totales de cada modulo
+                    $contador = 0; //Contador auxiliar para los alumnos sin notas
+                    $contadorSinNotas = 0;  //Cuenta los alumnos que no tienen notas
+                @endphp
                 <tr>
                     <td class="cabecera"><b>Alumno</b></td>
-                    @foreach($arrayUfs as $key => $u)
-                        <td class="cabecera"><b>{{$u->nombre}}</b></td>
+                    @foreach($arrayUfs as $key => $u) <!-- Recorre cada UF del modulo -->
+                        <td class="cabecera"><b>{{$u->nombre}}</b></td> <!-- Imprime el nombre de la UF -->
                         <td class="cabecera"><b>Horas</b></td>
                         @php 
-                            $horasTotales += $u->horas;
+                            $horasTotales += $u->horas; //Suma a las horas totales las horas de la UF
                         @endphp
                     @endforeach
                     <td class="cabecera"><b>Nota Final</b></td>
                     <td class="cabecera"><b>Horas cursadas</b></td>
                     <td class="cabecera"><b>Horas totales</b></td>
                 </tr>
-                @foreach($arrayAlumnos as $key => $a)
-                    @php
-                        $horasTotalesHechas = 0;
-                        $notaMedia = 0;
+                @foreach($arrayAlumnos as $key => $a) <!-- Recorre cada alumno del modulo -->
+                    @php //Crea las siguientes variables
+                        $horasTotalesHechas = 0;  //Cuenta las horas totales hechas de cada alumno
+                        $notaMedia = 0; //Guarda la nota media
                     @endphp
-                    @if($modulo->ciclos->nombre == $a->ciclo)
+                    @if($modulo->ciclos->nombre == $a->ciclo) <!-- Comprueba que el ciclo que está cursando el alumno sea igual al nombre del ciclo que pertenece el modulo -->
                         <tr>
-                            <td>{{$a->nombre}} {{$a->apellidos}}</td>
-                            @foreach($a->ufs as $u)
-                                @if($u->modulo_id == $modulo->id)
+                            <td>{{$a->nombre}} {{$a->apellidos}}</td> <!-- Imprime el nombre y apellidos del alumno -->
+                            @foreach($a->ufs as $u) <!-- Recorre cada UF del alumno -->
+                                @if($u->modulo_id == $modulo->id) <!-- Comprueba que el modulo que pertenece la UF sea igual al modulo que recorre el bucle -->
                                     <td> 
-                                        @if(auth()->user()->role_id == 2)
-                                            <select name="notas[]" class="col-md-12" style="text-align: center">
+                                        @if(auth()->user()->role_id == 2) <!-- Si el auth es profesor, crea un select editable para las notas -->
+                                            <select name="notas[]" class="col-md-12" style="text-align: center"> <!-- Este select envía una array de notas -->
+                                                <!-- El valor de cada opcion guarda la id del alumno, la id de la uf y la nota separados por '_'. Puedes ver como se utiliza en el controlador de notas -->
                                                 <option value="{{$a->id . "_" . $u->id . "_0"}}" @if ($u->pivot->nota == 0) selected @endif>NE</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_1"}}" @if ($u->pivot->nota == 1) selected @endif>1</option>  
                                                 <option value="{{$a->id . "_" . $u->id . "_2"}}" @if ($u->pivot->nota == 2) selected @endif>2</option>  
@@ -48,28 +53,28 @@
                                                 <option value="{{$a->id . "_" . $u->id . "_10"}}" @if ($u->pivot->nota == 10) selected @endif>10</option>
                                             </select>
                                         @else
-                                            @if ($u->pivot->nota == 0)
+                                            @if ($u->pivot->nota == 0) <!-- Si la nota es igual a cero, el alumno no esta evaluado (NE) -->
                                                 NE
-                                            @else
+                                            @else <!-- En cualquier otro caso imprime la nota del alumno -->
                                                 {{$u->pivot->nota}}
                                             @endif
                                         @endif
                                     </td>
-                                    <td><b>{{$u->horas}}</b></td>
-                                    @php $notaMedia += $u->pivot->nota*$u->horas;@endphp
-                                    @if ($u->pivot->nota == 0)
+                                    <td><b>{{$u->horas}}</b></td> <!-- Imprime las horas de la UF -->
+                                    @php $notaMedia += $u->pivot->nota*$u->horas;@endphp <!-- Suma a la nota media el resultado de multiplicar la nota del alumno por las horas de la UF -->
+                                    @if ($u->pivot->nota == 0) <!-- Si la nota es diferente a cero, se suman las horas a las horas hechas del alumno en ese modulo -->
                                     @else
                                         @php $horasTotalesHechas += $u->horas;@endphp
                                     @endif
                                 @php
-                                    $contador++;
+                                    $contador++; //Sumamos uno al contador auxiliar
                                 @endphp
                                 @endif
                             @endforeach
-                            @foreach($arrayUfs as $key => $uf)
-                            @if ($contador<=$contadorSinNotas)
+                            @foreach($arrayUfs as $key => $uf) <!-- Recorre cada UF del modulo -->
+                            @if ($contador<=$contadorSinNotas) <!-- Comprueba si el contador auxiliar es menor o igual a los alumnos sin notas. Esto sirve para que la casilla sea editable aunque el alumno no tenga nota -->
                                 <td>
-                                    @if(auth()->user()->role_id == 2)
+                                    @if(auth()->user()->role_id == 2) <!-- Si el auth es profesor, permite editar la nota del alumno -->
                                     <select name="notas[]" class="col-md-12" style="text-align: center">
                                         <option value="{{$a->id . "_" . $uf->id . "_0"}}" selected>NE</option>  
                                         <option value="{{$a->id . "_" . $uf->id . "_1"}}">1</option>  
@@ -83,30 +88,30 @@
                                         <option value="{{$a->id . "_" . $uf->id . "_9"}}">9</option>  
                                         <option value="{{$a->id . "_" . $uf->id . "_10"}}">10</option>
                                     </select>
-                                    @else
+                                    @else <!-- En cualquier otro caso, pondrá que no está evaluado al no tener nota -->
                                         NE
                                     @endif
                                 </td>
-                                <td><b>{{$uf->horas}}</b></td>
+                                <td><b>{{$uf->horas}}</b></td> <!-- Imprime las horas de la UF -->
                             @else
                                 @php
-                                    $contadorSinNotas++;
+                                    $contadorSinNotas++; //Suma uno al contador sin notas
                                 @endphp
                             @endif
                             @endforeach
-                            @if ($notaMedia == 0)
+                            @if ($notaMedia == 0) <!-- Si la nota media es igual a cero, el alumno no ha sido evaluado -->
                                 <td><b>NE</b></td>
-                            @else
+                            @else <!-- En cualquier otro caso, calcula la nota media -->
                                 <td><b>{{@number_format($notaMedia / $horasTotales)}}</b></td>
                             @endif
-                            <td><b>{{$horasTotalesHechas}}</b></td>
+                            <td><b>{{$horasTotalesHechas}}</b></td> <!-- Finalmente, muestra las horas totales hechas del alumno y las horas totales de ese modulo -->
                             <td><b>{{$horasTotales}}</b></td>
                         </tr>
                     @endif
                 @endforeach
             </table>
             <a class="btn block mt-1 w-full" href="{{route('moduloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>&nbsp
-            @if(auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor)
+            @if(auth()->user()->role_id == 2 && auth()->user()->id == $modulo->profesor) <!-- Si el auth es profesor y es el profesor de ese modulo, puedes guardar los cambios en las notas -->
                     <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white; float: left">
                         {{ __('Guardar cambios') }}
                     </x-jet-button>

@@ -9,7 +9,7 @@
         <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>
                 <h3 style="text-align: center">Datos de modulo</h1>
-                @if (isset($error) && $error==true)
+                @if (isset($error) && $error==true) <!-- Si la vista recibe un error, se mostrará lo siguiente y no se insertará la UF -->
                     <ul>
                         <div class="mb-4" style="color: red"><li>La uf ya existe</li></div>
                     </ul>        
@@ -17,7 +17,7 @@
                     <form class="mt-4" method="POST" action="{{ route('updateUf', $uf->id) }}">
                         @csrf
                         @method('PUT')
-
+                        <!-- Por cada input comprueba el rol de auth; si es profesor no podrá editar los datos -->
                         <div>
                             <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$uf->nombre}}" placeholder="Nombre" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
                         </div>
@@ -46,7 +46,7 @@
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     @stop
-@else
+@else <!-- Si no eres el profesor de ese módulo o un superusuario, se te informará de que no tienes permisos -->
     @section('content')
         <div class="col-md-12 text-center">
             <h1 class="text-danger">No tienes permisos para ver este contenido</h1>

@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    @foreach($arrayModulos as $key => $m) <!-- Recorre cada modulo de la array que le pasamos --> 
+    @foreach($arrayModulos as $key => $m) <!-- Recorre cada modulo del ciclo --> 
         @php //Crea las siguientes variables: 
             $contadorAlumnos = 0; //Cuenta los alumnos del módulo
             $aprobadosTotal = 0; //Cuenta los aprobados del módulo
@@ -53,7 +53,7 @@
                                     @php //Creamos las siguentes variables
                                         $totalActual = 0; //Cuenta las UFs evaluadas del alumno
                                         $aprobadasActual = 0; //Cuenta las UFs aprobadas del alumno actualmente
-                                        $aprobadasAlumno = 0; //Cuenta las UFs aprobadas del alumno de todo el curso
+                                        $aprobadasAlumno = 0; //Cuenta las UFs aprobadas del alumno en perspectiva de todo el curso
                                         $contadorAlumnos = $contadorAlumnos + 1; //Suma uno al contador de alumnos
                                     @endphp
                                     @foreach($a->ufs as $u) <!-- Recorre cada UF del alumno -->
@@ -65,9 +65,9 @@
                                                 if($u->pivot->nota >= 5){ //Si la nota es mayor o igual a cinco el alumno está aprobado y se suma al total del curso
                                                     $aprobadasAlumno++;
                                                 }
-                                                if ($totalActual == 0) { //Si el total actual es igual a cero no calculamos el porcentaje de aprobados (así evitamos el error division by zero )
+                                                if ($totalActual == 0) { //Si el total actual es igual a cero no calculamos el porcentaje de aprobado (así evitamos el error division by zero )
                                                     $aprobadasActual = @number_format(($aprobadasAlumno * 100 / 1));
-                                                } else{ //En caso de ser mayor a cero calculamos el porcentaje aprobado actual por cada modulo de cada alumno
+                                                } else{ //En caso de ser mayor a cero calculamos el porcentaje aprobado actual de este modulo
                                                     $aprobadasActual = @number_format(($aprobadasAlumno * 100 / $totalActual ));
                                                 }
                                             @endphp

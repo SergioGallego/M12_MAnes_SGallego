@@ -14,42 +14,42 @@ class UserSeeder extends Seeder
     private $arrayUsers = array (
         array(
             'name' => 'Arnau',
-			'email' => 'arnau@gmail.com',
+			'email' => 'arnau@inscamidemar.cat',
             'estado' => 'Activo',
             'password' => 'arnau1358',
             'role_id' => 1
         ),
         array(
             'name' => 'Sergio',
-			'email' => 'sergio@gmail.com',
+			'email' => 'sergio@inscamidemar.cat',
             'estado' => 'Activo',
             'password' => 'sergio676',
             'role_id' => 2
         ),
         array(
             'name' => 'Maximo',
-			'email' => 'maximo@gmail.com',
+			'email' => 'maximo@inscamidemar.cat',
             'estado' => 'Activo',
             'password' => 'maximomaximo',
             'role_id' => 2
         ),
         array(
             'name' => 'Jordi',
-			'email' => 'jordi@gmail.com',
+			'email' => 'jordi@inscamidemar.cat',
             'estado' => 'Activo',
             'password' => 'jordijordi',
             'role_id' => 2
         ),
         array(
             'name' => 'Didac',
-			'email' => 'didac@gmail.com',
+			'email' => 'didac@inscamidemar.cat',
             'estado' => 'Activo',
             'password' => 'didacdidac',
             'role_id' => 2
         ),
         array(
             'name' => 'Ramon',
-			'email' => 'ramon@gmail.com',
+			'email' => 'ramon@inscamidemar.cat',
             'estado' => 'Activo',
             'password' => 'ramonramon',
             'role_id' => 2
