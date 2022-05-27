@@ -26,7 +26,7 @@
                         <tr>
                             <td style="padding: 10px">{{$m->id}}</td> <!-- Imprimes los datos de cada modulo -->
                             <td style="padding: 10px">{{$m->nombre}}</td>
-                            <td style="padding: 10px">{{$m->comentario}}</td>
+                            <td style="padding: 10px">@php echo htmlspecialchars_decode($m->comentario);@endphp</td>
                             @if ($m->profesor == null) <!-- Si el modulo no tiene profesor, aparecerá Sin profesor -->
                                 <td style="padding: 10px">Sin profesor</td>
                             @else
@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-jet-input  placeholder="Nombre" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
+                        <textarea type="text" placeholder="Comentario" name="comentario" id="txtDescripcion" :value="old('comentario')" ></textarea> 
                     </div><br>
     
                     <div>
@@ -108,6 +108,14 @@
             </div>
         </div>
     @endif
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#txtDescripcion' ) )
+            .catch( error => {
+            console.error( error );
+            } );
+        </script>
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop

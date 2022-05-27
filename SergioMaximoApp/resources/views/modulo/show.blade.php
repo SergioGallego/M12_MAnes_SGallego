@@ -22,7 +22,7 @@
                         </div>
     
                         <div class="mt-4">
-                            <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$modulo->comentario}}" placeholder="Nombre" id="comentario" class="block mt-1 w-full form-control" type="text" name="comentario" :value="old('comentario')" required />
+                            <textarea @if(auth()->user()->role_id == 2) readonly @endif type="text" placeholder="Comentario" name="comentario" id="txtDescripcion" >{{$modulo->comentario}}</textarea> 
                         </div><br>
         
                         <div>
@@ -49,6 +49,14 @@
                 </form>
             </div>
     </div>
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#txtDescripcion' ) )
+            .catch( error => {
+            console.error( error );
+            } );
+        </script>
     <script src="{{ asset('js/index.js') }}" defer></script>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @stop

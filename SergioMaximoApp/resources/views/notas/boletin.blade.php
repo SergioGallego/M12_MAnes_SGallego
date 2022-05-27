@@ -13,7 +13,7 @@
                     $notaMedia = 0; //Guarda la nota media del modulo
                 @endphp
                 @if ($alumno->ciclo == $m->ciclos->nombre)  <!-- Comprueba si el ciclo que esta apuntado el alumno es el mismo ciclo que el modulo de la itineracion -->
-                    <li class="mb-3 mt-3">{{$m->nombre}} - {{$m->comentario}}</li>  <!-- Imprime el nombre del modulo -->
+                    <li class="mb-3 mt-3">{{$m->nombre}} - @php echo htmlspecialchars_decode($m->comentario);@endphp</li>  <!-- Imprime el nombre del modulo -->
                         @foreach ($arrayUFs as $key => $u)  <!-- Recorre cada UF del modulo -->
                             @if ($u->modulo_id == $m->id) 
                                 @foreach ($alumno->ufs as $uf)  <!-- Recorre cada nota del alumno de ese modulo -->
