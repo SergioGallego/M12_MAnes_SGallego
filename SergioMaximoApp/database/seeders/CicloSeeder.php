@@ -32,7 +32,7 @@ class CicloSeeder extends Seeder
         )
     );
 
-    public function seedCiclo(){
+    public function seedCiclo(){ //Recorre la array de ciclos guardando a cada uno en la base de datos
         DB::table('ciclos')->delete();
         foreach($this->arrayCiclo as $ciclo){
             $c = new Ciclo;

@@ -198,9 +198,9 @@ class AlumnoSeeder extends Seeder
     private function seedAlumno(){
         DB::table('alumnos')->delete();
 
-        $arrayUfs = Uf::all()->pluck('id')->toArray();
+        $arrayUfs = Uf::all()->pluck('id')->toArray(); //Guarda las ID de todas las UFs en una array
 
-        foreach($this->arrayAlumnos as $alumno){
+        foreach($this->arrayAlumnos as $alumno){ //Recorre la array de alumnos guardando a cada uno en la base de datos
             $al = new Alumno;
             $al->dni = $alumno['dni'];
             $al->apellidos = $alumno['apellidos'];
@@ -209,7 +209,7 @@ class AlumnoSeeder extends Seeder
             $al->save();
 
             
-        for($i=0; $i < count($arrayUfs); $i++){
+        for($i=0; $i < count($arrayUfs); $i++){ //Recorre cada UF por cada alumno apuntándolo a esta como no evaluado [valor 0 para la BBDD]. De esta forma evitamos problemas al cambiar de ciclo a un alumno sin interferir en las notas
             $id = $arrayUfs[$i];
             $al->ufs()->attach($id);
         }

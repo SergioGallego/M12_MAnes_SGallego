@@ -379,7 +379,7 @@ class UfSeeder extends Seeder
         ),
     );
 
-    public function seedUf(){
+    public function seedUf(){ //Recorre la array de UFs guardando a cada uno en la base de datos
         DB::table('ufs')->delete();
         foreach($this->arrayUf as $uf){
             $u = new Uf;

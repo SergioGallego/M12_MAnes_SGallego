@@ -12,7 +12,7 @@
                         @csrf
                         @method('PUT')
 
-                        <div>
+                        <div> <!-- Si el auth es profesor, solo podrá ver los datos --> 
                             <input @if(auth()->user()->role_id == 2) readonly @endif value="{{$ciclo->nombre}}" placeholder="Nombre" id="nombre" class="block mt-1 w-full form-control" type="text" name="nombre" :value="old('nombre')" required autofocus autocomplete="name" />
                         </div>
     
@@ -21,7 +21,7 @@
                         </div><br>
 
                         <a class="btn block mt-1 w-full" href="{{route('cicloIndex')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
-                        @if(auth()->user()->role_id == 1)
+                        @if(auth()->user()->role_id == 1) <!-- Si el auth es superusuario, podrá enviar los datos --> 
                             <x-jet-button class="btn block mt-1 w-full" style="background-color: rgb(255,103,1); color: white">
                                 {{ __('Enviar') }}
                             </x-jet-button>

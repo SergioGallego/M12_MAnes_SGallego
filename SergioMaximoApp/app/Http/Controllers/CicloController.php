@@ -14,19 +14,19 @@ use Illuminate\Support\Facades\DB;
 
 class CicloController extends Controller
 {
-    public function index()
+    public function index() //Pasa a la vista todos los ciclos
     {
         $ciclos = Ciclo::all();
         return view('ciclo.index', array('arrayCiclos'=>$ciclos));
       }
 
-    public function show($id)
+    public function show($id) //Pasa a la vista el ciclo selccionado
     {
         $ciclo = Ciclo::findOrFail($id);
         return view('ciclo.show', array('ciclo'=>$ciclo));
     }
 
-    public function stats($id)
+    public function stats($id) //Pasa a la vista el ciclo seleccionado junto a sus modulos, todas las UFs y todos los alumnos
     {
         $ciclo = Ciclo::findOrFail($id);
         $modulos = Modulo::where('ciclo', $id)->get();
@@ -35,7 +35,7 @@ class CicloController extends Controller
         return view('ciclo.stats', array('ciclo'=>$ciclo, 'arrayAlumnos'=>$alumnos, 'arrayModulos'=>$modulos, 'arrayUfs'=>$ufs));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //Actualiza el ciclo seleccionado con los campos introducidos
     {
         $ciclo = Ciclo::find($id);
         $ciclo->nombre=$request->input('nombre');
@@ -45,8 +45,8 @@ class CicloController extends Controller
         return redirect('/menu/ciclo/');
     }
 
-    public function store(Request $request)
-    { 
+    public function store(Request $request) //Registra el nuevo ciclo a partir de los campos introducidos
+    {  
         $ciclo = new Ciclo;
         $ciclo->nombre=$request->input('nombre');
         $ciclo->descripcion=$request->input('descripcion');
@@ -55,7 +55,7 @@ class CicloController extends Controller
         return redirect()->back();
     }
 
-    public function destroy($id)
+    public function destroy($id) //Destruye el ciclo seleccionado
     {
         Ciclo::destroy($id);
         return redirect()->back();

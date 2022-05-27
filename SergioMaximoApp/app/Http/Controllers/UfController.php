@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class UfController extends Controller
 {
-    public function index($id)
+    public function index($id) //Pasa a la vista todos los usuarios, las Ufs del modulo seleccionado y el mismo módulo
     {
         $profesores = User::all();
         $ufs = DB::table('ufs')->where('modulo_id', $id)->get();
@@ -21,13 +21,13 @@ class UfController extends Controller
         return view('uf.index', array('modulo'=>$modulo, 'arrayUfs'=>$ufs, 'arrayProf'=>$profesores));
     }
 
-    public function show($id)
+    public function show($id) //Pasa a la vista la Uf seleccionada
     {
         $uf = Uf::findOrFail($id);
         return view('uf.show', array('uf'=>$uf));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //Actualiza la UF con los campos introducidos
     {
         $uf = Uf::find($id);
         $uf->nombre=$request->input('nombre');
@@ -35,10 +35,10 @@ class UfController extends Controller
         $uf->modulo=$request->input('modulo');
         $uf->modulo_id=$request->input('modulo_id');
         $uf->updated_by=Auth::id();
-        try {
+        try { //Comprueba si la UF puede ser guardada
             $uf->save();
             return redirect('/menu/uf/' . $uf->modulo_id);
-        } catch (QueryException $e){
+        } catch (QueryException $e){ //En caso de que de error (probablemente por repetir campos unicos de una UF ya existente) nos devolverá a la vista con un mensaje de error
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return redirect('/menu/uf/' . $uf->modulo_id);
@@ -46,7 +46,7 @@ class UfController extends Controller
         }  
     }
 
-    public function store(Request $request)
+    public function store(Request $request) //Añade una UF con los campos introducidos
     { 
         $uf = new Uf;
         $uf->nombre=$request->input('nombre');
@@ -54,10 +54,10 @@ class UfController extends Controller
         $uf->modulo=$request->input('modulo');
         $uf->modulo_id=$request->input('modulo_id');
         $uf->updated_by=Auth::id();
-        try {
+        try { //Comprueba si la UF puede ser guardada
             $uf->save();
             return redirect('/menu/uf/' . $uf->modulo_id);
-        } catch (QueryException $e){
+        } catch (QueryException $e){  //En caso de que de error (probablemente por repetir campos unicos de una UF ya existente) nos devolverá a la vista con un mensaje de error
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return redirect('/menu/uf/' . $uf->modulo_id);
@@ -65,7 +65,7 @@ class UfController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function destroy($id) //Elimina la UF seleccionada
     {
         $uf = Uf::findOrFail($id);
         Uf::destroy($id);

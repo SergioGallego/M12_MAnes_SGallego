@@ -30,7 +30,7 @@ class LoginWithGoogleController extends Controller
                 return redirect()->intended('dashboard');
        
             }else{
-                $newUser = User::create([
+                $newUser = User::create([ //Crea un nuevo usuario de google y una contraseña por defecto
                     'name' => $user->name,
                     'email' => $user->email,
                     'role_id' => 2,

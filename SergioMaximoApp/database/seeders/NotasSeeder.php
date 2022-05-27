@@ -76,7 +76,7 @@ class NotasSeeder extends Seeder
         ),
     );
 
-    public function seedModulo(){
+    public function seedModulo(){ //Recorre la array de notas guardando a cada uno en la base de datos
         DB::table('alumno_ufs')->delete();
         foreach($this->arrayNotas as $nota){
             $n = new AlumnoUf;

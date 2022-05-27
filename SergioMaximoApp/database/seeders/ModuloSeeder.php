@@ -107,7 +107,7 @@ class ModuloSeeder extends Seeder
         ),
     );
 
-    public function seedModulo(){
+    public function seedModulo(){ //Recorre la array de modulos guardando a cada uno en la base de datos
         DB::table('modulos')->delete();
         foreach($this->arrayModulo as $modulo){
             $m = new Modulo;

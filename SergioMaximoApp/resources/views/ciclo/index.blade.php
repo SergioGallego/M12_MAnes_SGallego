@@ -4,7 +4,7 @@
     <h1 style="text-align: center">Gestión de ciclos</h1>
 @stop
 @section('content') 
-        @if (auth()->user()->role_id == 1)
+        @if (auth()->user()->role_id == 1)<!-- Comprueba el rol del usuario logeado, si es superuser la columna ocupará menos para añadir el form -->
             <div class="col-md-9">
         @endif
         @if (auth()->user()->role_id == 2)
@@ -17,14 +17,15 @@
                 <td class="cabecera"><b>Descripcion</b></td>
                 <td class="cabecera"><b>Acción</b></td>
             </tr>
-            @foreach ($arrayCiclos as $key => $c)
+            @foreach ($arrayCiclos as $key => $c) <!-- Recorre cada ciclo de la array --> 
                 <tr>
-                    <td style="padding: 10px">{{$c->id}}</td>
+                    <td style="padding: 10px">{{$c->id}}</td> <!-- Introduce cada campo --> 
                     <td style="padding: 10px">{{$c->nombre}}</td>
                     <td style="padding: 10px">{{$c->descripcion}}</td>
-                    <td style="padding: 10px"><a href="{{route('showCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
+                    <td style="padding: 10px"> <!-- Crea dos enlaces a rutas con la id del ciclo --> 
+                        <a href="{{route('showCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/detalles.png" width="24px"/></a>
                         <a href="{{route('statsCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/stats.png" width="24px"/></a>
-                        @if (auth()->user()->role_id == 1)
+                        @if (auth()->user()->role_id == 1) <!-- Si el auth es superusuario, permite borrar el ciclo --> 
                             <a href="{{route('destroyCiclo', $c->id)}}" class="btn" style="color: white; background-color: #FF6701"><img src="https://raw.githubusercontent.com/SergioGallego/M12_MAnes_SGallego/main/icon/borrar.png" width="24px"/></a>
                         @endif
                     </td>
@@ -33,7 +34,7 @@
         </table><br>
         <a class="btn block mt-1 w-full" href="{{route('menu')}}" style="background-color: rgb(255,103,1); color: white">Volver</a>
     </div>
-    @if (auth()->user()->role_id == 1)
+    @if (auth()->user()->role_id == 1) <!-- Si el auth es superusuario, aparecerña un formulario para añadir ciclos --> 
         <div class="col-md-3">
             <div class="botones p-3" style="border-width: 1px; background-color: #ffe6cf">
             <x-jet-validation-errors class="mb-4" style="color: red"/>

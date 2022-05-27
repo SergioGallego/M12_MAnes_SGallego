@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 
 class ModuloController extends Controller
 {
-    public function index()
+    public function index() //Pasa a la vista todos los modulos, ciclos y el usuario conectado
     {
         $modulo = Modulo::all();
         $ciclos = Ciclo::all();
@@ -21,7 +21,7 @@ class ModuloController extends Controller
         return view('modulo.index', array('error'=>false, 'arrayModulos'=>$modulo, 'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
     }
 
-    public function show($id)
+    public function show($id) //Pasa a la vista el modulo seleccionado, todos los ciclos y el usuario conectado
     {
         $modulo = Modulo::findOrFail($id);
         $ciclos = Ciclo::all();
@@ -29,7 +29,7 @@ class ModuloController extends Controller
         return view('modulo.show', array('error'=>false, 'modulo'=>$modulo, 'arrayCiclos'=>$ciclos, 'arrayProfesores'=>$users));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //Actualiza el modulo seleccionado a partir de los campos introducidos
     {
         $modulo = Modulo::find($id);
         $modulo->nombre=$request->input('nombre');
@@ -37,10 +37,10 @@ class ModuloController extends Controller
         $modulo->ciclo=$request->input('ciclo');
         $modulo->comentario=$request->input('comentario');
         $modulo->updated_by=Auth::id();
-        try {
+        try { //Comprueba si el modulo puede ser guardado
             $modulo->save();
             return view('modulo.index', array('error'=>false, 'modulo'=>$modulo, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
-        } catch (QueryException $e){
+        } catch (QueryException $e){ //En caso de que de error (probablemente por repetir campos unicos de un modulo ya existente) nos devolverá a la vista con un mensaje de error
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return view('modulo.show', array('error'=>true, 'modulo'=>$modulo, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
@@ -48,7 +48,7 @@ class ModuloController extends Controller
         }       
     }
 
-    public function store(Request $request)
+    public function store(Request $request) //Se añade el modulo con los campos introducidos
     { 
         $modulo = new Modulo;
         $modulo->nombre=$request->input('nombre');
@@ -56,10 +56,10 @@ class ModuloController extends Controller
         $modulo->ciclo=$request->input('ciclo');
         $modulo->comentario=$request->input('comentario');
         $modulo->updated_by=Auth::id();
-        try {
+        try { //Comprueba si el modulo puede ser guardado
             $modulo->save();
             return view('modulo.index', array('error'=>false, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
-        } catch (QueryException $e){
+        } catch (QueryException $e){ //En caso de que de error (probablemente por repetir campos unicos de un modulo ya existente) nos devolverá a la vista con un mensaje de error
             $errorCode = $e->errorInfo[1];
             if($errorCode == 1062){
                 return view('modulo.index', array('error'=>true, 'arrayModulos'=>Modulo::all(), 'arrayCiclos'=>Ciclo::all(), 'arrayProfesores'=>User::all()));
@@ -67,7 +67,7 @@ class ModuloController extends Controller
         }
     }
 
-    public function destroy($id)
+    public function destroy($id) //Elimina el modulo seleccionado
     {
         Modulo::destroy($id);
         return redirect()->back();

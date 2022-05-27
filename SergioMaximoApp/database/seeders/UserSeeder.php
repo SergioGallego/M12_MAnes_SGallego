@@ -56,7 +56,7 @@ class UserSeeder extends Seeder
         ),
     );
 
-    private function seedUser(){
+    private function seedUser(){ //Recorre la array de usuarios guardando a cada uno en la base de datos
         DB::table('users')->delete();
         foreach($this->arrayUsers as $user){
             $us = new User;

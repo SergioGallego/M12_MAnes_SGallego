@@ -15,30 +15,30 @@ class UserController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
         return view('user.index');
     }
 
-    public function indexProfesores()
+    public function indexProfesores() //Pasa a la vista todos los usuarios
     {
         $usuarios = User::all();
         return view('profesor.index', array('arrayUsuarios'=>$usuarios));
     }
 
-    public function show($id)
+    public function show($id) //Pasa a la vista el usuario seleccionado
     {
         $profesor = User::findOrFail($id);
         return view('profesor.show', array('profesor'=>$profesor));
     }
  
-    public function edit($id)
+    public function edit($id) //Pasa a la vista el usuario seleccionado
     {
         $profesor = User::findOrFail($id);
         return view('profesor.edit', array('profesor'=>$profesor));
     }
 
-    public function store(Request $request)
+    public function store(Request $request) //Añade un usuario con los campos introducidos
     {
         $profesor = new User;
         $profesor->name=$request->input('name');
@@ -51,7 +51,7 @@ class UserController extends Controller
     }
     
     
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) //Actualiza un usuario con los campos introducidos
     {
         $profesor = User::find($id);
         $profesor->name=$request->input('name');
@@ -63,7 +63,7 @@ class UserController extends Controller
         return redirect('/menu/user/');
     }
 
-    public function destroy($id)
+    public function destroy($id) //Elimina el usuario seleccionado
     {
         User::destroy($id);
         return redirect()->back();

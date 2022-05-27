@@ -11,7 +11,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //Te devuelve al menu principal
     {
         return redirect()->route('menu');
     }
